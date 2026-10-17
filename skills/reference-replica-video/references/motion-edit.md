@@ -36,4 +36,6 @@ Frame holds such as twelve distinct drawings per second played at twenty-four fr
 
 Render a quality master and a mobile-friendly preview. Once every shot has `clip {asset, in, duration, speed}`, `python3 scripts/render_edit.py PLAN MASTER --preview PREVIEW [--holds 12]` renders the cut, frame holds, dissolves and music from the plan; any other host editing tool is equally valid. Verify duration, frame size, aspect ratio, frame rate, audio coverage, silence, clipping, cut boundaries and encoding quality. Use `media_inspect.py audio` on the final output as a diagnostic, then listen; intended silence should not be classified as an automatic defect.
 
+The helper outputs music only and discards source-clip audio. It adds a 0.3-second music fade-out and sharpens clips narrower than the output width; review those treatments before delivery. Use another editing tool when synchronous sound or different finishing controls are required.
+
 Watch once without explanatory notes, then with music. Report unresolved creative defects separately from technical checks. Provide the requested delivery location only under the user's authorization. Include the plan, accepted references, export settings and costs with estimates visibly separated from actual billed amounts.

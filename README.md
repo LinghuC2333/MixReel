@@ -44,7 +44,7 @@ python3 skills/reference-replica-video/scripts/init_config.py
 skills/reference-replica-video/
   SKILL.md                  入口、阶段选择与必要约束
   references/               故事、分镜、图像、视频和执行说明
-  scripts/                  本地分析、计划检查、费用记录与脱敏
+  scripts/                  本地分析、剪辑导出、计划检查、费用记录与脱敏
   assets/                   项目记录模板和合成计划样例
   agents/                   Codex 显示信息
 tests/                     无付费调用的自动测试
@@ -54,7 +54,15 @@ docs/                      设计、迁移与验证记录
 
 ## 工具与边界
 
-Python 3.10 及以上即可运行计划检查、记录和脱敏工具，无额外 Python 依赖。媒体诊断需要本机已有 `ffmpeg` 和 `ffprobe`。
+Python 3.10 及以上即可运行计划检查、记录和脱敏工具，无额外 Python 依赖。媒体诊断和剪辑导出需要本机已有 `ffmpeg` 和 `ffprobe`。拍点分析另需安装 `numpy` 和 `librosa`，建议放在独立环境中。
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install numpy librosa
+```
+
+上面的激活命令适用于 macOS/Linux。未安装可选依赖时，拍点测试会跳过；验证全部功能时应先安装。
 
 ```sh
 python3 skills/reference-replica-video/scripts/validate_plan.py skills/reference-replica-video/assets/plan.example.json
