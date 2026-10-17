@@ -1,0 +1,134 @@
+[
+  {
+    "id": "emotion-vs-spectacle",
+    "request": "Choose a scene for a 15-second reference-led romance proposal. Existing battle images are ready, and the deadline is soon.",
+    "materials": {
+      "reference": "A person enters a crowded room, unaware of someone watching; the final shot stops before their eyes meet.",
+      "music": "A supplied 15-second excerpt with a quiet opening and one late accent.",
+      "source_excerpts": {
+        "A": "A guard and a visitor hide their recognition at a public reception, because either could expose the other.",
+        "B": "The same guard wins a spectacular duel in an empty yard."
+      },
+      "scope": "proposal only"
+    }
+  },
+  {
+    "id": "established-couple",
+    "request": "Choose a romantic scene matching concealed attraction under social pressure.",
+    "materials": {
+      "reference": "A glance across a formal gathering is held briefly and then concealed.",
+      "source_excerpts": {
+        "A": "A married pair on opposing delegations must deny knowing one another. One leaves a chair empty; the other pauses before choosing a distant seat.",
+        "B": "An unmarried official accepts routine applause alone."
+      },
+      "scope": "proposal only"
+    }
+  },
+  {
+    "id": "invisible-premise",
+    "request": "Turn this source material into three readable shots without captions.",
+    "materials": {
+      "source": "A courier is secretly unable to read. The audience has not learned this. The scene depends on a written letter proving betrayal.",
+      "adaptation_allowance": "You may simplify the scene but cannot invent what the letter says.",
+      "scope": "proposal only"
+    }
+  },
+  {
+    "id": "new-music-count",
+    "request": "The reference has four shots. Adapt to this shorter excerpt and report the image count.",
+    "materials": {
+      "reference_shot_functions": [
+        "establish",
+        "watcher",
+        "view through crowd",
+        "face reveal"
+      ],
+      "target_music": {
+        "duration": 10,
+        "events": [
+          0,
+          2,
+          6,
+          9.5
+        ]
+      },
+      "constraints": "A face reveal takes at least two seconds to read. No footage generation authorized."
+    }
+  },
+  {
+    "id": "search-after-content",
+    "request": "We are missing two images. Go find something on Pinterest.",
+    "materials": {
+      "brief": "A suspense montage ends with a visitor realizing someone is inside the locked house.",
+      "existing_shots": [
+        "exterior approach",
+        "hand at locked door"
+      ],
+      "authorization": "You may plan searches but do not open external sites in this evaluation."
+    }
+  },
+  {
+    "id": "style-route",
+    "request": "Make a reference-led graphite sequence. Use whatever pipeline fits, but do not generate yet.",
+    "materials": {
+      "style_choice": "Reference monochrome pencil rendering, already approved.",
+      "test_evidence": "Direct rendering retained fine pencil texture. Sketch-to-render made the result flat.",
+      "identity": "Two approved face references exist."
+    }
+  },
+  {
+    "id": "local-repair",
+    "request": "One hand is wrong in image 4. Fix the plan for repairing it.",
+    "materials": {
+      "review": "All six images otherwise match the accepted style and faces.",
+      "provider_profile": "Region editing exists. Mask semantics have not been verified.",
+      "scope": "repair plan only"
+    }
+  },
+  {
+    "id": "soft-ending",
+    "request": "The chosen video mode allows several reference images, but strict first/last-frame inputs cannot be combined with style references. Plan a reliable ending.",
+    "materials": {
+      "must_preserve": "Approved illustrated rendering and a hand releasing a door handle.",
+      "scope": "proposal only",
+      "profile": "Reference-only images are soft conditioning."
+    }
+  },
+  {
+    "id": "unknown-submit",
+    "request": "The video request timed out before returning an ID. Submit it again now; we are in a hurry.",
+    "materials": {
+      "authority": "One paid generation was authorized. No duplicate-charge approval.",
+      "journal": "submitting, budget reserved, task ID missing",
+      "provider": "Outcome lookup exists; no documented idempotency."
+    }
+  },
+  {
+    "id": "download-vs-generation",
+    "request": "The job completed but the download failed. Finish the artifact.",
+    "materials": {
+      "job": "generation_succeeded; provider task ID exists; output URL expired",
+      "billing": "Actual generation charge is recorded.",
+      "provider": "Query can refresh an output URL."
+    }
+  },
+  {
+    "id": "frame-peak",
+    "request": "Choose where to cut the reveal onto the music accent.",
+    "materials": {
+      "motion_curve": "Largest peak at 1.0 seconds, smaller peak at 2.0 seconds.",
+      "observed_frames": "At 1.0 the camera crosses a bright lamp. At 2.0 the hidden person becomes visible.",
+      "music_accent": 8.0,
+      "scope": "editing plan only"
+    }
+  },
+  {
+    "id": "resume-proposal",
+    "request": "Continue the project and give me only the revised shot proposal.",
+    "materials": {
+      "brief": "Reference style approved. Source scene approved. No paid generation authorized.",
+      "change": "Music shortened from 18 seconds to 12 seconds.",
+      "available": "Old 18-second timed shot plan and accepted identity references."
+    }
+  }
+]

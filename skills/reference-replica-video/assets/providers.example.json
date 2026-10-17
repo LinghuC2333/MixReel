@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "profiles": {
+    "image_generation": {
+      "provider": "",
+      "account_alias": "",
+      "model": "",
+      "base_url": "",
+      "allowed_hosts": [],
+      "auth": {
+        "source": "credentials_file",
+        "name": "image_generation"
+      },
+      "prompt_family": "",
+      "verified_at": "",
+      "docs_url": ""
+    },
+    "image_editing": {
+      "provider": "",
+      "account_alias": "",
+      "model": "",
+      "base_url": "",
+      "allowed_hosts": [],
+      "auth": {
+        "source": "credentials_file",
+        "name": "image_editing"
+      },
+      "prompt_family": "",
+      "verified_at": "",
+      "docs_url": ""
+    },
+    "video_generation": {
+      "provider": "",
+      "account_alias": "",
+      "model": "",
+      "base_url": "",
+      "allowed_hosts": [],
+      "auth": {
+        "source": "credentials_file",
+        "name": "video_generation"
+      },
+      "prompt_family": "",
+      "verified_at": "",
+      "docs_url": ""
+    }
+  }
+}

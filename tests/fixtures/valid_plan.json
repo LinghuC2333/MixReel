@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "duration": 6.0,
+  "fps": 24,
+  "illustration_count": 2,
+  "music": {
+    "asset": "media/music.wav",
+    "duration": 10.0,
+    "offset": 2.0,
+    "events": [
+      {
+        "id": "entry",
+        "time": 0.0,
+        "kind": "phrase_start"
+      },
+      {
+        "id": "reveal",
+        "time": 3.0,
+        "kind": "accent"
+      }
+    ]
+  },
+  "references": [
+    {
+      "id": "style-a",
+      "asset": "media/style.png",
+      "role": "style",
+      "contribution": "Rendering only; no source identities."
+    }
+  ],
+  "reviews": {
+    "storyboard": "pending",
+    "style": "pending",
+    "keyframes": "pending"
+  },
+  "shots": [
+    {
+      "id": "shot-1",
+      "start": 0.0,
+      "end": 3.0,
+      "function": "Establish an obstructed view.",
+      "source_evidence": "Synthetic fixture, not a source-story adaptation.",
+      "keyframe_design": "A foreground curtain partially hides an empty doorway.",
+      "description": "From the room, the camera tracks right past the curtain and reveals the doorway. The curtain moves gently in the draft. Room ambience only.",
+      "opening": "Doorway partly occluded.",
+      "ending": "Doorway visible.",
+      "camera": {
+        "behavior": "track_right",
+        "start": "Behind foreground curtain",
+        "end": "Clear view of doorway"
+      },
+      "bindings": [
+        "style-a"
+      ],
+      "keyframes": [
+        "frame-1"
+      ],
+      "music_event": "entry",
+      "transition": {
+        "type": "cut",
+        "duration": 0
+      },
+      "provider_prompt": null
+    },
+    {
+      "id": "shot-2",
+      "start": 3.0,
+      "end": 6.0,
+      "function": "Reveal a change in the room.",
+      "source_evidence": "Synthetic fixture, not a source-story adaptation.",
+      "keyframe_design": "A hand on the outer door handle, viewed from the room.",
+      "description": "The camera holds on the handle, with no dolly, no zoom and no pan. The hand turns the handle and the door opens slightly. The latch clicks; no background music.",
+      "opening": "Door closed.",
+      "ending": "Door slightly open.",
+      "camera": {
+        "behavior": "fixed",
+        "start": "Handle close-up",
+        "end": "Same close-up"
+      },
+      "bindings": [
+        "style-a"
+      ],
+      "keyframes": [
+        "frame-2"
+      ],
+      "music_event": "reveal",
+      "transition": {
+        "type": "cut",
+        "duration": 0
+      },
+      "provider_prompt": null
+    }
+  ]
+}
