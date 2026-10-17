@@ -45,6 +45,6 @@ In collaborative work, present story plus storyboard before illustrations, one r
 
 No generation with unknown billing behavior or an unapproved provider substitution. Persist submission intent before a paid call. An ambiguous timeout is reconciled before resubmission. Price estimates are never reported as actual charges.
 
-Validate the plan before execution with `python3 scripts/validate_plan.py PATH`. Use `python3 scripts/job_journal.py --help` for the local job record. Neither helper submits paid work. Record semantic and visual review separately from machine checks.
+Validate the plan before execution with `python3 scripts/validate_plan.py PATH`. Local, unpaid helpers: `scripts/beat_grid.py` fits a beat grid to the target music (optional numpy/librosa); `scripts/render_edit.py` renders the plan's cut with speed, frame holds and dissolves. Use `python3 scripts/job_journal.py --help` for the local job record. Neither helper submits paid work. Record semantic and visual review separately from machine checks.
 
 Completion requires inspecting the delivered artifact, verifying duration and audio, listing unresolved defects, and reconciling costs. A successful job status alone is insufficient.
