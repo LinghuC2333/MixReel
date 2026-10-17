@@ -4,7 +4,7 @@
 
 Read the approved shot plan and reference inventory before each prompt. Preserve the principal camera behavior, gaze targets, visible action sequence and final state. Specify subjects by stable roles and exact reference order rather than vague pronouns. Do not substitute looking at the lens for looking toward another character.
 
-Match the reference's kind of motion. For illustrated tableaux, camera travel, foreground parallax, breathing and cloth motion may be sufficient. For a confrontation, contact, force and reaction must be visible. A camera move should reveal information, alter distance or emphasize power; decorative movement in every shot is not a quality criterion.
+Choose camera and subject movement from the approved sequence and the reference observations. Describe what changes during the shot and what the viewer should notice as it unfolds.
 
 Prefer one approved shot per generated clip when edit timing matters. Multi-shot generation is an explicit option when the selected model supports it and its cuts can be reviewed. Do not turn a shot into several unplanned angles.
 

@@ -33,14 +33,11 @@ Read [Project records](references/records.md) before creating or changing record
 
 Resolve every bundled script path relative to this `SKILL.md`, then invoke it through Python with explicit project input/output paths. Keep the private project's working directory; do not write project data into the installed skill.
 
-## Creative decisions that must survive execution
+## From reference to proposal and images
 
-- Story choice comes from reference emotion, target music and source material together. Spectacle and available assets cannot silently change the intended genre.
-- Show the visible evidence for tension. Reject a premise that needs an unshown secret to make sense, or supply a legible visual expression grounded in the source.
-- Write the sequential shot descriptions before paid illustration. Establish who sees whom, action cause and result, camera movement and the ending state.
-- Derive shot count from the new music and readable actions. Reference shot count, beat count and keyframe count are different quantities.
-- Choose movement to serve the reference and story. A restrained gaze can need a moving camera; an action scene can need a held reaction.
-- Lock approved appearance and rendering. Each reference has an explicit role; its presence alone does not prove the model used it correctly.
+Use [Story](references/story.md) to turn observed audience experience and user intent into alternative visual scripts. Review those scripts shot by shot before illustration, and derive the image count from the chosen music and readable actions.
+
+Use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then correcting visible identity/detail deviations with GPT. Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
 
 ## Review and execution boundaries
 

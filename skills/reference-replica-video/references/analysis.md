@@ -24,6 +24,4 @@ Sketch the available visual slots using music events and the time each action ne
 
 Map each reference shot's function to a slot on the target music. Keep emotional progression while allowing removal, merging, extension or an additional shot when duration changes. State what each change contributes. Do not retain a weak shot only to preserve numbering.
 
-When a slot lacks a usable composition, define the narrative function, subject count, shot scale, viewpoint, gaze and negative space first. Search Pinterest or another authorized source with short combinations of those attributes. Compare candidates for staging and readability, then select one primary composition reference per shot by default. Keep source provenance and its permitted role. Additional references require distinct roles, not an undifferentiated image pile.
-
-Search is optional. A usable reference frame or an original composition may already satisfy the slot. Do not transmit unrelated reference images into later generation stages automatically.
+For each planned shot, select one composition reference using [Images, stage 0](images.md). A usable reference-video frame can supply it directly; otherwise define the missing visual requirements before searching Pinterest. Deliver the selected images and their source/adjustment notes together.

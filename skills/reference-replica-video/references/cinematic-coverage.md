@@ -26,8 +26,6 @@ Keep a continuous shot when uninterrupted time, physical distance, surveillance,
 
 Identify the scene's emotional arc, not only its dominant feeling. Mark the opening state, the source beat that changes or intensifies it, and the feeling left in the final image. If the source contains no turn, preserve a deliberately static mood. State the atmosphere once in the H3 description, then let observable channels carry it. Useful channels include shot distance, pace, stillness, gaze, breath, micro-hesitation, light, weather, environmental motion, physical sound, touch, and deliberate non-contact.
 
-For grief, quiet duration, restrained movement, muted ambience, withheld speech, and one physical reaction usually carry more weight than repeated sadness adjectives. For romantic tension, preserve the source's consent and boundaries while emphasizing mutual awareness, charged proximity, interrupted or withheld touch, close breathing, synchronized movement, and reaction timing. Do not turn subtext into a new kiss, caress, embrace, smile, or spoken confession.
-
 Let atmosphere shape coverage without obscuring the event. A prop state change must remain readable, and a relationship beat must still preserve who chooses, who waits, and who touches or refuses to touch.
 
 Do a silent-frame check before finalizing the plan. The emotional change should still be legible from performance, distance, light, or composition when dialogue and sound are removed. Sound may deepen the scene but should not carry the entire emotional turn by itself.
@@ -35,8 +33,6 @@ Do a silent-frame check before finalizing the plan. The emotional change should 
 ## Make decisive actions complete
 
 For a plot-critical physical action, show a short causal chain rather than naming the result. Establish the initial state, make the contact or applied force visible, show the transition, then hold the result long enough to register. The model should see where the hand, tool, object, and resistance are located relative to one another.
-
-A cutting insert may show the blades enclosing the material, pressure increasing, fibers separating, tension releasing, and the suspended object falling. A lock insert may show the key seated in the keyway, the turn, the bolt click, the handle test, and the held latch. An ownership change may keep both hands and the object visible until one hand releases and the other clearly controls it.
 
 Avoid hiding the decisive contact behind a body, cutting away before the state changes, or asking one brief insert to perform several unrelated actions. Prefer positive placement such as `both boots remain one step behind the threshold` over a bare negative such as `do not enter`.
 
@@ -60,7 +56,7 @@ When a boundary, withheld touch, maintained distance, or control of a prop is th
 
 An environment shot may establish place, weather, isolation, danger, or the direction of travel. It can also bridge two spaces. Keep it brief enough that the event still fits the requested duration.
 
-A prop insert may reveal evidence, mark a state change, or create a transition. Examples include shears closing on rope, a key turning, hands refusing the reins, or a suitcase handle changing owners. Return from the insert with continuous positions and motion.
+A prop insert may reveal evidence, mark a state change, or create a transition. Return from the insert with continuous positions and motion.
 
 Do not add an empty shot or insert only to imitate a trailer. Every added image must carry information, mood tied to the setting, or a transition already supported by the source.
 

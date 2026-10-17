@@ -19,7 +19,7 @@ The brief links to other records. The latest user instruction overrides an older
 
 The bundled example is validated by `validate_plan.py`. Its durations and names are synthetic fixtures. The validator checks timeline and dependency consistency; it cannot judge taste or verify that a person is recognizable.
 
-`duration` is the target timeline length. `music.duration` describes the source track; `music.offset` identifies the selected excerpt. Musical events are relative to that excerpt. Shots tile the timeline without gaps. `references` is a stable asset inventory; `bindings` gives the exact ordered IDs for each provider request. Each shot has a visible scene, a keyframe design, source evidence, camera behavior and starting/ending state.
+`duration` is the target timeline length. `music.duration` describes the source track; `music.offset` identifies the selected excerpt. Musical events are relative to that excerpt. Shots tile the timeline without gaps. `references` is a stable asset inventory; `bindings` gives the planned ordered IDs for each provider request. Save the actual submitted image inventory with each job as described in [Images](images.md); reconcile any difference before treating the stage as reviewed. Each shot has a visible scene, a keyframe design, source evidence, camera behavior and starting/ending state.
 
 `transition.duration` represents overlap leading into the incoming shot. It consumes extra source handles, not additional output duration. A rendered shot's `clip.in` includes the pre-transition handle; the clip must supply `(shot duration + incoming overlap) * speed` source seconds. The main shot event begins after that overlap. The generator may provide more footage; the editor chooses the usable interval.
 
@@ -32,7 +32,7 @@ The bundled example is validated by `validate_plan.py`. Its durations and names 
 | Reference, audience or emotional goal | Candidate story, shot plan and all dependent media |
 | Music excerpt or tempo interpretation | Timing, shot count, edits and only media that no longer fits |
 | Character/style anchor | Affected images and clips, not unrelated analysis |
-| One frame's hand or prop | That frame and clips derived from it |
+| A local image correction | That frame and clips derived from it |
 | In/out edit or export setting | Timeline/audio/export; do not regenerate images |
 | Provider/model | Capability profile, affected prompts, cost and a representative quality test |
 

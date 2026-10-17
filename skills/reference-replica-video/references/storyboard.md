@@ -32,7 +32,7 @@ Track character positions, screen direction, eye lines, prop ownership, injuries
 
 Ask what new information each shot adds. Use a wide view for scale, an over-shoulder view for what someone sees, an insert for evidence, or a close-up for a readable reaction. These are choices justified by the scene, not a checklist that forces every type into every film.
 
-Reject contradictory start/end demands, such as walking away throughout and finishing at the initial position without a motivated turn. Do not force several complex actions into a short slot. Simplify, split or change the timing before generating.
+Check that the starting state, action and ending can follow one another within the slot. Adjust staging or timing before generation when they cannot.
 
 A montage can connect non-consecutive source moments through a deliberate emotional progression. Label this structure so omitted causality is intentional. A continuous scene requires continuous geography and action.
 

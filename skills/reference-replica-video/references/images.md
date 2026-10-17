@@ -1,42 +1,41 @@
-# Choose and preserve the visual treatment
+# From composition reference to finished keyframe
 
-## Style choice
+Use the user's selected style source, either their own artwork or frames from the reference video. If it is undecided, ask which source to use. Record the chosen images without prescribing a particular style.
 
-Use the recorded choice of own-IP rendering or reference-video rendering. If neither is chosen, explain the concrete visual difference and ask once. A style lock records media, palette, line and brush behavior, lighting, material finish and forbidden drift based on the user's actual preferences. Do not infer that every project must be anime, impasto, monochrome or photorealistic.
+Follow these four stages for each keyframe. Preserve the actual model/tool identity in the job record; a product label alone does not verify a model version. Resolve unavailable tools before submitting work, without silently replacing a stage.
 
-Select a representative frame that tests the hardest relevant combination of face, material, space and scale. A close-up alone may not test a wide crowded scene. Use the smallest set that resolves the actual risk. Review this before producing the full batch.
+## 0. Select one composition reference
 
-## Reference roles
+Write the shot's scale, subject count and image share, foreground/background relationship, and action that must remain visible. Use a suitable frame from the corresponding reference-video shot, or search Pinterest through an available OpenCLI installation.
 
-Maintain an ordered inventory giving each image's content hash, source, allowed contribution and unwanted carry-over.
+Combine two or three short action, viewpoint or setting terms; keep story names and lore out of the query. Check the installed command's help before use. A search command may take this form.
 
-| Role | Intended contribution | Typical contamination |
-|---|---|---|
-| Composition | Framing, pose, depth, placement | Palette, medium, lighting or source identities |
-| Identity | Face, hair and distinguishing features | Portrait pose, background and clothing |
-| Style | Rendering and material treatment | Source faces or environment |
-| Wardrobe | Garment shape and detail | Full-body pose or physique |
-| Environment | Place, architecture and spatial cues | Wrong season, daylight or camera position |
-| Ending anchor | Desired final composition and state | A second starting scene or an unwanted cut |
+```sh
+opencli pinterest search-pins "<short terms>" --limit 10 -f json
+```
 
-Use stable, user-approved identity references. A new approved frame can become the identity anchor after comparing it to the intended character. A single image need not contain every person; different characters can have separate approved sources. Preserve original references rather than repeatedly cropping regenerated faces and accumulating drift.
+Save search results, deduplicate candidates, download and open them. Compare framing, action and cropping visually, then search again for the missing condition if necessary. Tool access errors are not empty search results. Keep an unresolved shot incomplete when no candidate fits.
 
-## Select a route by evidence
+Select exactly one composition image per shot. Record its original URL, search terms or source-video time, borrowed composition and required changes. Show all selected images together to review repeated scale and angles. Candidate sheets are for selection, not extra generation inputs.
 
-A colored blocking sketch can control pose, geometry and palette before final rendering. Supply only the composition reference and a simple-sketch treatment when that is the requested first stage. Avoid detailed clothing or face references that make the sketch prematurely dictate the final look.
+## 1. GPT creates a simple composition draft
 
-Test direct generation when the model already follows the target rendering. Test sketch-to-render when composition is difficult and the rendering model can reinterpret the sketch. Add a local identity or detail pass only where review identifies a defect. The model sequence is selected per treatment and current capabilities, not fixed by brand names.
+Supply exactly two images, the selected composition reference and one simple-drawing example. Describe the scene, people count, framing, time of day, theme colors and simple clothing silhouettes in text.
 
-If clothing references copy their pose into the image, try face crops plus explicit wardrobe description during composition/rendering, and apply garment detail in a controlled repair pass. If line-based artwork becomes flat, try direct generation with style references or a different rendering step. These are diagnosed remedies, not universal limitations of a named model.
+Produce a colored blocking draft that preserves pose, relative size, depth and light/shadow. Leave character faces, hair and detailed clothing undeveloped. Do not include complete character portraits or a previous finished illustration at this stage. Review the draft against the shot requirements before continuing.
 
-## Review and repair
+## 2. Ideogram applies the style and completes the people
 
-Inspect face resemblance, gaze, anatomy, pose, garment continuity, character count, scene time, palette and rendering. Compare at intended phone size as well as full resolution. Keep a contact sheet for consistency and full-resolution files for details.
+Supply the draft first, then the original face-reference collage, then the selected style images. Add a background reference only when needed. State the collage's left-to-right identity order, and separately state each character's target-screen position and clothing. Explain each input's role; collage order does not determine scene placement.
 
-For a spatially local edit, use a mask or equivalent region control when supported. Verify that provider's mask polarity and dimensions; black does not universally mean edit. Protect other people and unchanged areas. Compare before/after beyond the edited region.
+Preserve composition, shot scale and time of day. Disable `magic_prompt` and retain the draft's dimensions, mapping those settings through the verified endpoint schema. Do not import another model's parameter names. Inspect the returned image against the draft and the selected identity/style references.
 
-A single rejected image does not justify regenerating the whole set. First retry only that image against the approved style and identity references. Expand the repair only if the shared style definition changed or comparisons show group-wide defects. Record superseded assets without overwriting originals.
+## 3. GPT corrects identity and visible details
 
-Choose resolution for downstream output, crop margin and visible detail. Start near the target useful resolution; require a demonstrated benefit for expensive upscaling. Do not infer that a larger input guarantees a sharper video.
+Supply the Ideogram result and the relevant character references. When retaining original clothing, use the character portraits. For changed clothing, use original face references and style images, keeping the newly selected wardrobe.
 
-Approve the full keyframe set before the video batch. Count optional ending images separately. An ending reference in reference-only mode is a soft visual instruction, not a guaranteed endpoint constraint.
+Correct only observed deviations in visible features, hair, proportions or garment details. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
+
+## Record what was actually submitted
+
+For every generation or edit, save an ordered input-image manifest with stage, shot/job ID, file or stable asset ID, content hash, role and character mapping. Save the prompt, parameters and output IDs alongside it. Check the executor's actual inputs against this manifest, not just the planned bindings. Keep credentials and temporary signed links out of shareable records. Preserve originals and previous versions.
