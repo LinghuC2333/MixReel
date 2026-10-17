@@ -13,7 +13,7 @@
 | 5 项本地媒体测试 | 通过 | 用合成色块与声音检测切镜、画面变化、尾部静音和缺失音轨 |
 | 包结构检查 | 通过 | 本地链接、Python 语法、JSON、参考文件入口和明显私人信息检查 |
 
-媒体测试使用临时色块视频与合成声音，测试结束自动删除，不使用客户素材。测试环境为 macOS 上的 Python 与已有 ffmpeg。Windows 分支和在线 CI 尚未在本轮运行。
+媒体测试使用临时色块视频与合成声音，测试结束自动删除，不使用客户素材。本地测试环境为 macOS 上的 Python 与已有 ffmpeg。GitHub 的 Ubuntu 环境也已通过全部 42 项测试和包结构检查，详见[自动检查结果](https://github.com/LinghuC2333/reference-replica-video/actions/runs/39035565205)。Windows 分支尚未实测。
 
 ## 尚未验证
 
