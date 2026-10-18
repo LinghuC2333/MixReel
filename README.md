@@ -1,68 +1,139 @@
-# 从参考视频到故事短片
+<h1 align="center">MixReel</h1>
 
-一个可用于 Codex、Claude Code 等支持 Agent Skills 的助手的技能项目。输入参考视频、目标音乐和故事资料，输出用户指定阶段的成果，可以只做提案，也可以继续制作关键帧与短片。
+<h3 align="center">Remix any reel into your own story</h3>
 
-创作计划与接口配置分开。插画按构图参考、GPT 简易稿、Ideogram 完成插画、GPT 修正的顺序制作，具体接口由用户配置。主说明使用英文，便于跨团队复用；本说明和设计说明使用中文。
+<p align="center">An agent skill that turns a reference video into a new beat-synced short with your own characters</p>
 
-## 开始使用
+<p align="center">
+  <a href="#install"><strong>Install</strong></a>
+  &nbsp;&bull;&nbsp;
+  <a href="#showcase"><strong>Showcase</strong></a>
+  &nbsp;&bull;&nbsp;
+  <a href="#use-the-skill"><strong>Use the skill</strong></a>
+  &nbsp;&bull;&nbsp;
+  <a href="./README.zh-CN.md"><strong>简体中文</strong></a>
+</p>
 
-将 `skills/mixreel` 整个目录复制到助手的技能目录。Codex 通常使用 `~/.codex/skills`，Claude Code 项目通常使用 `.claude/skills`。实际加载方式以所用宿主为准。也可以让助手直接读取该目录中的 `SKILL.md`。
+<p align="center">
+  <a href="./LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"></a>
+  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent%20Skill-Claude%20Code%20%7C%20Codex-6E56CF?style=flat-square">
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?style=flat-square">
+</p>
 
-例如，让助手使用 `$mixreel`，读取参考视频、目标音乐和小说资料，先提交可逐镜检查的提案。本例只授权提案，不会自动开始生图。
+MixReel is an Agent Skill for Claude Code, Codex and other agents that load skills. Give your agent a reference video, a music track and your story material. It studies what the reference makes the viewer feel shot by shot, finds the matching moment in your story, and produces a reviewable script, keyframes, video clips and a final cut timed to the music.
 
-私人素材、项目记录和凭证放在这个源码目录以外。已做过的选择保存在项目记录中，继续任务时先读取这些记录。
+The skill carries over the experience of the reference. Your characters, your story and your chosen visual style replace everything else.
 
-## 配置自己的模型
+<p align="center">
+  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/side-by-side.webp" alt="Reference video on the left, the new short made with this skill on the right" width="608">
+</p>
+<p align="center"><em>Left, the reference video. Right, a 16.5-second short for our own novel, made with this skill.</em></p>
 
-生图、编辑图片和生成视频可以使用不同的服务，也可以共用同一服务。先运行下面的命令，在源码目录外创建空白配置。它不会联网或导入任何旧密钥。
+## Install
+
+```bash
+npx skills add LinghuC2333/mixreel
+```
+
+You can also copy `skills/mixreel` into your agent's skill directory, for example `.claude/skills` for a Claude Code project or `~/.codex/skills` for Codex.
+
+The skill itself is free. Image and video generation run on services you choose and pay for, and you configure them once on your own machine (see [Configure your models](#configure-your-models)).
+
+## Showcase
+
+### The Last Princess · First Meeting
+
+[Production notes](docs/showcase/first-meeting/README.md) · [Full reference video](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
+
+<table>
+  <tr>
+    <td>
+      <p><b>"FIRST MEETING"</b>, the video at the top of this page, is a 16.5-second vertical short for the romance novel <i>The Last Princess</i>. The reference is a hand-drawn greyscale ballroom meet-cute in which she never notices him and he finds her across the crowd. Our version moves that feeling to the night rebels storm the palace. He spots the princess on the stairs, grabs her wrist, she slaps him and runs, and he is left with the handprint and a faint smile.</p>
+      <p>Six shots and eight keyframes. The user chose to keep the reference's look, so reference frames served as edit bases in Ideogram 4.5, with the official character art as identity references. GPT Image 2.5 repaired two hands. MiniMax H3 animated the keyframes at 768P. Cuts land on the drum entry, the heaviest kick and both closing hits, with twelve drawings per second for a hand-drawn cadence.</p>
+      <p>Cost of everything kept in the final cut was about <b>$2.10</b> for images and <b>¥13</b> for video. Including every test along the way it came to about $7.30 and ¥16.20. These are service quotes and estimates, not reconciled bills.</p>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/process.jpg" alt="Reference frame, keyframe and frames from the final video for three shots" width="760">
+</p>
+<p align="center"><em>From reference frame to keyframe to final video, for three of the six shots.</em></p>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/keyframes.jpg" alt="The eight keyframes of the short" width="760">
+</p>
+<p align="center"><em>All eight keyframes. Each character keeps one face and one outfit across the scene.</em></p>
+
+The reference video and the song excerpt "Own The Dark" belong to their owners and appear here only to demonstrate the workflow.
+
+## Use the skill
+
+Start your agent in a private project folder that holds your reference video, music and story notes, then ask in plain words.
+
+Ask for a proposal only. Nothing is generated and nothing is paid for.
+
+```text
+Use $mixreel. Reference video ./media/reference.mp4, music ./media/music.mp3,
+story notes ./story/. Propose two or three scripts I can review shot by shot.
+```
+
+Run the whole production with review points.
+
+```text
+Use $mixreel to make the approved script into a finished short.
+Stop for my review after the composition drafts, after the keyframes with a video budget,
+and before the final cut.
+```
+
+The agent records every decision, input and cost in your project folder, so you can stop and resume at any stage.
+
+## What the skill does
+
+**Script from the viewer's experience.** The agent breaks the reference into shots and notes what the viewer expects, learns and feels at each moment. It then looks for scenes in your story that create the same experience, cites where each comes from and marks what was compressed or invented. Every script gets a stranger-viewer check before you see it.
+
+**Scene descriptions you can review.** Each shot is written as one camera setup with visible actions in causal order, a clear ending image and only on-set sound. Risky actions are spelled out as starting state, contact, change and result. You review the picture, not a model prompt.
+
+**Prompts written for each video model.** MiniMax H3 gets a six-part reference prompt bound to the exact upload order of its images. Seedance 2 gets a compact single-setup direction. Neither is converted from the other.
+
+**Keyframes that keep your style and characters.** One composition reference per shot, a simple blocking draft, a finishing pass with your style and character references, then local repairs. A reference frame that already fits the shot can serve directly as the edit base. Whether it also supplies the style is your choice.
+
+**Cuts timed to what actually happened.** The agent watches the returned clips, finds the real moment of each action and places it on the beat. A local renderer cuts, retimes, adds frame holds and lays the music.
+
+**Spending you can audit.** Quotes, estimates and billed charges stay separate. A paid request is recorded before it is sent and never resubmitted blindly after a timeout.
+
+## Configure your models
+
+Image generation, image editing and video generation can use different services. Create blank private config files outside the repository. The command makes no network calls and imports no keys.
 
 ```sh
 python3 skills/mixreel/scripts/init_config.py
 ```
 
-随后在本机编辑这两个文件。
-
 ```text
 ~/.config/mixreel/
-├── providers.json      # 服务、模型、接口地址和密钥名称
-└── credentials.json    # 用户自己的密钥，只保存在本机
+├── providers.json      # services, models, endpoints and credential names
+└── credentials.json    # your own keys, stored only on this machine
 ```
 
-填写所选服务的配置和密钥即可；已有宿主密钥管理或环境变量时可以直接沿用。初始化工具不会覆盖已存在的配置。macOS/Linux 默认只有当前用户能读取；Windows 需要自行设置文件访问权限。密钥文件采用明文存储，有现成的系统密钥管理工具时优先使用它。
+See [local configuration](skills/mixreel/references/local-config.md) for how agents read them. The repository ships no paid model client. Your agent uses its own tools or the endpoints you configure, and checks current parameters and pricing first.
 
-仓库仅包含空白示例。助手或接口程序需按[本机配置说明](skills/mixreel/references/local-config.md)读取相应配置；这个初始化命令本身不会连接服务或验证余额。
-
-## 视频提示词
-
-可编辑场景描述与发给模型的提示词分别保存。选择 Seedance 2 时使用简洁场景描述；选择 MiniMax H3 时，直接把已批准的场景、镜头计划与有序参考图写成六段提示词。两套写法按模型选择，不串联运行。
-
-规则由用户授权的 Lunaverse IDE 文件改编，已移除专用执行命令和特定小说案例。具体迁入内容见[提示词来源与修改](docs/PROMPT-SOURCES.md)。接口的时长、字符限制、模型名称与收费仍需使用前核实。
-
-## 项目结构
+## Project structure
 
 ```text
 skills/mixreel/
-  SKILL.md                  入口、阶段选择与必要约束
-  references/               故事、分镜、图像、视频和执行说明
-  scripts/                  本地分析、剪辑导出、计划检查、费用记录与脱敏
-  assets/                   项目记录模板和合成计划样例
-  agents/                   Codex 显示信息
-tests/                     无付费调用的自动测试
-evals/                     真实任务验证方法和人工审阅维度
-docs/                      设计、迁移与验证记录
+  SKILL.md        entry point, stage routing and boundaries
+  references/     story, storyboard, images, video and execution rules, read stage by stage
+  scripts/        local analysis, edit rendering, plan checks, cost journal, redaction
+  assets/         project record template and a synthetic plan example
+tests/            automated tests with no paid calls
+docs/             design notes, validation record and showcase notes
 ```
 
-## 工具与边界
+## Tools and checks
 
-Python 3.10 及以上即可运行计划检查、记录和脱敏工具，无额外 Python 依赖。媒体诊断和剪辑导出需要本机已有 `ffmpeg` 和 `ffprobe`。拍点分析另需安装 `numpy` 和 `librosa`，建议放在独立环境中。
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install numpy librosa
-```
-
-上面的激活命令适用于 macOS/Linux。未安装可选依赖时，拍点测试会跳过；验证全部功能时应先安装。
+Python 3.10 or newer runs the plan checks, journal and redaction tools. Media inspection and edit rendering need `ffmpeg` and `ffprobe`. Beat analysis also needs `numpy` and `librosa`.
 
 ```sh
 python3 skills/mixreel/scripts/validate_plan.py skills/mixreel/assets/plan.example.json
@@ -70,14 +141,10 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-本项目不附带付费模型客户端。助手使用宿主已有的工具或已配置接口，并先核实参数、参考图能力和实际扣费渠道。网络提交由这些工具负责；本地费用记录工具本身不能拦截绕过它的调用。
+## Contributing
 
-费用报价、估算和实际扣款分开记录。任务提交超时后先查原任务；下载失败时只重试下载。详情见 [执行说明](skills/mixreel/references/execution.md)。
+Changes to the creative method should come with observations from a real production and a human review. Keep provider-specific support in its own adapter section, with current documentation and tests that do not trigger paid calls. Keep credentials, signed links and other people's material out of the repository unless you have permission to publish it. [Design notes](docs/DESIGN.md) explain the trade-offs and [validation](docs/VALIDATION.md) separates what has been tested from what has not.
 
-## 阅读与贡献
+## License
 
-入口只加载当前阶段需要的说明。[设计说明](docs/DESIGN.md)解释取舍，[迁移说明](docs/MIGRATION.md)说明旧实现如何归位，[验证记录](docs/VALIDATION.md)区分已经跑过的检查与尚未开展的实战验证。
-
-修改创作方法时附上真实任务的观察与人工审阅依据。供应商专用支持放到独立适配部分，附当前文档依据和不触发付费的测试。不要把客户素材、故事原文、内部地址、签名链接或密钥加入仓库。
-
-采用 MIT 许可证。许可证只覆盖本项目原创文件，不赋予使用外部音乐、视频或角色素材的权利。
+MIT. The license covers the original files of this project. It grants no rights to the reference video, music or character material shown in the showcase.
