@@ -8,7 +8,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPT=ROOT/'skills/reference-replica-video/scripts/render_edit.py'
+SCRIPT=ROOT/'skills/mixreel/scripts/render_edit.py'
 FIXTURE=json.loads((ROOT/'tests/fixtures/valid_plan.json').read_text())
 
 

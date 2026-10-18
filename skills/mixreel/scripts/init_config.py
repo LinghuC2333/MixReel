@@ -55,7 +55,7 @@ def initialize(directory):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', type=Path,
-                        default=Path.home() / '.config' / 'reference-replica-video')
+                        default=Path.home() / '.config' / 'mixreel')
     args = parser.parse_args()
     try:
         results = initialize(args.directory)

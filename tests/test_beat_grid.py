@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPT=ROOT/'skills/reference-replica-video/scripts/beat_grid.py'
+SCRIPT=ROOT/'skills/mixreel/scripts/beat_grid.py'
 HAS_LIBROSA=importlib.util.find_spec('librosa') is not None and importlib.util.find_spec('numpy') is not None
 
 

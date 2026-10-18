@@ -7,11 +7,11 @@ import re
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-SKILL=ROOT/'skills/reference-replica-video'
+SKILL=ROOT/'skills/mixreel'
 errors=[]
 entry=(SKILL/'SKILL.md').read_text()
 front=re.match(r'^---\n(.*?)\n---\n',entry,re.S)
-if not front or not re.search(r'^name: reference-replica-video$',front[1],re.M):errors.append('invalid skill name')
+if not front or not re.search(r'^name: mixreel$',front[1],re.M):errors.append('invalid skill name')
 if not front or not re.search(r'^description: .+',front[1],re.M):errors.append('missing description')
 if len(entry.splitlines())>150:errors.append('entrypoint too large; review progressive disclosure')
 private_patterns=[r'/Users/' + r'[^/\s]+/', r'https://[^/\s]*' + r'feishu\.cn/',

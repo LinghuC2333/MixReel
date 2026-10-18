@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('init_config', ROOT / 'skills/reference-replica-video/scripts/init_config.py')
+spec = importlib.util.spec_from_file_location('init_config', ROOT / 'skills/mixreel/scripts/init_config.py')
 config = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(config)
 

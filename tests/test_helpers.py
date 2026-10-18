@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'skills/reference-replica-video/scripts'
+SCRIPTS = ROOT / 'skills/mixreel/scripts'
 
 def load(name):
     spec = importlib.util.spec_from_file_location(name, SCRIPTS / (name + '.py'))
