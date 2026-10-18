@@ -4,6 +4,8 @@ Use the user's selected style source, either their own artwork or frames from th
 
 Use these four stages by default for each keyframe; the direct-frame editing branch below may skip stage 1. Preserve the actual model/tool identity in the job record; a product label alone does not verify a model version. Resolve unavailable tools before submitting work, without silently replacing a stage.
 
+Use the user-provided character consistency references as the authority for appearance. Their form is the user’s choice and may include headshots, full-body portraits, multi-angle sheets or expression sheets. Inspect what each covers and record it in `BRIEF.md`. Include the relevant references whenever editing that character; do not substitute intermediate artwork or crops from other works without user confirmation.
+
 ## 0. Select one composition reference
 
 Write the shot's scale, subject count and image share, foreground/background relationship, and action that must remain visible. Use a suitable frame from the corresponding reference-video shot, or search Pinterest through an available OpenCLI installation.
@@ -28,13 +30,13 @@ Produce a colored blocking draft that preserves pose, relative size, depth and l
 
 ## 2. Ideogram applies the style and completes the people
 
-Supply the draft or qualifying reference frame first, then the original face-reference collage, then the selected style images. Add a background reference only when needed. State the collage's left-to-right identity order, and separately state each character's target-screen position and clothing. Explain each input's role; collage order does not determine scene placement.
+Supply the draft or qualifying reference frame first, then the character consistency references and selected style images. Add a background reference only when needed. Use whole images, crops or a combined sheet according to what the references actually contain and their recorded roles. When several characters share an image, state their order within it separately from each character’s target-screen position and clothing; reference order does not determine scene placement.
 
 Preserve composition, shot scale and time of day. Disable `magic_prompt` and retain the editing base’s dimensions, mapping those settings through the verified endpoint schema. Do not import another model's parameter names. Inspect the returned image against the editing base and the selected identity/style references.
 
 ## 3. GPT corrects identity and visible details
 
-Supply the Ideogram result and the relevant character references. When retaining original clothing, use the character portraits. For changed clothing, use original face references and style images, keeping the newly selected wardrobe.
+Supply the Ideogram result and the relevant character consistency references, preserving their recorded identity, style and wardrobe roles. Use only the aspects assigned by the user; an identity reference does not authorize replacing the selected wardrobe.
 
 Correct only observed deviations in visible features, hair, proportions or garment details. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
 
