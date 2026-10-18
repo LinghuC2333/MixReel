@@ -137,7 +137,9 @@ def validate(plan):
                 cd = number(clip.get('duration'), p + '.clip.duration', True)
                 speed = number(clip.get('speed'), p + '.clip.speed', True)
                 if None not in (cin, cd, speed, length) and cin + (length + pad) * speed > cd + tolerance:
-                    fail(p + '.clip', 'source clip lacks requested range or transition handle')
+                    fail(p + '.clip', 'source clip lacks requested range or transition handle; '
+                         f'required source end {cin + (length + pad) * speed:g}s exceeds '
+                         f'clip.duration {cd:g}s (total source-file duration)')
         if end is not None: previous_end = end
         if length is not None: previous_length = length
     if duration is not None and abs(previous_end - duration) > tolerance:

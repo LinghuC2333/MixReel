@@ -37,9 +37,11 @@ Resolve every bundled script path relative to this `SKILL.md`, then invoke it th
 
 Use [Story](references/story.md) to turn observed audience experience and user intent into alternative visual scripts. Review those scripts shot by shot before illustration, and derive the image count from the chosen music and readable actions.
 
-Use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then correcting visible identity/detail deviations with GPT. Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
+By default, use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then repairing localized details with GPT while preserving the established rendering and character appearance. When a reference-video frame already meets the shot requirements, direct frame editing may skip the blocking draft under the conditions in [Images](references/images.md). Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
 
 ## Review and execution boundaries
+
+Apply the user's decisions already recorded in `BRIEF.md` for appearance-affecting choices, including each input image's composition, style, identity or wardrobe role, style source and clothing. Ask and record the answer only when a relevant choice remains unresolved; do not reconfirm settled choices for each input image. Do not turn unconfirmed assistant assumptions into requirements.
 
 In collaborative work, present story plus storyboard before illustrations, one representative style test before the image batch, and the reviewed keyframes plus video cost before the video batch. These are reviewable artifacts, not repeated permission questions. Existing authorization covers the scope already approved. Autonomous review is allowed only within the user's recorded delegation; record the reasoning rather than inventing user approval.
 

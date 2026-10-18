@@ -58,12 +58,20 @@ class PlanTests(unittest.TestCase):
         shot = self.p['shots'][1]
         shot['transition'] = {'type':'dissolve','duration':.5}
         shot['clip'] = {'asset':'clip.mp4','duration':3.4,'in':0,'speed':1}
-        self.assertTrue(any('handle' in x for x in validator.validate(self.p)))
+        self.assertIn(
+            'shots[1].clip: source clip lacks requested range or transition handle; '
+            'required source end 3.5s exceeds clip.duration 3.4s (total source-file duration)',
+            validator.validate(self.p))
         shot['clip']['duration'] = 3.5
         self.assertFalse(validator.validate(self.p))
     def test_retime_checks_source_range(self):
         self.p['shots'][0]['clip'] = {'asset':'clip.mp4','duration':4,'in':1,'speed':1.2}
-        self.assertTrue(any('range' in x for x in validator.validate(self.p)))
+        self.assertIn(
+            'shots[0].clip: source clip lacks requested range or transition handle; '
+            'required source end 4.6s exceeds clip.duration 4s (total source-file duration)',
+            validator.validate(self.p))
+        self.p['shots'][0]['clip']['duration'] = 4.6
+        self.assertFalse(validator.validate(self.p))
     def test_missing_scene(self):
         self.p['shots'][0]['description'] = ''
         self.assertTrue(any('description' in x for x in validator.validate(self.p)))
