@@ -92,6 +92,7 @@ Before returning the prompt, verify all of the following:
 - Any required boundary, restraint, safety, distance, or control remains visible as physical evidence rather than existing only as an instruction.
 - Cuts help reveal action, reaction, space, mood, or information.
 - Two-person geography and eyelines remain coherent.
+- Gaze targets are explicit during turns, looks back and shifts of attention, including when camera movement reveals a face.
 - Every reference label matches the provider inventory and keeps one meaning.
 - Every critical prop has continuous position, ownership, and state.
 - Cut times increase and remain inside the target duration.
