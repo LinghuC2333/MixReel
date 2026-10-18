@@ -28,7 +28,7 @@ The provider prompt is a separate rendering of the approved scene. It can add or
 
 ## Continuity and variation
 
-Track character positions, screen direction, eye lines, prop ownership, injuries, wardrobe, environment and time of day across cuts. Keep each character’s user-selected outfit consistent within a continuous scene using the wardrobe-reference rules in [Images](images.md). Write the visual cause of each meaningful change. A change of angle is legitimate when geography remains understandable; no automatic ban on repeated angles or static shots.
+Track character positions, screen direction, eye lines, prop ownership, injuries, wardrobe, environment and time of day across cuts. Keep each character's user-selected outfit consistent within a continuous scene using the wardrobe-reference rules in [Images](images.md). Write the visual cause of each meaningful change. A change of angle is legitimate when geography remains understandable; no automatic ban on repeated angles or static shots.
 
 Ask what new information each shot adds. Use a wide view for scale, an over-shoulder view for what someone sees, an insert for evidence, or a close-up for a readable reaction. These are choices justified by the scene, not a checklist that forces every type into every film.
 

@@ -10,7 +10,7 @@ Link reference video, target music/excerpt, story passages, character consistenc
 
 ## Creative decisions
 
-Record style source, story candidate, source-grounded adaptation, timeline approach, identity anchors, chosen provider/account and reasons for choices. Record the user-confirmed prompt roles of each input-image type (composition, style, identity, wardrobe) and the source of each character’s selected wardrobe reference. Record uncertainty when it affects the result.
+Record style source, story candidate, source-grounded adaptation, timeline approach, identity anchors, chosen provider/account and reasons for choices. Record the user-confirmed prompt roles of each input-image type (composition, style, identity, wardrobe) and the source of each character's selected wardrobe reference. Record uncertainty when it affects the result.
 
 ## Reviews and spending authority
 
