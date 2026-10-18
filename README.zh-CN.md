@@ -26,14 +26,14 @@
 搬过来的是参考视频的观看体验，人物、故事和画风都换成你自己的。
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/side-by-side.webp" alt="左边是参考视频，右边是用这个 skill 做出的新短片" width="608">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/side-by-side.webp" alt="左边是参考视频，右边是用这个 skill 做出的新短片" width="608">
 </p>
 <p align="center"><em>左边是参考视频，右边是用这个 skill 做出的新短片。</em></p>
 
 ## 安装
 
 ```bash
-npx skills add LinghuC2333/mixreel
+npx skills add LinghuC2333/MixReel
 ```
 
 也可以把 `skills/mixreel` 整个目录复制到助手的技能目录，Claude Code 项目一般是 `.claude/skills`，Codex 一般是 `~/.codex/skills`。
@@ -44,17 +44,17 @@ skill 本身免费。生图和生视频用的是你自己选、自己付费的�
 
 ### 初遇
 
-[参考视频原片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [带声音的完整成片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
+[参考视频原片](https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/reference.mp4) · [带声音的完整成片](https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/first-meeting.mp4)
 
 一条 16.5 秒的竖版短片，就是页面顶部那条视频。参考视频是一段手绘风格的舞会邂逅，新版本讲的是另一场初遇，换成了自己的角色，保留参考视频的画风，按新的音乐卡点剪辑。
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/process.jpg" alt="三个镜头从参考帧到关键帧再到成片" width="760">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/process.jpg" alt="三个镜头从参考帧到关键帧再到成片" width="760">
 </p>
 <p align="center"><em>六个镜头里挑了三个，从参考帧到关键帧再到成片。</em></p>
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/keyframes.jpg" alt="短片的 8 张关键帧" width="760">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/keyframes.jpg" alt="短片的 8 张关键帧" width="760">
 </p>
 <p align="center"><em>全部 8 张关键帧。同一场戏里，每个角色的脸和衣服前后一致。</em></p>
 

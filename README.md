@@ -26,14 +26,14 @@ MixReel is an Agent Skill for Claude Code, Codex and other agents that load skil
 The skill carries over the experience of the reference. Your characters, your story and your chosen visual style replace everything else.
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/side-by-side.webp" alt="Reference video on the left, the new short made with this skill on the right" width="608">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/side-by-side.webp" alt="Reference video on the left, the new short made with this skill on the right" width="608">
 </p>
 <p align="center"><em>Left, the reference video. Right, a new short made with this skill.</em></p>
 
 ## Install
 
 ```bash
-npx skills add LinghuC2333/mixreel
+npx skills add LinghuC2333/MixReel
 ```
 
 You can also copy `skills/mixreel` into your agent's skill directory, for example `.claude/skills` for a Claude Code project or `~/.codex/skills` for Codex.
@@ -44,17 +44,17 @@ The skill itself is free. Image and video generation run on services you choose 
 
 ### First Meeting
 
-[Reference video](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
+[Reference video](https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/first-meeting.mp4)
 
 A 16.5-second vertical short, the video at the top of this page. The reference is a hand-drawn ballroom meet-cute. The new version tells a different first meeting with its own characters, keeps the reference's look and is cut to new music.
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/process.jpg" alt="Reference frame, keyframe and frames from the final video for three shots" width="760">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/process.jpg" alt="Reference frame, keyframe and frames from the final video for three shots" width="760">
 </p>
 <p align="center"><em>From reference frame to keyframe to final video, for three of the six shots.</em></p>
 
 <p align="center">
-  <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/keyframes.jpg" alt="The eight keyframes of the short" width="760">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/keyframes.jpg" alt="The eight keyframes of the short" width="760">
 </p>
 <p align="center"><em>All eight keyframes. Each character keeps one face and one outfit across the scene.</em></p>
 
