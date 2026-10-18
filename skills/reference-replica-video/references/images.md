@@ -34,6 +34,8 @@ Supply the draft or qualifying reference frame first, then the character consist
 
 Preserve composition, shot scale and time of day. Disable `magic_prompt` and retain the editing base’s dimensions, mapping those settings through the verified endpoint schema. Do not import another model's parameter names. Inspect the returned image against the editing base and the selected identity/style references.
 
+Keep each character’s wardrobe consistent across a continuous scene, using the clothing choice confirmed by the user and recorded in `BRIEF.md`. If the character consistency reference includes that scene’s selected outfit, use it as the wardrobe reference. For a new outfit or references without clothing, once the first keyframe showing the outfit is approved, crop a wardrobe reference from it. Include that reference in subsequent edits involving the character and explicitly require matching clothing.
+
 ## 3. GPT corrects identity and visible details
 
 Supply the Ideogram result and the relevant character consistency references, preserving their recorded identity, style and wardrobe roles. Use only the aspects assigned by the user; an identity reference does not authorize replacing the selected wardrobe.
