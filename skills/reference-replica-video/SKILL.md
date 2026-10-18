@@ -41,7 +41,7 @@ By default, use the four stages in [Images](references/images.md), selecting one
 
 ## Review and execution boundaries
 
-Confirm and record in `BRIEF.md` the user’s intent for appearance-affecting choices, including each input image’s composition, style, identity or wardrobe role, style source and clothing, before writing them into prompts. Do not turn unconfirmed assistant assumptions into requirements.
+Apply the user's decisions already recorded in `BRIEF.md` for appearance-affecting choices, including each input image's composition, style, identity or wardrobe role, style source and clothing. Ask and record the answer only when a relevant choice remains unresolved; do not reconfirm settled choices for each input image. Do not turn unconfirmed assistant assumptions into requirements.
 
 In collaborative work, present story plus storyboard before illustrations, one representative style test before the image batch, and the reviewed keyframes plus video cost before the video batch. These are reviewable artifacts, not repeated permission questions. Existing authorization covers the scope already approved. Autonomous review is allowed only within the user's recorded delegation; record the reasoning rather than inventing user approval.
 
