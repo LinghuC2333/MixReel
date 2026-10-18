@@ -42,6 +42,8 @@ Supply the Ideogram result and the relevant character consistency references, pr
 
 Correct only observed deviations in visible features, hair, proportions or garment details. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
 
+Preserve regions outside the requested repair. If an edit changes them, a feathered mask may composite the corresponding regions from the pre-edit image back into the result. Compare before and after at enlarged scale to check seams and confirm that the remaining regions are unchanged.
+
 ## Record what was actually submitted
 
 Before submission, state each input image’s role according to the user’s confirmed intent in `BRIEF.md`. For every generation or edit, save an ordered input-image manifest with stage, shot/job ID, file or stable asset ID, content hash, role and character mapping. Save the prompt, parameters and output IDs alongside it. Check the executor's actual inputs against this manifest, not just the planned bindings. Keep credentials and temporary signed links out of shareable records. Preserve originals and previous versions.
