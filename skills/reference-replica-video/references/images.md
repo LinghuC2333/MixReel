@@ -36,11 +36,11 @@ Preserve composition, shot scale and time of day. Disable `magic_prompt` and ret
 
 Keep each character’s wardrobe consistent across a continuous scene, using the clothing choice confirmed by the user and recorded in `BRIEF.md`. If the character consistency reference includes that scene’s selected outfit, use it as the wardrobe reference. For a new outfit or references without clothing, once the first keyframe showing the outfit is approved, crop a wardrobe reference from it. Include that reference in subsequent edits involving the character and explicitly require matching clothing.
 
-## 3. GPT corrects identity and visible details
+## 3. GPT repairs localized details
 
 Supply the Ideogram result and the relevant character consistency references, preserving their recorded identity, style and wardrobe roles. Use only the aspects assigned by the user; an identity reference does not authorize replacing the selected wardrobe.
 
-Correct only observed deviations in visible features, hair, proportions or garment details. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
+Repair only localized details and physical inconsistencies, such as hands, props, garment details or proportions, while preserving the established rendering and character appearance and demeanor. Resolve character-appearance problems in stage 2 with the relevant character consistency references. If a local repair changes the established rendering or character appearance or demeanor, reject it and return to stage 2 with those references. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
 
 For retries or further repairs, follow [Diagnosis](diagnosis.md) to choose the original inputs or a different stage/model. Preserve regions outside the requested repair. If an edit changes them, a feathered mask may composite the corresponding regions from the pre-edit image back into the result. Compare before and after at enlarged scale to check seams and confirm that the remaining regions are unchanged.
 
