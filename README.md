@@ -58,7 +58,28 @@ A 16.5-second vertical short, the video at the top of this page. The reference i
 </p>
 <p align="center"><em>All eight keyframes. Each character keeps one face and one outfit across the scene.</em></p>
 
-The reference video and the music belong to their owners and appear here only to demonstrate the workflow.
+### Point of View
+
+[Reference video](https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/pov-short.mp4)
+
+A 15.8-second vertical short where the camera is the viewer's eyes. The reference is a game-character fan edit: one close-up per lyric line, her hand reaching into frame, him looking straight into the lens. The new version keeps that first-person feeling with its own characters and setting, in the art style of the official character sheets rather than the reference's look.
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/side-by-side.webp" alt="Reference video on the left, the new short on the right" width="608">
+</p>
+<p align="center"><em>Left, the reference video. Right, the new short.</em></p>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/process.jpg" alt="Composition reference, blocking draft, keyframe and final video for two shots" width="760">
+</p>
+<p align="center"><em>From composition reference to blocking draft to keyframe to final video, for two of the eight shots. The blocking draft already carries the chosen palette and lighting.</em></p>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/keyframes.jpg" alt="The eight keyframes of the short" width="760">
+</p>
+<p align="center"><em>All eight keyframes, one per lyric line.</em></p>
+
+The reference videos and the music in both examples belong to their owners and appear here only to demonstrate the workflow.
 
 ## Use the skill
 

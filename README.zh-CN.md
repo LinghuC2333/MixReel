@@ -58,7 +58,28 @@ skill 本身免费。生图和生视频用的是你自己选、自己付费的�
 </p>
 <p align="center"><em>全部 8 张关键帧。同一场戏里，每个角色的脸和衣服前后一致。</em></p>
 
-参考视频和配乐的权利归原作者所有，这里只用来演示流程。
+### 第一人称视角
+
+[参考视频原片](https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/reference.mp4) · [带声音的完整成片](https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/pov-short.mp4)
+
+一条 15.8 秒的竖版短片，镜头就是观众的眼睛。参考视频是一段游戏角色的粉丝剪辑，每句歌词一个特写，她的手伸进画面，他一直看着镜头。新版本保留这种第一人称的心动，换成了自己的角色和场景，画风用官方角色立绘，不沿用参考视频的画风。
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/side-by-side.webp" alt="左边是参考视频，右边是新短片" width="608">
+</p>
+<p align="center"><em>左边是参考视频，右边是新短片。</em></p>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/process.jpg" alt="两个镜头从构图参考到简易稿、关键帧再到成片" width="760">
+</p>
+<p align="center"><em>八个镜头里挑了两个，从构图参考到简易稿、关键帧再到成片。简易稿就已经带上了选定的色调和光线。</em></p>
+
+<p align="center">
+  <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-pov/keyframes.jpg" alt="短片的 8 张关键帧" width="760">
+</p>
+<p align="center"><em>全部 8 张关键帧，每句歌词一张。</em></p>
+
+两个案例中的参考视频和配乐，权利都归原作者所有，这里只用来演示流程。
 
 ## 怎么用
 
