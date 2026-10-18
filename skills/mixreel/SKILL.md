@@ -1,9 +1,9 @@
 ---
-name: reference-replica-video
+name: mixreel
 description: Use when adapting a reference video's emotional effect and filmmaking to a new story or IP with target music, or revising an existing reference-led short-video project. Also applies to proposal-only and storyboard-only requests.
 ---
 
-# Reference Replica Video
+# MixReel
 
 Adapt the reference's audience experience to the user's story, music and visual identity. Deliver only the requested stage. A proposal request does not authorize media generation.
 

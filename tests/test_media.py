@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('media_inspect',ROOT/'skills/reference-replica-video/scripts/media_inspect.py')
+spec=importlib.util.spec_from_file_location('media_inspect',ROOT/'skills/mixreel/scripts/media_inspect.py')
 media=importlib.util.module_from_spec(spec);spec.loader.exec_module(media)
 
 

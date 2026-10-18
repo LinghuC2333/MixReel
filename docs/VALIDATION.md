@@ -15,7 +15,7 @@
 | 4 项剪辑导出测试 | 通过 | 硬切、叠化后的总时长、素材范围检查与拒绝覆盖文件 |
 | 包结构检查 | 通过 | 本地链接、Python 语法、JSON、参考文件入口和明显私人信息检查 |
 
-媒体测试使用临时色块视频与合成声音，测试结束自动删除，不使用客户素材。本地测试环境为 macOS 上的 Python 与已有 ffmpeg。新增工具合并后，本地 48 项测试全部通过，无跳过项。GitHub 先前通过的 42 项检查见[历史检查结果](https://github.com/LinghuC2333/reference-replica-video/actions/runs/39035565205)，新补丁的在线检查结果以仓库 Actions 为准。Windows 分支尚未实测。
+媒体测试使用临时色块视频与合成声音，测试结束自动删除，不使用客户素材。本地测试环境为 macOS 上的 Python 与已有 ffmpeg。新增工具合并后，本地 48 项测试全部通过，无跳过项。GitHub 先前通过的 42 项检查见[历史检查结果](https://github.com/LinghuC2333/mixreel/actions/runs/39035565205)，新补丁的在线检查结果以仓库 Actions 为准。Windows 分支尚未实测。
 
 ## 尚未验证
 

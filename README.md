@@ -6,9 +6,9 @@
 
 ## 开始使用
 
-将 `skills/reference-replica-video` 整个目录复制到助手的技能目录。Codex 通常使用 `~/.codex/skills`，Claude Code 项目通常使用 `.claude/skills`。实际加载方式以所用宿主为准。也可以让助手直接读取该目录中的 `SKILL.md`。
+将 `skills/mixreel` 整个目录复制到助手的技能目录。Codex 通常使用 `~/.codex/skills`，Claude Code 项目通常使用 `.claude/skills`。实际加载方式以所用宿主为准。也可以让助手直接读取该目录中的 `SKILL.md`。
 
-例如，让助手使用 `$reference-replica-video`，读取参考视频、目标音乐和小说资料，先提交可逐镜检查的提案。本例只授权提案，不会自动开始生图。
+例如，让助手使用 `$mixreel`，读取参考视频、目标音乐和小说资料，先提交可逐镜检查的提案。本例只授权提案，不会自动开始生图。
 
 私人素材、项目记录和凭证放在这个源码目录以外。已做过的选择保存在项目记录中，继续任务时先读取这些记录。
 
@@ -17,20 +17,20 @@
 生图、编辑图片和生成视频可以使用不同的服务，也可以共用同一服务。先运行下面的命令，在源码目录外创建空白配置。它不会联网或导入任何旧密钥。
 
 ```sh
-python3 skills/reference-replica-video/scripts/init_config.py
+python3 skills/mixreel/scripts/init_config.py
 ```
 
 随后在本机编辑这两个文件。
 
 ```text
-~/.config/reference-replica-video/
+~/.config/mixreel/
 ├── providers.json      # 服务、模型、接口地址和密钥名称
 └── credentials.json    # 用户自己的密钥，只保存在本机
 ```
 
 填写所选服务的配置和密钥即可；已有宿主密钥管理或环境变量时可以直接沿用。初始化工具不会覆盖已存在的配置。macOS/Linux 默认只有当前用户能读取；Windows 需要自行设置文件访问权限。密钥文件采用明文存储，有现成的系统密钥管理工具时优先使用它。
 
-仓库仅包含空白示例。助手或接口程序需按[本机配置说明](skills/reference-replica-video/references/local-config.md)读取相应配置；这个初始化命令本身不会连接服务或验证余额。
+仓库仅包含空白示例。助手或接口程序需按[本机配置说明](skills/mixreel/references/local-config.md)读取相应配置；这个初始化命令本身不会连接服务或验证余额。
 
 ## 视频提示词
 
@@ -41,7 +41,7 @@ python3 skills/reference-replica-video/scripts/init_config.py
 ## 项目结构
 
 ```text
-skills/reference-replica-video/
+skills/mixreel/
   SKILL.md                  入口、阶段选择与必要约束
   references/               故事、分镜、图像、视频和执行说明
   scripts/                  本地分析、剪辑导出、计划检查、费用记录与脱敏
@@ -65,14 +65,14 @@ python3 -m pip install numpy librosa
 上面的激活命令适用于 macOS/Linux。未安装可选依赖时，拍点测试会跳过；验证全部功能时应先安装。
 
 ```sh
-python3 skills/reference-replica-video/scripts/validate_plan.py skills/reference-replica-video/assets/plan.example.json
+python3 skills/mixreel/scripts/validate_plan.py skills/mixreel/assets/plan.example.json
 python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
 本项目不附带付费模型客户端。助手使用宿主已有的工具或已配置接口，并先核实参数、参考图能力和实际扣费渠道。网络提交由这些工具负责；本地费用记录工具本身不能拦截绕过它的调用。
 
-费用报价、估算和实际扣款分开记录。任务提交超时后先查原任务；下载失败时只重试下载。详情见 [执行说明](skills/reference-replica-video/references/execution.md)。
+费用报价、估算和实际扣款分开记录。任务提交超时后先查原任务；下载失败时只重试下载。详情见 [执行说明](skills/mixreel/references/execution.md)。
 
 ## 阅读与贡献
 
