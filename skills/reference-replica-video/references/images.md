@@ -42,7 +42,7 @@ Supply the Ideogram result and the relevant character consistency references, pr
 
 Correct only observed deviations in visible features, hair, proportions or garment details. Keep the camera, action and subject size unchanged. Small or obscured faces remain small or obscured; assess only what is actually visible. Compare before and after, then review the complete set for consistency before video production.
 
-Preserve regions outside the requested repair. If an edit changes them, a feathered mask may composite the corresponding regions from the pre-edit image back into the result. Compare before and after at enlarged scale to check seams and confirm that the remaining regions are unchanged.
+For retries or further repairs, follow [Diagnosis](diagnosis.md) to choose the original inputs or a different stage/model. Preserve regions outside the requested repair. If an edit changes them, a feathered mask may composite the corresponding regions from the pre-edit image back into the result. Compare before and after at enlarged scale to check seams and confirm that the remaining regions are unchanged.
 
 ## Record what was actually submitted
 
