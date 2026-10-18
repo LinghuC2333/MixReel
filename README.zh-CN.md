@@ -28,7 +28,7 @@
 <p align="center">
   <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/side-by-side.webp" alt="左边是参考视频，右边是用这个 skill 做出的新短片" width="608">
 </p>
-<p align="center"><em>左边是参考视频，右边是给我们自己的小说做的 16.5 秒短片。</em></p>
+<p align="center"><em>左边是参考视频，右边是用这个 skill 做出的新短片。</em></p>
 
 ## 安装
 
@@ -42,19 +42,11 @@ skill 本身免费。生图和生视频用的是你自己选、自己付费的�
 
 ## 案例
 
-### The Last Princess · 初遇
+### 初遇
 
-[制作说明（英文）](docs/showcase/first-meeting/README.md) · [参考视频原片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [带声音的完整成片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
+[参考视频原片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [带声音的完整成片](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
 
-<table>
-  <tr>
-    <td>
-      <p><b>“初遇”</b>就是页面顶部那条视频，给言情小说《The Last Princess》做的 16.5 秒竖版短片。参考视频是一段灰阶手绘的舞会邂逅，她毫无察觉，他在人群里一眼认出她。我们把这种感觉搬到了叛军攻进王宫的那一夜。他在楼梯上认出公主，抓住她的手腕，她甩了他一巴掌逃走，留下他脸上的掌印和嘴角一点笑意。</p>
-      <p>一共 6 个镜头、8 张关键帧。用户选择沿用参考视频的画风，所以直接拿参考视频的帧当 Ideogram 4.5 的编辑底图，用官方角色立绘保证人物长相。两处手画坏了，交给 GPT Image 2.5 局部修补。视频用 MiniMax H3 生成，768P。切点落在鼓点进入、全曲最重的鼓点和收尾两下重拍上，剪成每秒 12 张画的一拍二节奏。</p>
-      <p>只算成片里用到的部分，图片约 <b>2.10 美元</b>，视频约 <b>13 元</b>。算上全部试错，图片约 7.30 美元，视频 16.20 元。这些是服务商的报价和估算，还没和账单核对。</p>
-    </td>
-  </tr>
-</table>
+一条 16.5 秒的竖版短片，就是页面顶部那条视频。参考视频是一段手绘风格的舞会邂逅，新版本讲的是另一场初遇，换成了自己的角色，保留参考视频的画风，按新的音乐卡点剪辑。
 
 <p align="center">
   <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/process.jpg" alt="三个镜头从参考帧到关键帧再到成片" width="760">
@@ -66,7 +58,7 @@ skill 本身免费。生图和生视频用的是你自己选、自己付费的�
 </p>
 <p align="center"><em>全部 8 张关键帧。同一场戏里，每个角色的脸和衣服前后一致。</em></p>
 
-参考视频和配乐片段 “Own The Dark” 的权利归原作者所有，这里只用来演示流程。
+参考视频和配乐的权利归原作者所有，这里只用来演示流程。
 
 ## 怎么用
 
@@ -127,7 +119,7 @@ skills/mixreel/
   scripts/        本地分析、剪辑导出、计划检查、费用记录与脱敏
   assets/         项目记录模板和合成计划样例
 tests/            不触发付费调用的自动测试
-docs/             设计说明、验证记录和案例说明
+docs/             设计说明和验证记录
 ```
 
 ## 工具与检查

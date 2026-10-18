@@ -28,7 +28,7 @@ The skill carries over the experience of the reference. Your characters, your st
 <p align="center">
   <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/side-by-side.webp" alt="Reference video on the left, the new short made with this skill on the right" width="608">
 </p>
-<p align="center"><em>Left, the reference video. Right, a 16.5-second short for our own novel, made with this skill.</em></p>
+<p align="center"><em>Left, the reference video. Right, a new short made with this skill.</em></p>
 
 ## Install
 
@@ -42,19 +42,11 @@ The skill itself is free. Image and video generation run on services you choose 
 
 ## Showcase
 
-### The Last Princess · First Meeting
+### First Meeting
 
-[Production notes](docs/showcase/first-meeting/README.md) · [Full reference video](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
+[Reference video](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/reference.mp4) · [Full short with sound](https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/first-meeting.mp4)
 
-<table>
-  <tr>
-    <td>
-      <p><b>"FIRST MEETING"</b>, the video at the top of this page, is a 16.5-second vertical short for the romance novel <i>The Last Princess</i>. The reference is a hand-drawn greyscale ballroom meet-cute in which she never notices him and he finds her across the crowd. Our version moves that feeling to the night rebels storm the palace. He spots the princess on the stairs, grabs her wrist, she slaps him and runs, and he is left with the handprint and a faint smile.</p>
-      <p>Six shots and eight keyframes. The user chose to keep the reference's look, so reference frames served as edit bases in Ideogram 4.5, with the official character art as identity references. GPT Image 2.5 repaired two hands. MiniMax H3 animated the keyframes at 768P. Cuts land on the drum entry, the heaviest kick and both closing hits, with twelve drawings per second for a hand-drawn cadence.</p>
-      <p>Cost of everything kept in the final cut was about <b>$2.10</b> for images and <b>¥13</b> for video. Including every test along the way it came to about $7.30 and ¥16.20. These are service quotes and estimates, not reconciled bills.</p>
-    </td>
-  </tr>
-</table>
+A 16.5-second vertical short, the video at the top of this page. The reference is a hand-drawn ballroom meet-cute. The new version tells a different first meeting with its own characters, keeps the reference's look and is cut to new music.
 
 <p align="center">
   <img src="https://github.com/LinghuC2333/mixreel/releases/download/showcase-first-meeting/process.jpg" alt="Reference frame, keyframe and frames from the final video for three shots" width="760">
@@ -66,7 +58,7 @@ The skill itself is free. Image and video generation run on services you choose 
 </p>
 <p align="center"><em>All eight keyframes. Each character keeps one face and one outfit across the scene.</em></p>
 
-The reference video and the song excerpt "Own The Dark" belong to their owners and appear here only to demonstrate the workflow.
+The reference video and the music belong to their owners and appear here only to demonstrate the workflow.
 
 ## Use the skill
 
@@ -128,7 +120,7 @@ skills/mixreel/
   scripts/        local analysis, edit rendering, plan checks, cost journal, redaction
   assets/         project record template and a synthetic plan example
 tests/            automated tests with no paid calls
-docs/             design notes, validation record and showcase notes
+docs/             design notes and validation record
 ```
 
 ## Tools and checks
