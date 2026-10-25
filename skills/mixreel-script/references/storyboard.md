@@ -4,7 +4,9 @@
 
 For a script proposal, show the visible sequence with target timing or provisional pacing, image/action/camera, exact copy/dialogue, sound/music and product/brand treatment when relevant. Include source locators and selected reference functions. Use the [script template](../assets/SCRIPT.template.md) as needed.
 
-A script-only request does not require generation groups, new images or a selected model. After the creative plan is accepted, [video planning](../../mixreel-video-plan/SKILL.md) assigns groups and necessary frame counts before illustrations. Preserve shot IDs across that handoff. Camera cuts do not imply separate calls.
+Distinguish a story outline from a complete director-facing script. Every actual camera cut in the latter gets a stable shot ID, final-timeline range, scale/viewpoint, subject placement and starting state, one principal camera behavior, visible action/reaction, ending state and connection to the next shot. Record dialogue, sound and edit-layer copy alongside the description. A plot beat containing several setups needs several shot descriptions. Each shot should identify the information it reveals or changes; a timestamp alone is not a storyboard.
+
+A script-only task needs no paid account or generated assets. Before finalizing a full script, run the early feasibility check below; [video planning](../../mixreel-video-plan/SKILL.md) owns final groups, verified request settings and necessary frame counts. Preserve shot IDs across that handoff. Camera cuts do not imply separate calls.
 
 ## Editable scene description contract
 
@@ -37,3 +39,13 @@ A montage can connect non-consecutive source moments through a deliberate emotio
 ## Approval scope
 
 Present the actual visual plan before illustration. Record the artifact revision and user response. Changing the story, emotional premise or major staging invalidates dependent review. Correcting a typo does not. If the user asks only for a proposal, stop after delivering it; generation remains a later task.
+
+## Early feasibility check
+
+Use known user constraints and supplied capability evidence while writing, rather than discovering after approval that the script cannot be produced. Record total edit duration, generated-footage needs, UI/recorded/held sections, and any provisional generation groups. If a stated request maximum is exceeded, propose coherent group boundaries or a shorter treatment. Label user-supplied limits versus independently verified endpoint support. Never turn a particular project's limit into a universal model rule.
+
+For each provisional boundary name the retained character/prop positions, ending and restarting state, whether time continues or is intentionally omitted, and the visual/audio bridge. Keep enough time for actions and readable text; split at a pause, reaction or edit-layer insert when suitable, rather than in the middle of a critical movement. A generated clip's minimum billable duration does not determine the speed of that movement.
+
+A full script also needs a sound decision. Follow the user's selected track or sound direction. Without one, propose reuse/adaptation of accessible reference audio, newly composed score, or an intentional sound-only treatment if it fits the request. Unknown alignment can remain provisional, but "music pending" alone is not a finished sound plan. Specify cue intervals, mood/instrumentation or sound texture, accents, dialogue space and the ending; distinguish observed source audio from invented direction. Do not claim to imitate unheard audio.
+
+When proposing music composed by the video model, carry that requirement into video planning and the selected prompt's score field. Verify native audio/music output before execution; prompt text cannot give a silent endpoint that capability. Separate requests do not guarantee a shared tune, key or seamless score. Plan a supported shared score, deliberate musical stop/re-entry, or an editing method and required assets. Unresolved capability blocks submit-readiness, not the ability to review the creative proposal. No new model call is authorized by this check.

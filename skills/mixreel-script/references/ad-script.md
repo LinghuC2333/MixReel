@@ -18,6 +18,14 @@ Choose a format that fits the borrowed mechanism and campaign intent. A demonstr
 
 For an unfamiliar audience, make the immediate desire or situation legible before relying on character names and lore. Dialogue should perform an action such as refusing, teasing, persuading or revealing; avoid having characters recite the product specification.
 
+## Show why this audience would stay
+
+For the proposed execution record a short, evidence-linked account: whose viewpoint the viewer occupies; what that audience wants, fears or recognizes according to the brief; the exact opening stimulus; the expectation it creates; and the later action that pays it off or deliberately changes it. Connect the reference's observed event/time to the new event. Distinguish user-confirmed preference, observed reference technique and the agent's creative hypothesis. Do not treat a demographic label as evidence of a desire or invent universal genre tastes.
+
+Check where agency lies when it matters to the brief: who chooses, who acts, who bears a cost, and who receives the payoff. Test the actual event against recorded audience preferences before polishing its wording. A clearly rejected emotional premise fails even when the storyboard format and product facts are correct. Keep project-specific preferences out of public universal rules.
+
+For advertising, explain why the product interaction belongs at that exact moment and what observable consequence follows it. If the product only appears as a logo after a self-contained invented story, mark that integration as weak unless the brief explicitly calls for that treatment. Conversely, do not turn a product insert into a forced demonstration in a deliberately emotional brand film. State an observable creative test or unresolved taste question, not a self-awarded "catchy" score or predicted conversion.
+
 ## Compare actual creative directions
 
 When comparing options, vary the opening situation, viewer perspective, reveal or product integration in a meaningful way. State which reference dimensions each preserves, the central message, expected audience response and a trade-off. If a single execution is requested, develop it without manufacturing alternatives.

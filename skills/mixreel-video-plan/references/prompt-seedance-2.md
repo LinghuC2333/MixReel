@@ -23,9 +23,12 @@ fade to black. When exact outfit references already exist, do not repeat their
 clothing details.
 
 Do not add a style header, model, duration, ratio, resolution, reference labels,
-reference lists, URLs, YAML, file paths, or executor commands. Sound must say
-`无配乐，仅保留同期声`: synchronous dialogue, environmental sound, and action
-sound are allowed; background music is not.
+reference lists, URLs, YAML, file paths, or executor commands. In the source
+sound-only mode, sound says `无配乐，仅保留同期声`: dialogue, environment and
+action sounds remain, while score is excluded. Use that mode only when it fits
+the approved sound plan. A requested generated score needs a verified compatible
+endpoint and authoring format; do not overwrite it with this sound-only phrase
+or infer current model limitations from the bundled historical mode.
 
 Return exactly one valid JSON object and no Markdown or commentary:
 

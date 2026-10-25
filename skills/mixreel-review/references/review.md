@@ -12,6 +12,8 @@ Read the actual deliverable, its version, the current user requirements and sele
 
 Use the script skill's [advertising checks](../../mixreel-script/references/ad-script.md) when reviewing an advertising script. A functioning renderer or completed generation status cannot answer these creative questions.
 
+For a complete script, verify actual shot IDs, scale/viewpoint, blocking, camera, end states and joins, plus a sound plan and early treatment of known generation limits. Do not accept a timed plot outline as a director-facing CG script. Check the audience desire/agency against the brief and the opening-to-payoff mechanism against reference evidence; a rejected emotional premise remains a failed creative check.
+
 Read audience-facing copy without production notes. Flag internal review labels that accidentally became captions, while retaining disclosures needed to keep the product portrayal accurate. Check whether camera choices support the planned reveal or action rather than repeating a convenient default.
 
 ## Findings and closure

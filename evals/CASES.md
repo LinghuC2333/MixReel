@@ -32,6 +32,12 @@ Input: an accepted creative mechanism with user-excluded reference style and a d
 
 Check: keep the user's style, flag the lost lyric dependency, propose a visual/copy replacement and new timing as a change for review. Do not silently borrow the reference's look or uniformly scale timestamps. If only a proposal is authorized, stop there.
 
+## Script D, full CG script with missing music and a request ceiling
+
+Synthetic task: turn the manually controlled task-board product into an approximately 18-second complete director-facing script, with a person at a desk and an actual UI insert. Reference evidence remains a pause followed by a reveal. No track is supplied; the user asks for video-model-composed music. A user-supplied fixture says requests run from 5 to 15 seconds, with native audio unverified. These are test conditions, not live provider facts.
+
+Check: actual shot IDs, scale/viewpoint, placement, camera behavior, action and boundary states; a brief-supported attention mechanism; a concrete score proposal; early grouping that distinguishes generated footage from UI and respects the stated ceiling. Explain music and visual joins and flag native-audio verification before submission. Do not certify a timed plot outline, silently erase music, invent exact accepted duration increments, or turn any example ceiling into a global rule.
+
 ## Keyframes
 
 Input: an accepted frame requirement and manifests for two characters, a selected new outfit, composition-only source and separate style. No paid authorization. Include a flawed proposed manifest that uses character portraits in the blocking pass and treats the composition as style.

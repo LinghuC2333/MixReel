@@ -78,7 +78,7 @@ Read [H3 format](h3-format.md) and write the six sections in its exact order. Wr
 
 Use `[Shot 1]` without a timestamp. Start every later shot with `[Shot N] At MM:SS.mmm, ...`. Put exact spoken words inside `<d>[Language] ...</d>` and assign stable `(S1)`, `(S2)`, and later speaker IDs by the order of actual vocal events. Do not invent dialogue.
 
-Write synchronous ambience, action sounds, and non-verbal human sounds. Scene video has no audience-only score unless the source explicitly overrides that rule, so the default final line is `non_diegetic_music:\nN/A`.
+Write synchronous ambience, action sounds, and non-verbal human sounds. Follow the approved sound plan. Use `non_diegetic_music` for requested model-composed score only when native music output is verified; use `N/A` for no generated score or score added in editing. Do not erase the script's music request through a template default.
 
 Keep the prompt compact. Use `summary` for one short sentence, `retention_analysis` for reference fidelity, and `detailed_description` for the actual staging. Do not restate the same appearance, geography, mood, or prohibition across all three sections. When shortening, remove repeated style language and explanation before cutting story beats, action causality, emotional change, spatial proof, dialogue, or the authored final image.
 

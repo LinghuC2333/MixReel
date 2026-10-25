@@ -26,6 +26,14 @@ The same independent campaign trial was rerun against the amended rules, preserv
 
 The changed-music walkthrough identified a source-lyric dependency and proposed replacing the reveal mechanism instead of stretching every timestamp. This was an author-led fixture, not an audio-listening result.
 
+## Director-facing script follow-up
+
+User review rejected the private campaign's emotional premise even though its earlier format and factual checks passed. That rejection remains a creative failure, not an acceptance. Project-specific audience preferences stay outside the public package. The general rule now requires checking who chooses, who acts, who pays a cost and who receives the payoff against the advertiser's confirmed audience intent.
+
+The user also found that a later accepted outline lacked complete shot descriptions and deferred sound and duration feasibility. Updated rules distinguish outlines from full director-facing scripts, require audience/source evidence for an attention hypothesis, and carry authored music into provider planning without promising unverified audio capabilities.
+
+A fresh independent trial used the synthetic Dayboard brief, an 18-second target, a user-supplied 5–15-second request range, and requested original model-composed music with native audio support unknown. The agent received the revised skill and inputs without expected answers or previous results. Its [full CG script](outputs/dayboard-cg-script.md) contains three actual shots, explicit starting/ending states and joins, two five-second generated sections, and eight seconds of real UI recording. It preserves manual dragging, proposes a deliberate musical stop and re-entry, and blocks submission readiness pending audio verification. No paid call or media generation occurred. This demonstrates rule following in this fixture, not advertising appeal or provider execution quality.
+
 ## Executable checks
 
 - 75 unit tests passed with no skips, including 10 collection installation and dependency tests.

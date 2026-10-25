@@ -27,7 +27,7 @@ Write the actual copy or action involved when available. Labels such as fast-pac
 
 A source script's realized pauses, cuts and reveals are tied to its sound. Its underlying creative idea may survive a new track. Preserve the selected idea while rebuilding the timeline against target phrases, accents, spoken readability and action duration. Do not mechanically scale all source timestamps or require a cut at every beat.
 
-When the lyric, recognizable sound or silence is itself the joke or reveal, record that dependency. A replacement track may require a rewritten hook or payoff. A user-selected excerpt stays fixed unless a conflict is surfaced. With no target audio, deliver a stated pacing proposal and leave exact musical alignment pending.
+When the lyric, recognizable sound or silence is itself the joke or reveal, record that dependency. A replacement track may require a rewritten hook or payoff. A user-selected excerpt stays fixed unless a conflict is surfaced. With no target audio, a full script still proposes a concrete sound treatment using the [early feasibility check](storyboard.md#early-feasibility-check). Exact alignment can remain provisional; an outline can explicitly defer this work.
 
 Keep source observation, planned transfer and final asset conditioning separate. For example, a creator's recorded reaction can inspire the new reveal order without becoming a submitted identity or style reference. Record the actual roles again at the image/video stage.
 

@@ -91,7 +91,7 @@ Keep shot-synchronized dialogue and sound events in `detailed_description`.
 
 `overall_soundscape` summarizes continuous ambience, physical action sounds, and non-verbal human sounds. Do not repeat dialogue there.
 
-`non_diegetic_music` describes audience-only score. Scene video defaults to `N/A` because it preserves synchronous sound without background music.
+`non_diegetic_music` describes audience-only score. Use `N/A` when the approved plan calls for no generated score, including music added separately in editing. If the approved script requests model-composed music and the verified endpoint supports it, write its requested cue progression, texture, accents and ending here. Do not silently replace an authored score with `N/A`; unsupported audio needs an explicit production alternative. Separate generated clips require a documented continuity or musical transition plan.
 
 ## Prompt exclusions
 
