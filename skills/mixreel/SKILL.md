@@ -1,52 +1,44 @@
 ---
 name: mixreel
-description: Use when adapting a reference video's emotional effect and filmmaking to a new story or IP with target music, or revising an existing reference-led short-video project. Also applies to proposal-only and storyboard-only requests.
+description: Coordinate reference-led video projects across analysis, script, keyframe, video-direction, production and review skills. Use for end-to-end work or resuming a project; individual stages can be invoked separately.
 ---
 
 # MixReel
 
-Adapt the reference's audience experience to the user's story, music and visual identity. Deliver only the requested stage. A proposal request does not authorize media generation.
+Coordinate the requested work using the six specialist skills in this collection. Stop at the requested deliverable. Read the project's existing brief, accepted artifacts and job journal before choosing where to resume. The latest user instruction overrides an older record; invalidate only dependent work.
 
-## Resume before planning
+## Select the smallest useful task
 
-Read the project's `BRIEF.md`, `plan.json`, approved artifacts and job journal if present. Match the current request to the earliest affected stage. Reuse accepted decisions; inspect old assets before reusing them. If records conflict, the user's latest instruction wins. Record the change and invalidate only dependent decisions.
+| Need | Skill | Result |
+| --- | --- | --- |
+| Understand a reference or target soundtrack | [Reference analysis](../mixreel-analyze/SKILL.md) | Time-labelled evidence and audio events |
+| Write or improve the adaptation script | [Script](../mixreel-script/SKILL.md) | Selected borrowing dimensions and a watchable script |
+| Create or repair necessary illustrations | [Keyframes](../mixreel-keyframes/SKILL.md) | Reviewed artwork and actual input manifest |
+| Plan video requests or write model prompts | [Video plan](../mixreel-video-plan/SKILL.md) | Groups, keyframe needs and reference-bound prompts |
+| Submit approved jobs, edit or export | [Production](../mixreel-produce/SKILL.md) | Reconciled jobs and delivered video |
+| Inspect results and decide a repair | [Review](../mixreel-review/SKILL.md) | Evidence, repair destination and recheck |
 
-For a new project, record the reference, target music or excerpt, story sources, audience, deliverable and spending authority in `BRIEF.md`. Ask only consequential missing questions. Choose own-IP style or reference-video style with the user if unspecified. Preserve an already stated choice. Store private work outside this skill's source tree.
+Read only the relevant specialist and its required references. This is a skill collection, not a requirement to spawn agents. A host without skill dispatch can open the linked SKILL.md and execute its instructions directly. Existing suitable artifacts can satisfy an input; do not rerun a stage solely because another skill did not create them.
 
-## Read only the stage you need
+## Order and boundaries
 
-| Current need | Read | Produce |
-|---|---|---|
-| Understand a reference and target music | [Analysis](references/analysis.md) | Shot evidence, music events, uncertainty |
-| Select story or prepare a proposal | [Story](references/story.md) and [Storyboard](references/storyboard.md) | Source-grounded candidates and a timed visual plan |
-| Choose style or make/edit illustrations | [Images](references/images.md) | Approved style and identity references, reviewed keyframes |
-| Group generation requests, animate, cut or export | [Motion and editing](references/motion-edit.md) | Reviewed motion, beat-aligned edit, delivery checks |
-| Install or locate model credentials | [Local configuration](references/local-config.md) | Private provider profiles and credential locations |
-| Write a Seedance 2 video prompt | [Seedance 2](references/prompt-seedance-2.md) | Compact scene description for the selected model |
-| Write an H3 video prompt | [H3 authoring](references/prompt-minimax-h3.md), [H3 format](references/h3-format.md) and [Cinematic coverage](references/cinematic-coverage.md) | Reference-bound prompt and supported duration |
-| Configure tools, spend or resume jobs | [Execution](references/execution.md) and [Provider contract](references/providers.md) | Verified capability profile and reconciled journal |
-| Recover from a quality problem | [Diagnosis](references/diagnosis.md) | Narrow repair and affected-artifact list |
+For a new project, establish audience, purpose, materials, borrowing choices and requested stop point in the [brief](assets/BRIEF.template.md). Use [handoffs](references/handoffs.md) to distinguish analysis, script and production artifacts. Advertising work also uses the script skill's advertiser requirements; other filmmaking remains supported.
 
-Select only the video prompt family verified for the chosen endpoint. H3 consumes the approved source scene directly, never a Seedance-formatted intermediate. An approved shot plan constrains both families.
+The usual order is reference analysis, script, generation planning and necessary-image decisions, keyframes, finalized prompts, production and review. Video planning checks real provider capabilities before commissioning images. A request may contain several editorial shots; it may need few or no new keyframes. Preserve this grouping through production.
 
-Read [Project records](references/records.md) before creating or changing records. Start from [the brief template](assets/BRIEF.template.md); the [plan example](assets/plan.example.json) demonstrates the machine-readable fields. It is synthetic test data, not a creative proposal.
+Use the four-stage image workflow for each needed new illustration, including its documented direct-frame branch. Follow the user's recorded identity, wardrobe, style and composition choices. Preserve accepted decisions without asking again. Proposed creative choices remain proposals until approved or covered by explicit delegation.
 
-Resolve every bundled script path relative to this `SKILL.md`, then invoke it through Python with explicit project input/output paths. Keep the private project's working directory; do not write project data into the installed skill.
+For collaborative work, show the actual script before illustrations, a representative style result before an image batch, and reviewed groups/references/cost before video submission. Existing authorization applies to its covered scope; do not invent human approval from a machine check.
 
-## From reference to proposal and images
+## Shared resources
 
-Use [Story](references/story.md) to turn observed audience experience and user intent into alternative visual scripts. Review those scripts shot by shot, then use [Motion and editing](references/motion-edit.md) to group connected shots into generation requests before producing illustrations. Prefer a coherent sequence per request when the verified endpoint supports it, using the script, supported video/audio references and only the keyframes needed to constrain unresolved visual states. Report shot count, generation-request count and unique new illustration count separately.
+This directory also owns the collection's common resources. Specialists read them directly; do not copy decision records or budgets into separate stage projects.
 
-For each new keyframe that is actually needed, use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then repairing localized details with GPT while preserving the established rendering and character appearance. When a reference-video frame already meets the shot requirements, direct frame editing may skip the blocking draft under the conditions in [Images](references/images.md). Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
+- [Handoffs](references/handoffs.md) and [records](references/records.md) define authority, stages and continuation.
+- [Execution](references/execution.md) owns spending, recovery and privacy rules.
+- [Providers](references/providers.md) and [local configuration](references/local-config.md) own service selection and credentials.
+- [Plan example](assets/plan.example.json) is a synthetic production plan, not a script-only requirement.
 
-## Review and execution boundaries
+Resolve shared scripts from this installed directory, denoted `<core>` in specialist references. Keep project outputs outside the skill source. The seven local tools in `scripts/` analyze media, fit beat grids, validate plans, render simple edits, maintain the journal, initialize blank configuration and redact exports; none submits paid model jobs.
 
-Apply the user's decisions already recorded in `BRIEF.md` for appearance-affecting choices, including each input image's composition, style, identity or wardrobe role, style source and clothing. Ask and record the answer only when a relevant choice remains unresolved; do not reconfirm settled choices for each input image. Do not turn unconfirmed assistant assumptions into requirements.
-
-In collaborative work, present story plus storyboard before illustrations, one representative style test before the image batch, and the reviewed generation groups, reference set and per-request cost before video submission. These are reviewable artifacts, not repeated permission questions. Existing authorization covers the scope already approved. Autonomous review is allowed only within the user's recorded delegation; record the reasoning rather than inventing user approval.
-
-No generation with unknown billing behavior or an unapproved provider substitution. Persist submission intent before a paid call. An ambiguous timeout is reconciled before resubmission. Price estimates are never reported as actual charges.
-
-Validate the plan before execution with `python3 scripts/validate_plan.py PATH`. Local, unpaid helpers: `scripts/beat_grid.py` fits a beat grid to the target music (optional numpy/librosa); `scripts/render_edit.py` renders the plan's cut with speed, frame holds and dissolves. Use `python3 scripts/job_journal.py --help` for the local job record. Neither helper submits paid work. Record semantic and visual review separately from machine checks.
-
-Completion requires inspecting the delivered artifact, verifying duration and audio, listing unresolved defects, and reconciling costs. A successful job status alone is insufficient.
+Complete only after inspecting the requested artifact, reporting untested or unresolved items and reconciling any paid work. Do not infer creative success from successful generation or structural validation.

@@ -2,7 +2,7 @@
 
 <h3 align="center">Remix any reel into your own story</h3>
 
-<p align="center">An agent skill that turns a reference video into a new beat-synced short with your own characters</p>
+<p align="center">A collection of agent skills for reference analysis, scripts, consistent artwork and video production</p>
 
 <p align="center">
   <a href="#install"><strong>Install</strong></a>
@@ -21,9 +21,9 @@
   <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?style=flat-square">
 </p>
 
-MixReel is an Agent Skill for Claude Code, Codex and other agents that load skills. Give your agent a reference video, a music track and your story material. It studies what the reference makes the viewer feel shot by shot, finds the matching moment in your story, and produces a reviewable script, keyframes, video clips and a final cut timed to the music.
+MixReel is a collection of seven skills for Claude Code, Codex and other agents that load skills. Start with a reference video and your advertiser or creative requirements. Ask for a script, a specific production stage, or the full workflow using your chosen assets and services.
 
-The skill carries over the experience of the reference. Your characters, your story and your chosen visual style replace everything else.
+Choose which dimensions to borrow, such as a hook, script structure, composition, music, editing or style. Keep those decisions explicit; borrowing one does not automatically copy the others.
 
 <p align="center">
   <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/side-by-side.webp" alt="Reference video on the left, the new short made with this skill on the right" width="608">
@@ -32,11 +32,13 @@ The skill carries over the experience of the reference. Your characters, your st
 
 ## Install
 
+Install the collection together, then invoke each skill independently. Download or clone this repository and run the local installer from the checkout.
+
 ```bash
-npx skills add LinghuC2333/MixReel
+python3 scripts/install_collection.py --destination ~/.codex/skills
 ```
 
-You can also copy `skills/mixreel` into your agent's skill directory, for example `.claude/skills` for a Claude Code project or `~/.codex/skills` for Codex.
+For a Claude Code project, use `.claude/skills` as the destination. The installer copies all seven skills and shared resources without network access, reading keys or overwriting an existing MixReel installation. For upgrades, install to a fresh directory, inspect it and explicitly replace the previous installation. Do not copy a specialist alone or alter another project's active symlink target.
 
 The skill itself is free. Image and video generation run on services you choose and pay for, and you configure them once on your own machine (see [Configure your models](#configure-your-models)).
 
@@ -83,7 +85,7 @@ The reference videos and the music in both examples belong to their owners and a
 
 ## Use the skill
 
-Start your agent in a private project folder that holds your reference video, music and story notes, then ask in plain words.
+Start your agent in a private project folder with the materials relevant to the requested stage. You can invoke `$mixreel-script` directly for an advertising script or `$mixreel-review` for an existing artifact. Other specialist names are listed below.
 
 Ask for a proposal only. Nothing is generated and nothing is paid for.
 
@@ -104,9 +106,9 @@ The agent records every decision, input and cost in your project folder, so you 
 
 ## What the skill does
 
-**Script from the viewer's experience.** The agent breaks the reference into shots and notes what the viewer expects, learns and feels at each moment. It then looks for scenes in your story that create the same experience, cites where each comes from and marks what was compressed or invented. Every script gets a stranger-viewer check before you see it.
+**Scripts grounded in the reference and your goal.** The agent examines the actual opening, reveal and payoff, then chooses what to borrow for your message. Advertising scripts include concrete pictures, exact copy, product behavior and brand/UI treatment. Source-story adaptations cite the material and identify invented scenes. A script-only task needs no generated assets or model account.
 
-**Scene descriptions you can review.** Each shot is written as one camera setup with visible actions in causal order, a clear ending image and only on-set sound. Risky actions are spelled out as starting state, contact, change and result. You review the picture, not a model prompt.
+**Scene descriptions you can review.** Each shot has a coherent camera behavior, visible actions in causal order and a clear ending image. Risky actions specify starting state, contact, change and result. Keep copy, music, UI and brand requirements in the script and edit plan even when a model prompt excludes them.
 
 **Prompts written for each video model.** MiniMax H3 gets a six-part reference prompt bound to the exact upload order of its images. Seedance 2 gets a compact single-setup direction. Neither is converted from the other.
 
@@ -137,13 +139,15 @@ See [local configuration](skills/mixreel/references/local-config.md) for how age
 ## Project structure
 
 ```text
-skills/mixreel/
-  SKILL.md        entry point, stage routing and boundaries
-  references/     story, storyboard, images, video and execution rules, read stage by stage
-  scripts/        local analysis, edit rendering, plan checks, cost journal, redaction
-  assets/         project record template and a synthetic plan example
-tests/            automated tests with no paid calls
-docs/             design notes and validation record
+skills/
+  mixreel/             coordinator and shared rules, tools, templates
+  mixreel-analyze/     reference video and audio evidence
+  mixreel-script/      adaptation and advertising scripts
+  mixreel-keyframes/   consistent illustration keyframes
+  mixreel-video-plan/  generation groups and model prompts
+  mixreel-produce/     authorized generation, edit and export
+  mixreel-review/      evidence-based review and repair routing
+  mixreel.collection.json
 ```
 
 ## Tools and checks

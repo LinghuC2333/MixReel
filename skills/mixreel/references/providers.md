@@ -42,7 +42,7 @@ No automatic paid fallback. A documented non-acceptance can permit retry within 
 
 Keep parameter mappings and prompt formats in the private project's `providers/` directory until verified and sanitized for publication. A provider-specific reusable module belongs in an optional adapter package, not the core instructions. Do not import historical prices or fixed concurrency limits as global facts.
 
-For bundled prompt writing, select [Seedance 2](prompt-seedance-2.md) or [MiniMax H3](prompt-minimax-h3.md) after verifying the endpoint. These are authoring rules, not API clients.
+For bundled prompt writing, select [Seedance 2](../../mixreel-video-plan/references/prompt-seedance-2.md) or [MiniMax H3](../../mixreel-video-plan/references/prompt-minimax-h3.md) after verifying the endpoint. These are authoring rules, not API clients.
 
 For a host that exposes an existing specialized prompt skill, read it only after the model is selected and preserve the approved scene. If that skill changes the shot plan, resolve the conflict explicitly. Its existence does not authorize generation.
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "插画关键帧制作"
+  short_description: "按必要画面制作插画关键帧，检查人物、服装、构图和画风一致性"
+  default_prompt: "使用 $mixreel-keyframes 完成本次请求，沿用已确认的项目决定，只执行已授权的范围。"
+policy:
+  allow_implicit_invocation: true
