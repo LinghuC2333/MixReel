@@ -7,6 +7,8 @@ active model is `video-minimax-h3`, use `prompt-minimax-h3.md` instead.
 Do not run both prompt families for the same scene and do not use this output as an
 intermediate step for H3.
 
+This bundled authoring mode describes a single camera setup. Use it for a compatible single-shot generation group. A multi-shot group requires a separately verified endpoint format; do not silently split it into paid calls or assume this prompt alone enables multi-shot or video/audio conditioning.
+
 Rewrite exactly one approved story beat into a concise, production-ready
 Seedance 2 video direction. Preserve the named characters, background tags, props, story
 meaning, spatial relationships, and intended emotional beat. Do not invent a

@@ -14,10 +14,10 @@ The profile records the following.
 |---|---|
 | Provider and model | Actual billed service, account alias without credentials, model identifier |
 | Operations | Generate, edit, region-edit, animate, query, download and quote as supported |
-| Conditioning | Accepted image roles, ordering, limits, strict vs soft constraints, incompatible combinations |
-| Parameters | Duration, size, aspect ratio, quality, count and accepted prompt format |
+| Conditioning | Accepted image/video/audio inputs and roles, ordering, count/duration limits, strict vs soft constraints, incompatible combinations and generated-sound behavior |
+| Parameters | Supported duration range/increments, multi-shot support, size, aspect ratio, quality, count and accepted prompt format |
 | Region edit | Mask polarity, alpha semantics and size requirements |
-| Billing | Quote mechanism, currency, estimate vs actual, chargeable failures and cancellation behavior |
+| Billing | Quote mechanism, currency, minimum billable duration and rounding, per-request vs per-second basis, estimate vs actual, chargeable failures and cancellation behavior |
 | Recovery | Task ID, lookup and idempotency support, timeouts, rate limits and concurrency |
 | Authorization | Credential source name and endpoint allowlist; values stay in the host's secret store |
 | Output | Status states, artifact fields, expiry and download verification |

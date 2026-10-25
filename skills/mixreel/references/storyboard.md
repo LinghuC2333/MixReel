@@ -4,11 +4,11 @@
 
 For each shot show three adjacent parts in a table or readable cards.
 
-| Keyframe design | Editable scene description | Provider prompt |
+| Visual design and needed references | Editable scene description | Generation group |
 |---|---|---|
-| Opening composition, identities, positions, gaze and any required ending image | One coherent camera setup with visible sequential action and reaction | Translation into the selected model's supported format |
+| Composition, identities, positions and gaze; a shared, new or unnecessary keyframe | One coherent camera setup with visible sequential action and reaction | Request ID linking this shot to the group's ordered sequence and provider prompt |
 
-Attach time range, musical event, source-story locator, reference-shot function, transition and required image count to each row. If a provider is not selected, mark its prompt pending and supply the provider-neutral description. Do not invent API syntax to complete a table.
+Attach time range, musical event, source-story locator, reference-shot function, transition and required image count to each row. Assign shots to generation groups using [Motion and editing](motion-edit.md) before requesting new illustrations. A camera cut does not imply a separate generation call. If a provider is not selected, mark the group prompt pending and supply the provider-neutral descriptions. Do not invent API syntax to complete a table.
 
 ## Editable scene description contract
 
@@ -24,7 +24,7 @@ Keep this description free of model settings, duration ceilings, reference lists
 
 The editable scene description is a review artifact. H3 may use several approved shots and reads the original approved scene plus shot plan directly; it must not inherit the one-setup Seedance output as its source. Read the selected [Seedance 2](prompt-seedance-2.md) or [H3](prompt-minimax-h3.md) authoring rules only after model selection.
 
-The provider prompt is a separate rendering of the approved scene. It can add ordered reference bindings, supported timing hints and locked style instructions. It must preserve action, gaze, causality and the authored ending. Never let a provider adapter rewrite the story to fit a familiar prompt template.
+The provider prompt is a separate rendering of the approved generation group, combining its ordered shot descriptions and continuity requirements. It can add ordered reference bindings, supported timing hints and locked style instructions. It must preserve action, gaze, causality and the authored ending. Never let a provider adapter rewrite the story to fit a familiar prompt template.
 
 ## Continuity and variation
 
