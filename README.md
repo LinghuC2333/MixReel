@@ -110,7 +110,9 @@ The agent records every decision, input and cost in your project folder, so you 
 
 **Prompts written for each video model.** MiniMax H3 gets a six-part reference prompt bound to the exact upload order of its images. Seedance 2 gets a compact single-setup direction. Neither is converted from the other.
 
-**Keyframes that keep your style and characters.** One composition reference per shot, a simple blocking draft, a finishing pass with your style and character references, then local repairs. GPT only sets up the composition at the start and makes small fixes at the end; Ideogram sets the style and the characters' look. A reference frame that already fits the shot can serve directly as the edit base. Whether it also supplies the style is your choice.
+**Keyframes that keep your style and characters.** Generate only the keyframes needed by the planned sequence, reusing accepted assets and sharing images across shots where sufficient. For each necessary new keyframe, use one composition reference, a simple blocking draft, a finishing pass with your style and character references, then local repairs. GPT only sets up the composition at the start and makes small fixes at the end; Ideogram sets the style and the characters' look. A reference frame that already fits the shot can serve directly as the edit base. Whether it also supplies the style is your choice.
+
+**Connected shots in one generation request.** Plan the sequence before making images. Where the verified endpoint supports it, combine connected shots with a small reference set, the script and supported video/audio inputs. Split for documented capability, scene or rework reasons. Keep fast actions brief within the requested file duration, and compare minimum billing and retry costs per request.
 
 **Cuts timed to what actually happened.** The agent watches the returned clips, finds the real moment of each action and places it on the beat. A local renderer cuts, retimes, adds frame holds and lays the music.
 

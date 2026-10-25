@@ -23,8 +23,11 @@ def validate(plan):
             fail(f'{path}.{key}', 'nonempty text required')
     if not isinstance(plan, dict):
         return ['plan: expected an object']
-    if plan.get('version') != 1:
+    version = plan.get('version')
+    if isinstance(version, bool) or version not in (1, 2):
         fail('version', 'unsupported or missing version')
+    if version == 1 and 'generation_groups' in plan:
+        fail('generation_groups', 'use version 2 for grouped generation')
     duration = number(plan.get('duration'), 'duration', True)
     fps = number(plan.get('fps'), 'fps', True)
     tolerance = 0.5 / fps if fps else 0.001
@@ -57,6 +60,8 @@ def validate(plan):
         refs = []; fail('references', 'expected a list')
     ref_ids = set()
     allowed_roles = {'composition', 'identity', 'style', 'wardrobe', 'environment', 'ending_anchor'}
+    if version == 2:
+        allowed_roles.update(('motion', 'timing', 'sound'))
     for i, ref in enumerate(refs):
         p = f'references[{i}]'
         if not isinstance(ref, dict):
@@ -68,6 +73,8 @@ def validate(plan):
             ref_ids.add(rid)
         if not isinstance(ref.get('role'), str) or ref['role'] not in allowed_roles:
             fail(p, 'unknown reference role')
+        if version == 2 and ref.get('media_type') not in ('image', 'video', 'audio'):
+            fail(p + '.media_type', 'expected image, video or audio')
     reviews = plan.get('reviews', {})
     if not isinstance(reviews, dict):
         fail('reviews', 'expected an object')
@@ -109,8 +116,9 @@ def validate(plan):
             for b in bindings:
                 if b not in ref_ids: fail(p + '.bindings', 'unknown reference ' + b)
         kfs = shot.get('keyframes')
-        if not isinstance(kfs, list) or not kfs or any(not isinstance(k, str) or not k for k in kfs):
-            fail(p + '.keyframes', 'nonempty list of image IDs required')
+        if not isinstance(kfs, list) or (version != 2 and not kfs) or any(not isinstance(k, str) or not k.strip() for k in kfs):
+            fail(p + '.keyframes', 'list of image IDs required (may be empty in version 2)' if version == 2
+                 else 'nonempty list of image IDs required')
         else: frame_ids.update(kfs)
         event = shot.get('music_event')
         if event is not None and (not isinstance(event, str) or event not in event_ids):
@@ -147,7 +155,75 @@ def validate(plan):
     count = plan.get('illustration_count')
     if isinstance(count, bool) or not isinstance(count, int) or count != len(frame_ids):
         fail('illustration_count', f'expected {len(frame_ids)} unique images')
+    if version == 2:
+        validate_groups(plan.get('generation_groups'), shots, ref_ids, tolerance, fail, number, text)
     return errors
+
+
+def validate_groups(groups, shots, ref_ids, tolerance, fail, number, text):
+    """Check request membership independently of editorial shot and image counts."""
+    if not isinstance(groups, list) or not groups:
+        fail('generation_groups', 'nonempty list required for version 2')
+        return
+    by_id = {s['id']: s for s in shots if isinstance(s, dict) and isinstance(s.get('id'), str)}
+    ordered_ids = [s['id'] for s in shots if isinstance(s, dict) and isinstance(s.get('id'), str)]
+    assigned, group_ids = [], set()
+    for i, group in enumerate(groups):
+        p = f'generation_groups[{i}]'
+        if not isinstance(group, dict):
+            fail(p, 'expected an object'); continue
+        for key in ('id', 'reason', 'continuity'):
+            text(group, key, p)
+        gid = group.get('id')
+        if isinstance(gid, str):
+            if gid in group_ids: fail(p + '.id', 'duplicate generation group id')
+            group_ids.add(gid)
+        requested = number(group.get('requested_duration'), p + '.requested_duration', True)
+        members = group.get('shot_ids')
+        if not isinstance(members, list) or not members or any(not isinstance(s, str) or not s.strip() for s in members):
+            fail(p + '.shot_ids', 'nonempty ordered list of shot IDs required')
+            members = []
+        for sid in members:
+            if sid not in by_id: fail(p + '.shot_ids', 'unknown shot ' + sid)
+            if sid in assigned: fail(p + '.shot_ids', 'shot assigned more than once ' + sid)
+            assigned.append(sid)
+        bindings = group.get('bindings')
+        if not isinstance(bindings, list) or any(not isinstance(b, str) for b in bindings):
+            fail(p + '.bindings', 'expected an ordered list of reference IDs')
+        else:
+            if len(set(bindings)) != len(bindings): fail(p + '.bindings', 'duplicate binding')
+            for binding in bindings:
+                if binding not in ref_ids: fail(p + '.bindings', 'unknown reference ' + binding)
+        if group.get('provider_prompt') is not None and (not isinstance(group['provider_prompt'], str) or not group['provider_prompt'].strip()):
+            fail(p + '.provider_prompt', 'expected nonempty text or null while pending')
+        if not members or any(s not in by_id for s in members):
+            continue
+        selected = [by_id[s] for s in members]
+        # Planned request duration must cover its timeline span. Actual source
+        # ranges after generation are checked separately by each shot's clip.
+        start = number(selected[0].get('start'), p + '.first_shot.start')
+        end = number(selected[-1].get('end'), p + '.last_shot.end')
+        if None not in (start, end, requested) and requested + tolerance < end - start:
+            fail(p + '.requested_duration', f'{requested:g}s cannot cover the {end - start:g}s timeline span')
+        for shot in selected:
+            required = shot.get('bindings')
+            if isinstance(bindings, list) and isinstance(required, list):
+                if any(b not in bindings for b in required):
+                    fail(p + '.bindings', 'missing a member shot reference binding')
+        # One selected result supplies a group; repeated timeline uses must
+        # not silently point to different files or different source lengths.
+        clips = [s['clip'] for s in selected if isinstance(s.get('clip'), dict)]
+        if clips:
+            asset = clips[0].get('asset')
+            total = number(clips[0].get('duration'), p + '.clip.duration', True)
+            for clip in clips[1:]:
+                if clip.get('asset') != asset:
+                    fail(p, 'member clips must use the same selected source asset')
+                other = number(clip.get('duration'), p + '.clip.duration', True)
+                if None not in (total, other) and abs(total - other) > tolerance:
+                    fail(p, 'member clips must agree on total source duration')
+    if assigned != ordered_ids:
+        fail('generation_groups', 'groups must cover every shot exactly once in timeline order without interleaving')
 
 
 def main():

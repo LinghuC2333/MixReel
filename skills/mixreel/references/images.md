@@ -2,7 +2,7 @@
 
 Use the user's selected style source, either their own artwork or frames from the reference video. If it is undecided, ask which source to use. Record the chosen images without prescribing a particular style.
 
-Use these four stages by default for each keyframe; the direct-frame editing branch below may skip stage 1. Preserve the actual model/tool identity in the job record; a product label alone does not verify a model version. Resolve unavailable tools before submitting work, without silently replacing a stage.
+Plan [generation groups](motion-edit.md) first and create only the new keyframes needed to resolve visual uncertainty. Reuse accepted references or share a keyframe across shots when sufficient; keep textual visual designs for shots without a generated image. Use these four stages by default for each necessary new keyframe; the direct-frame editing branch below may skip stage 1. Preserve the actual model/tool identity in the job record; a product label alone does not verify a model version. Resolve unavailable tools before submitting work, without silently replacing a stage.
 
 Use the user-provided character consistency references as the authority for appearance. Their form is the user's choice and may include headshots, full-body portraits, multi-angle sheets or expression sheets. Inspect what each covers and record it in `BRIEF.md`. Include the relevant references whenever editing that character; do not substitute intermediate artwork or crops from other works without user confirmation.
 
@@ -18,7 +18,7 @@ opencli pinterest search-pins "<short terms>" --limit 10 -f json
 
 Save search results, deduplicate candidates, download and open them. Compare framing, action and cropping visually, then search again for the missing condition if necessary. Tool access errors are not empty search results. Keep an unresolved shot incomplete when no candidate fits.
 
-Select exactly one composition image per shot. Record its original URL, search terms or source-video time, borrowed composition and required changes. Show all selected images together to review repeated scale and angles. Candidate sheets are for selection, not extra generation inputs.
+Select exactly one composition image for each new keyframe being produced. Record its original URL, search terms or source-video time, borrowed composition and required changes. Show all selected images together to review repeated scale and angles. Candidate sheets are for selection, not extra generation inputs.
 
 When a reference-video frame already meets the shot's scale, staging and spatial requirements, it may serve directly as the first image for editing in stage 2, skipping the GPT draft. Edit people, clothing and scene details to match the approved shot. Assign its role from the style source recorded in `BRIEF.md`. It supplies composition and style only when the user chose reference-video style; otherwise it supplies composition only, with style supplied by the user's selected style references. In the composition-only case, check the output for unwanted style influence from the base frame.
 

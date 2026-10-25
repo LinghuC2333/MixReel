@@ -20,7 +20,7 @@ For a new project, record the reference, target music or excerpt, story sources,
 | Understand a reference and target music | [Analysis](references/analysis.md) | Shot evidence, music events, uncertainty |
 | Select story or prepare a proposal | [Story](references/story.md) and [Storyboard](references/storyboard.md) | Source-grounded candidates and a timed visual plan |
 | Choose style or make/edit illustrations | [Images](references/images.md) | Approved style and identity references, reviewed keyframes |
-| Animate, cut or export | [Motion and editing](references/motion-edit.md) | Reviewed motion, beat-aligned edit, delivery checks |
+| Group generation requests, animate, cut or export | [Motion and editing](references/motion-edit.md) | Reviewed motion, beat-aligned edit, delivery checks |
 | Install or locate model credentials | [Local configuration](references/local-config.md) | Private provider profiles and credential locations |
 | Write a Seedance 2 video prompt | [Seedance 2](references/prompt-seedance-2.md) | Compact scene description for the selected model |
 | Write an H3 video prompt | [H3 authoring](references/prompt-minimax-h3.md), [H3 format](references/h3-format.md) and [Cinematic coverage](references/cinematic-coverage.md) | Reference-bound prompt and supported duration |
@@ -35,15 +35,15 @@ Resolve every bundled script path relative to this `SKILL.md`, then invoke it th
 
 ## From reference to proposal and images
 
-Use [Story](references/story.md) to turn observed audience experience and user intent into alternative visual scripts. Review those scripts shot by shot before illustration, and derive the image count from the chosen music and readable actions.
+Use [Story](references/story.md) to turn observed audience experience and user intent into alternative visual scripts. Review those scripts shot by shot, then use [Motion and editing](references/motion-edit.md) to group connected shots into generation requests before producing illustrations. Prefer a coherent sequence per request when the verified endpoint supports it, using the script, supported video/audio references and only the keyframes needed to constrain unresolved visual states. Report shot count, generation-request count and unique new illustration count separately.
 
-By default, use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then repairing localized details with GPT while preserving the established rendering and character appearance. When a reference-video frame already meets the shot requirements, direct frame editing may skip the blocking draft under the conditions in [Images](references/images.md). Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
+For each new keyframe that is actually needed, use the four stages in [Images](references/images.md), selecting one composition reference, making a two-image GPT blocking draft, completing it with Ideogram, then repairing localized details with GPT while preserving the established rendering and character appearance. When a reference-video frame already meets the shot requirements, direct frame editing may skip the blocking draft under the conditions in [Images](references/images.md). Save the ordered images actually submitted at every stage. Style comes from the user's chosen references.
 
 ## Review and execution boundaries
 
 Apply the user's decisions already recorded in `BRIEF.md` for appearance-affecting choices, including each input image's composition, style, identity or wardrobe role, style source and clothing. Ask and record the answer only when a relevant choice remains unresolved; do not reconfirm settled choices for each input image. Do not turn unconfirmed assistant assumptions into requirements.
 
-In collaborative work, present story plus storyboard before illustrations, one representative style test before the image batch, and the reviewed keyframes plus video cost before the video batch. These are reviewable artifacts, not repeated permission questions. Existing authorization covers the scope already approved. Autonomous review is allowed only within the user's recorded delegation; record the reasoning rather than inventing user approval.
+In collaborative work, present story plus storyboard before illustrations, one representative style test before the image batch, and the reviewed generation groups, reference set and per-request cost before video submission. These are reviewable artifacts, not repeated permission questions. Existing authorization covers the scope already approved. Autonomous review is allowed only within the user's recorded delegation; record the reasoning rather than inventing user approval.
 
 No generation with unknown billing behavior or an unapproved provider substitution. Persist submission intent before a paid call. An ambiguous timeout is reconciled before resubmission. Price estimates are never reported as actual charges.
 

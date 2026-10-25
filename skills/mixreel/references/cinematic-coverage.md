@@ -68,13 +68,13 @@ Describe movement in concrete terms such as `tracks laterally beside the horse`,
 
 ## Timing
 
-Choose duration after the shot plan is complete. There is no default clip length and no fixed shot count. Let the visible event decide.
+Choose generation-group duration after the shot plan is complete. A cut within the group does not require another generated file, and a fast action can finish well before its shot or file ends. There is no default clip length and no fixed shot count. Let the visible event decide.
 
 Use these ranges as estimates rather than quotas:
 
 - A brief environment image usually needs 0.8 to 1.5 seconds.
 - A clear prop insert or simple state change usually needs 1.5 to 2.5 seconds.
-- A simple body action usually needs 2 to 3 seconds.
+- Allow setup and reaction around a simple body action as needed, while keeping a rapid strike or gesture brief; the surrounding shot length does not set the action speed.
 - A complex continuous action or camera move usually needs 3 to 6 seconds.
 - An important silent reaction usually needs 1.5 to 3 seconds after its cause becomes clear.
 - Dialogue needs its natural spoken time plus any visible pause or reaction required by the source.

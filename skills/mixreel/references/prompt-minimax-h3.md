@@ -17,12 +17,12 @@ Do not require or create an intermediate Seedance-style video description. Prese
 
 Use this format only when the selected endpoint is verified to support this reference workflow. Prompt labels alone cannot activate API reference handling. A composition or ending reference is a soft guide unless the endpoint provides a verified strict frame constraint. Do not claim a guaranteed ending from prose alone.
 
-An approved edit plan controls shot boundaries and music events. When a clip represents one approved continuous shot, keep it continuous; propose any new internal cuts before generation. Source-scene directing may suggest several shots during planning, but must not silently replace an already approved shot plan.
+An approved edit plan controls shot boundaries and music events. Write one prompt for the approved generation group, using request-local timing for its cuts and actions; do not create a paid call per shot. Bind video/audio references only through documented endpoint syntax, keeping picture labels for images. State when timing must be conveyed in text because a media input is unsupported. When a clip represents one approved continuous shot, keep it continuous; propose any new internal cuts before generation. Source-scene directing may suggest several shots during planning, but must not silently replace an already approved shot plan.
 
 ## Required inputs
 
-- One approved source scene description.
-- The ordered provider reference inventory. Every entry must include its exact `<Picture N>` number and the role it supplies, such as character identity, outfit, environment, visual style, or a concrete frame anchor.
+- The approved source scene and ordered shot descriptions for one generation group.
+- The ordered provider reference inventory. Each image entry must include its exact `<Picture N>` number and assigned role, such as character identity, outfit, environment, visual style or a frame anchor. Any supported video/audio inputs retain their documented identifiers and user-assigned roles separately.
 - The selected visual style when no reference already supplies it.
 - Any exact audible dialogue.
 - The target aspect ratio when it materially affects composition.
@@ -60,7 +60,7 @@ Before timing the shots, identify where each action contract completes, where th
 
 Estimate how long each planned shot needs for its visible action, camera movement, dialogue, and reaction to read naturally. Read the timing guidance in [cinematic coverage](cinematic-coverage.md). Add the shot times and round up to a whole second. Use the verified provider profile to establish supported durations. Round to a supported duration that allows the action to finish; handle longer estimates with the fitting rule below rather than silently truncating them.
 
-Do not stretch a simple event to a familiar default. Do not compress a complex event merely to reuse another CG's duration. If the honest estimate exceeds the verified maximum duration, first remove decorative coverage or merge shots that remain legible. If the source event still cannot fit, stop and report that it requires more than one clip rather than dropping story beats.
+Keep brief action execution separate from setup and reaction time, even when the requested file must meet an endpoint minimum. Do not stretch a simple event to a familiar default. Do not compress a complex event merely to reuse another CG's duration. If the honest estimate exceeds the verified maximum duration, first remove decorative coverage or merge shots that remain legible. If the source event still cannot fit, stop and report that it requires more than one clip rather than dropping story beats.
 
 When the user supplies an exact duration, fit the coverage to that duration without damaging the event. Report a conflict if the required action cannot read inside it. When the user supplies a ceiling, choose the shortest natural duration at or below it.
 

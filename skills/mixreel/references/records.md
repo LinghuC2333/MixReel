@@ -17,11 +17,19 @@ The brief links to other records. The latest user instruction overrides an older
 
 ## Plan shape
 
-The bundled example is validated by `validate_plan.py`. Its durations and names are synthetic fixtures. The validator checks timeline and dependency consistency; it cannot judge taste or verify that a person is recognizable.
+The bundled example uses version 2 and is validated by `validate_plan.py`. Version 1 plans remain readable with their original per-shot keyframe requirements; migrate explicitly before using generation groups. Its durations and names are synthetic fixtures. The validator checks timeline and dependency consistency; it cannot judge taste or verify that a person is recognizable.
 
-`duration` is the target timeline length. `music.duration` describes the source track; `music.offset` identifies the selected excerpt. Musical events are relative to that excerpt. Shots tile the timeline without gaps. `references` is a stable asset inventory; `bindings` gives the planned ordered IDs for each provider request. Save the actual submitted image inventory with each job as described in [Images](images.md); reconcile any difference before treating the stage as reviewed. Each shot has a visible scene, a keyframe design, source evidence, camera behavior and starting/ending state.
+`duration` is the target timeline length. `music.duration` describes the source track; `music.offset` identifies the selected excerpt. Musical events are relative to that excerpt. Shots tile the timeline without gaps. `references` is a stable asset inventory. In version 2 every reference declares `media_type` as `image`, `video` or `audio`, alongside its user-assigned `role` and `contribution`. Roles also include `motion`, `timing` and `sound`; declaring a role does not establish endpoint support. Shot `bindings` identify the references that shot needs; group `bindings` give the ordered request inventory and must include all member-shot bindings. Save the actual submitted image inventory with each job as described in [Images](images.md); reconcile any difference before treating the stage as reviewed. Each shot has a visible scene, a keyframe design, source evidence, camera behavior and starting/ending state.
+
+Version 2 requires a nonempty `generation_groups` list. Each entry has a unique `id`, ordered `shot_ids`, `requested_duration` in seconds, ordered reference `bindings`, a `reason` for the grouping or split, and `continuity` describing spatial/action states to preserve. `provider_prompt` is text or null while pending and belongs to the group, not a separate call for every shot. Groups must cover every shot exactly once, in timeline order, without interleaving. Requested duration must cover the group's planned timeline span; select a supported duration with necessary handles and verify limits and billing separately in the provider profile.
+
+In version 2, a shot's `keyframe_design` still describes its visual intent, but `keyframes` may be empty or share image IDs with other shots. List only planned new illustration outputs there, each with a reason in the visual design; existing assets belong in `references`. `illustration_count` counts the unique new image IDs across shots, not references, intermediate image passes or paid image attempts. The group's image outputs are the union of its members' keyframe IDs. Save their stable assets/hashes with the actual submitted references before execution. Report `len(shots)`, `len(generation_groups)` and `illustration_count` separately. Keyframe review still records whether the selected visual inputs are sufficient even when no new image is needed.
+
+The bundled synthetic plan demonstrates two editorial shots sharing one generation request with one new keyframe, plus video and audio reference roles. It does not claim those inputs are supported by any particular endpoint. Record capability evidence, estimated billable seconds, quotes and retry scope in the provider profile, brief and journal; requested seconds are not actual billed seconds.
 
 `transition.duration` represents overlap leading into the incoming shot. It consumes extra source handles, not additional output duration. A rendered shot's `clip.in` includes the pre-transition handle; the clip must supply `(shot duration + incoming overlap) * speed` source seconds. `clip.duration` is the total duration of the source file, not the length of the selected excerpt. The validator checks that `clip.in + (shot duration + incoming overlap) * speed` does not exceed that total. The main shot event begins after that overlap. The generator may provide more footage; the editor chooses the usable interval.
+
+After generation, member shots in a group use the same selected `clip.asset` and full source `clip.duration`, with independently observed `clip.in` and playback `speed`. Keep internal timing intact where it fits; adjust only from inspected footage. Several source excerpts can be rendered from that same file without separate generation jobs. Prompt-local shot times do not establish these source in-points.
 
 `reviews` records creative checks. Values pending, approved and rejected describe the human review state. Automated test success cannot turn a pending review into approved. Costs and authority live in the journal and brief, not in a fabricated plan approval flag.
 
@@ -32,7 +40,8 @@ The bundled example is validated by `validate_plan.py`. Its durations and names 
 | Reference, audience or emotional goal | Candidate story, shot plan and all dependent media |
 | Music excerpt or tempo interpretation | Timing, shot count, edits and only media that no longer fits |
 | Character/style anchor | Affected images and clips, not unrelated analysis |
-| A local image correction | That frame and clips derived from it |
+| A local image correction | That frame and generation groups using it, plus their dependent clips |
+| Generation grouping or reference modality | Group prompt, capability checks, duration/cost estimate and affected source-to-edit mappings |
 | In/out edit or export setting | Timeline/audio/export; do not regenerate images |
 | Provider/model | Capability profile, affected prompts, cost and a representative quality test |
 

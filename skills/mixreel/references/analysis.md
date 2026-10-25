@@ -18,10 +18,10 @@ The target track controls the new timeline. Keep source offsets when using an ex
 
 `python3 scripts/media_inspect.py audio AUDIO OUTPUT.json` reports duration, silence and candidate onsets. Optional beat tracking: `python3 scripts/beat_grid.py AUDIO OUTPUT.json --bpm HINT` fits a regular grid and reports kick/hat strength per beat (requires numpy and librosa). Record method, confidence, drum entry, phrase changes, strong accents and ending. Listen around those events. The kick/hat fields are frequency-band energy estimates, not verified instrument labels. `bar_start` groups the fitted grid using `--bar` (default 4); it does not detect downbeats. A regular fitted grid does not establish where the musical phrase begins. Do not assume every song is four-four, every phrase has eight beats, or every detected transient needs a cut.
 
-Sketch the available visual slots using music events and the time each action needs. Report timeline shots, starting illustrations, optional ending illustrations and total unique illustrations separately. Do not equate one beat with one image.
+Sketch the available visual slots using music events and the time each action needs. Report timeline shots, generation requests and unique new illustrations separately; decide the latter two after [grouping the sequence](motion-edit.md). Do not equate one beat with one image.
 
 ## Transfer and fill gaps
 
 Map each reference shot's function to a slot on the target music. Keep emotional progression while allowing removal, merging, extension or an additional shot when duration changes. State what each change contributes. Do not retain a weak shot only to preserve numbering.
 
-For each planned shot, select one composition reference using [Images, stage 0](images.md). A usable reference-video frame can supply it directly; otherwise define the missing visual requirements before searching Pinterest. Deliver the selected images and their source/adjustment notes together.
+Keep composition evidence for each planned shot. After generation grouping identifies which new keyframes are necessary, select one composition reference for each of those keyframes using [Images, stage 0](images.md). A usable reference-video frame can supply it directly; otherwise define the missing visual requirements before searching Pinterest. Deliver the selected images and their source/adjustment notes together.

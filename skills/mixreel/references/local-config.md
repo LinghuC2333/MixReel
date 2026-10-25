@@ -29,3 +29,11 @@ Read only the selected credential inside the executing client. Do not dump the f
 Before a credential is transmitted, verify the HTTPS endpoint against `allowed_hosts` and the user's intended service. An empty key, endpoint or allowlist means unconfigured, not permission to guess. Do not forward authentication to artifact download hosts or cross-host redirects. Current documentation establishes authentication format, actual supported operations and billing behavior; see [providers](providers.md).
 
 Keep prices, reference-mode capabilities and request schemas in the private project's verified provider record. A populated profile is not proof of connectivity or permission to test a billable endpoint. Record only service names, model IDs, credential reference names, redacted results and known costs in handoffs.
+
+## Moving an existing model to a gateway
+
+When the user changes the service for an existing model, update the affected private profiles and their callers together. Verify the gateway's model ID, endpoint, authentication and operation-specific fields from its own current documentation. Upstream request bodies, mask rules and polling paths must not be reused without verification. Preserve unrelated profiles, especially the selected video provider.
+
+Record the new request mapping and evidence in the private provider record, and link it from the profile. Remove stale endpoint instructions from the active profile. Keep credentials outside the checkout and leave the public provider template unconfigured. If multiple stages used the retired service, account for each affected stage while preserving its chosen model and purpose.
+
+Prefer a documented model-list request to check authentication without generation. Record authentication, advertised capabilities, quotes and successful generation separately; discovery does not establish working edits or output quality. Use a quote request only when documented as non-generating, and do not submit a paid test merely to finish a configuration migration. Existing task IDs must still be queried through the provider and account that accepted them.

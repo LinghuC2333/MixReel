@@ -10,6 +10,8 @@ Read-only analysis, local rendering and downloads of existing artifacts can proc
 
 Use `job_journal.py` to reserve the worst-case approved charge before a request, record the task ID immediately, record generation success before download, and reconcile billing independently of artifact retrieval. This helper makes no network calls and cannot prevent a separate client from bypassing it. Executors must follow the protocol.
 
+For video, one generation group is one submission intent; timeline shots using its output do not create additional paid jobs. Include the group ID, ordered shot plan, requested duration and all accepted image/video/audio bindings in the request hash. Keep the actual billed duration separate from the retained edit duration.
+
 One journal is shared across the project's workers. The helper uses a local exclusive lock and atomic replacement. Network filesystems and distributed workers require a transactional shared store instead. Never split the same budget into several independent journals.
 
 A prepared job may be submitted once. The transition to `submitting` must be recorded before the network call. On restart, `submitting` means outcome unknown. Reconcile through provider lookup; do not submit again just because the task ID was not saved. With provider-supported idempotency, reuse the original key. Otherwise wait for reliable evidence.
