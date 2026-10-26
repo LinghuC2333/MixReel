@@ -20,6 +20,6 @@ Run a quality gate before each delivery and fix what editing can fix first. Comp
 
 Export for the channels the user named: a master plus one version per platform, meeting its resolution, duration and loudness targets, with captions, logo and UI clear of the platform's own interface overlays.
 
-When an edit-only choice is still open, such as two music candidates, two openings, or frame holds versus motion smear, deliver the recommended version with labelled variants instead of stopping to ask. Variants cost no generation and double as test material. Each version carries a short note of what changed since the previous one.
+When an edit-only choice is still open, such as two music candidates, two openings, or frame holds versus motion smear, deliver the recommended version with labelled variants instead of stopping to ask. Variants come only from edit-layer choices, never from extra paid generation, and they double as test material. Each version carries a short note of what changed since the previous one.
 
 Watch once without explanatory notes, then with music. Report unresolved creative defects separately from technical checks. Provide the requested delivery location only under the user's authorization. Include the plan, accepted references, export settings and costs with estimates visibly separated from actual billed amounts.

@@ -34,5 +34,5 @@ When preserving a stylized look, provide a supported style conditioning mechanis
 
 Allow edit handles around essential actions where the model's timing is unreliable. Choose length from readable action plus tested timing tolerance, subject to supported durations and budget. Do not impose the same seconds or a historic delay on all models. If complexity exceeds the slot, simplify or split before paying.
 
-A resolution or motion-risk comparison is a paid experiment. State its cost and use existing authorization or obtain the missing authorization. Compare one representative shot before multiplying the cheaper option.
+A resolution or motion-risk comparison is a paid experiment. Propose it only when the choice cannot be made otherwise, and run it only when the user asks for that comparison and its cost. Compare one representative shot before multiplying the cheaper option.
 
