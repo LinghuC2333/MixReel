@@ -38,7 +38,7 @@ Create a standalone `<Picture N>` definition only when the image is an exact fir
 
 ## `subject_definitions`
 
-Give every reused person, environment, prop, style, standalone picture, video, or audio reference one clear definition. State which asset supplies it and what must remain stable. Do not invent visual traits absent from the inventory.
+Give every reused person, environment, prop, style, standalone picture, video, or audio reference one clear definition. When a visual style is a hard requirement, define it as the first subject so the prompt opens with it; name its source references and the motion texture it implies, and render every shot in it. State which asset supplies it and what must remain stable. Do not invent visual traits absent from the inventory.
 
 Example:
 
