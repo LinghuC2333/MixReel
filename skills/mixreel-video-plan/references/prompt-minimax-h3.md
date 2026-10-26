@@ -70,7 +70,7 @@ After selecting the duration, assign every later shot a strictly increasing cut 
 
 Resolve each tagged character, background, prop, and style anchor to a stable `<Subject N>`. Cite the exact `<Picture N>` source in its definition. Preserve only the roles assigned to each reference. An identity-only face reference does not supply wardrobe. For an approved wardrobe change, bind the selected outfit separately and preserve the approved action, pose, gaze, and expression.
 
-Keep visual appearance bound to references. Do not invent hair, facial features, clothing, architecture, colors, or materials that the inventory should supply. Give every plot-critical prop an explicit position and state change in the shot where it matters.
+Keep visual appearance bound to references. Do not invent hair, facial features, clothing, architecture, colors, or materials that the inventory should supply. Give every plot-critical prop an explicit position and state change in the shot where it matters. Do not name a prop or person in a shot where it must stay out of frame, even in a negative sentence; the name tends to put it in the picture. Describe the gaze direction or screen position instead, and name the object only in shots that show it.
 
 ### 5. Write the H3 prompt
 
@@ -95,6 +95,7 @@ Before returning the prompt, verify all of the following:
 - Gaze targets are explicit during turns, looks back and shifts of attention, including when camera movement reveals a face.
 - Every reference label matches the provider inventory and keeps one meaning.
 - Every critical prop has continuous position, ownership, and state.
+- No object or person that must stay out of a shot is named in that shot.
 - Cut times increase and remain inside the target duration.
 - Dialogue, sound, and visible text are synchronized and not invented.
 - The prompt contains no unresolved source tags, URLs, local paths, model settings, executor commands, subtitles, logos, watermarks, or fade to black.

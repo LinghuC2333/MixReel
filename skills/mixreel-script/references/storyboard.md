@@ -15,7 +15,7 @@ Serialize each scene description as `{"description":"..."}` when a tool needs st
 - Establish the view and subjects' physical relationship, including what is outside the frame.
 - Give the camera one principal behavior and a destination. For a fixed camera, explicitly prohibit dolly, zoom and pan. This wording applies only when the shot is intentionally fixed.
 - Describe observable actions and reactions in their causal order. For a risky action, make the starting state, contact or force, transition and resulting state visible.
-- State the ending composition and what must remain readable there. Give plot-critical props their own sentences.
+- State the ending composition and what must remain readable there. Give plot-critical props their own sentences. In a shot where a prop must stay out of frame, describe where the eyes go instead of naming it.
 - Specify synchronous environment and action sound when relevant. Record score and edit-layer audio separately from scene sound; preserve the user-selected treatment.
 
 Keep this description free of model settings, duration ceilings, reference lists, URLs, style headers, readable overlays and fade-to-black instructions. Do not repeat wardrobe already supplied by the visual references. Put technical timing and appearance bindings in the adjacent fields. This exclusion applies only to the generation-facing scene field. Put approved captions, titles, UI, brand marks and ending treatments in the script and edit-layer fields so they remain visible to production.
