@@ -9,7 +9,7 @@ description: Inspect a script, keyframe, generated clip or finished video agains
 
 Accept the artifact to review, requested quality concerns, relevant approved specification and source/reference evidence. Read [handoffs](../mixreel/references/handoffs.md), [diagnosis](references/diagnosis.md) and [review criteria](references/review.md); use [video inspection](references/video-review.md) for footage.
 
-Watch actual video and listen to audio when available. Report a sampled-frame review as sampled and silent inspection as silent. Never claim a camera move, seamless transition or audible event from one still. If approved targets are missing, separate observable defects from judgments that need that target.
+For a production, review the assembled film the user will receive; generated footage is judged inside that cut, not as loose clips. Watch actual video and listen to audio when available. Report a sampled-frame review as sampled and silent inspection as silent. Never claim a camera move, seamless transition or audible event from one still. If approved targets are missing, separate observable defects from judgments that need that target.
 
 ## Find the narrowest useful repair
 

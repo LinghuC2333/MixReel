@@ -21,4 +21,6 @@ Inspect returned footage before choosing ranges using [video review](../mixreel-
 
 Use `<core>/scripts/render_edit.py` for supported local edits or a suitable host editor for other needs. This helper drops source-clip audio, adds a short music fade and can sharpen resized footage; it cannot fulfill dialogue/SFX/UI/caption requirements by itself. Verify the actual render preserves every approved layer. Do not declare an advertising video complete with required brand/UI/sound missing.
 
+Every delivery is a finished film. As soon as footage exists, assemble every approved layer, including UI, brand marks, captions, dialogue and sound, music and end card. Where an asset is still missing, place a clearly marked placeholder inside the film rather than handing over loose clips. Raw generated clips are attachments on request, never the deliverable. Run the quality gate in [production](references/production.md) before handing it over.
+
 Return the requested master/preview with source ranges, edit settings, known limitations and actual/estimated/unknown costs clearly separated. Read [review](../mixreel-review/SKILL.md) to check the deliverable before completion. Delivery to external destinations requires the corresponding user authorization.

@@ -16,4 +16,10 @@ Render a quality master and a mobile-friendly preview. Once every shot has `clip
 
 The helper outputs music only and discards source-clip audio. It adds a 0.3-second music fade-out and sharpens clips narrower than the output width; review those treatments before delivery. Use another editing tool when synchronous sound or different finishing controls are required.
 
+Run a quality gate before each delivery and fix what editing can fix first. Compare detected cuts with the plan, look for runs of only a few frames from a neighbouring shot, inspect every continuation seam, check audio coverage and silence, listen for score the plan did not ask for, locate each line of dialogue in its intended shot, and measure loudness, duration and frame size. Report only what remains as known issues, each with a repair option and its cost.
+
+Export for the channels the user named: a master plus one version per platform, meeting its resolution, duration and loudness targets, with captions, logo and UI clear of the platform's own interface overlays.
+
+When an edit-only choice is still open, such as two music candidates, two openings, or frame holds versus motion smear, deliver the recommended version with labelled variants instead of stopping to ask. Variants cost no generation and double as test material. Each version carries a short note of what changed since the previous one.
+
 Watch once without explanatory notes, then with music. Report unresolved creative defects separately from technical checks. Provide the requested delivery location only under the user's authorization. Include the plan, accepted references, export settings and costs with estimates visibly separated from actual billed amounts.
