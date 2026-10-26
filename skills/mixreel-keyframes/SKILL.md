@@ -17,7 +17,7 @@ Follow the documented four stages: select one composition reference, two-image G
 
 Read [providers](../mixreel/references/providers.md), [local configuration](../mixreel/references/local-config.md) and [execution](../mixreel/references/execution.md) before paid calls. Resolve actual model/tool identity and supported edit fields. Do not substitute providers silently. Planning or mock mode produces a manifest, never a claimed generated image.
 
-Check composition, identity, style, clothing, gaze, anatomy and regions outside each repair. Character/style drift returns to completion with original inputs; localized repair cannot redesign the character. Use [diagnosis](../mixreel-review/references/diagnosis.md) for retry decisions.
+Confirm after every pass that the output actually differs from its base, as described in [images](references/images.md). Check composition, identity, style, clothing, gaze, anatomy and regions outside each repair. Character/style drift returns to completion with original inputs; localized repair cannot redesign the character. Use [diagnosis](../mixreel-review/references/diagnosis.md) for retry decisions.
 
 ## Deliver
 

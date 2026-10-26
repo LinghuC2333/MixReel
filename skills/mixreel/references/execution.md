@@ -32,6 +32,7 @@ The request file used for hashing contains the prompt, parameters, account alias
 | Generation running | Continue polling the same task within documented limits |
 | Generation succeeded, download failed | Retrieve existing output again, retain billed cost |
 | Output creatively rejected | Record the defect and proposed repair scope before another paid job |
+| Output identical or nearly identical to its input base | Record the pass as ineffective with the measured difference, keep the billed cost and change the route before paying again |
 | Quoted amount unavailable | Obtain a documented maximum and authority; unknown never becomes zero |
 
 ## Privacy and release

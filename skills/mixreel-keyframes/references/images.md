@@ -44,6 +44,12 @@ Repair only localized details and physical inconsistencies, such as hands, props
 
 For retries or further repairs, follow [Diagnosis](../../mixreel-review/references/diagnosis.md) to choose the original inputs or a different stage/model. Preserve regions outside the requested repair. If an edit changes them, a feathered mask may composite the corresponding regions from the pre-edit image back into the result. Compare before and after at enlarged scale to check seams and confirm that the remaining regions are unchanged.
 
+## Confirm that each pass did its job
+
+A finished job and a charge do not prove that an edit or completion pass changed anything. After every pass, compare the output with its base at full size and measure the pixel difference. An output identical or nearly identical to its base means the pass had no effect on this endpoint, even when it was billed. Record it as ineffective and stop that route; do not resubmit the same request.
+
+Run a new or changed stage on one representative image before applying it across a batch. When a stage proves ineffective with the available endpoint, report the evidence and propose an alternative, such as another supported model for that stage or dropping the stage. The user decides; never drop a stage silently. Keep the other stages' rules unchanged.
+
 ## Record what was actually submitted
 
 Before submission, state each input image's role according to the user's confirmed intent in `BRIEF.md`. For every generation or edit, save an ordered input-image manifest with stage, shot/job ID, file or stable asset ID, content hash, role and character mapping. Save the prompt, parameters and output IDs alongside it. Check the executor's actual inputs against this manifest, not just the planned bindings. Keep credentials and temporary signed links out of shareable records. Preserve originals and previous versions.
