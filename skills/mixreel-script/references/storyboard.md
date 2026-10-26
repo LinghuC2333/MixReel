@@ -32,7 +32,7 @@ Ask what new information each shot adds. Use a wide view for scale, an over-shou
 
 Choose camera movement or stillness for what the viewer needs to discover and how the action develops. Do not default all shots to a locked camera merely because it is easier to describe, or add motion only to make the list more varied. Record the purpose of a consequential camera choice in the production notes.
 
-Check that the starting state, action and ending can follow one another within the slot. Adjust staging or timing before generation when they cannot.
+Check that the starting state, action and ending can follow one another within the slot. Adjust staging or timing before generation when they cannot. A [spatial previs](previs.md) can test occlusion, screen direction, background direction and timing before any image is made.
 
 A montage can connect non-consecutive source moments through a deliberate emotional progression. Label this structure so omitted causality is intentional. A continuous scene requires continuous geography and action.
 

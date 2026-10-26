@@ -18,7 +18,7 @@ opencli pinterest search-pins "<short terms>" --limit 10 -f json
 
 Save search results, deduplicate candidates, download and open them. Compare framing, action and cropping visually, then search again for the missing condition if necessary. Tool access errors are not empty search results. Keep an unresolved shot incomplete when no candidate fits.
 
-Select exactly one composition image for each new keyframe being produced. Record its original URL, search terms or source-video time, borrowed composition and required changes. Show all selected images together to review repeated scale and angles. Candidate sheets are for selection, not extra generation inputs.
+A shot render from a [spatial previs](../../mixreel-script/references/previs.md) can serve as the composition reference when one exists. Select exactly one composition image for each new keyframe being produced. Record its original URL, search terms or source-video time, borrowed composition and required changes. Show all selected images together to review repeated scale and angles. Candidate sheets are for selection, not extra generation inputs.
 
 When a reference-video frame already meets the shot's scale, staging and spatial requirements, it may serve directly as the first image for editing in stage 2, skipping the GPT draft. Edit people, clothing and scene details to match the approved shot. Assign its role from the style source recorded in `BRIEF.md`. It supplies composition and style only when the user chose reference-video style; otherwise it supplies composition only, with style supplied by the user's selected style references. In the composition-only case, check the output for unwanted style influence from the base frame.
 

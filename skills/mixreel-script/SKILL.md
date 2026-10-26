@@ -9,7 +9,7 @@ description: Write or revise a reference-led adaptation script from advertiser o
 
 Read the user's requirements and existing brief, actual reference evidence, available product/story sources, confirmed brand/appearance choices and target music if supplied. Accept an existing script for focused revision. Do not require a novel, a new illustration, a provider account or a complete production plan to write a script.
 
-Read [handoffs](../mixreel/references/handoffs.md), then [adaptation decisions](references/adaptation.md). For advertising, also read [advertising script](references/ad-script.md). For source-story adaptation read [story](references/story.md). Use [storyboard](references/storyboard.md) for the visible sequence. Creative work about fictional events must preserve the user's source/adaptation boundaries.
+Read [handoffs](../mixreel/references/handoffs.md), then [adaptation decisions](references/adaptation.md). For advertising, also read [advertising script](references/ad-script.md). For source-story adaptation read [story](references/story.md). Use [storyboard](references/storyboard.md) for the visible sequence. When staging, screen direction or prop placement is at risk, block it first with a [spatial previs](references/previs.md). Creative work about fictional events must preserve the user's source/adaptation boundaries.
 
 ## Work from evidence to a watchable proposal
 
