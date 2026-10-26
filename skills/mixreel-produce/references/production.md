@@ -6,6 +6,8 @@ Keep a satisfactory generated sequence intact wherever its actual timing fits. F
 
 Use cuts and reveals on selected musical events. Preserve readable reactions and a coherent ending; not every beat requires an event. Mark intentional off-beat cuts. Dissolves consume overlap and require handles; model them explicitly so they do not shorten the film unexpectedly. Retiming limits follow the scene and acceptable motion, not a fixed universal percentage. Keep synchronous sound in time when retiming or omit unusable sound deliberately.
 
+Composite exact UI, captions and brand layers over the interval reserved for them. Keep live footage under partial overlays and use a held or blurred frame only where the product screen covers the picture. Keep score and sound continuous through the overlay; interface sounds sit on top.
+
 Frame holds such as twelve distinct drawings per second played at twenty-four frames per second can produce a hand-drawn cadence. Offer or use this according to recorded preference. Compare motion and cut timing after applying it. It is an editing treatment, not a reason to regenerate already acceptable footage.
 
 ## Deliver

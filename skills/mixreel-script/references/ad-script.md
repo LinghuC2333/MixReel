@@ -40,6 +40,8 @@ Keep review annotations, missing-asset notes and test status outside the audienc
 
 Plan when the viewer recognizes the product and why it belongs in this sequence. Use the approved logo/UI/materials. Mark how precise elements will be realized, such as supplied screen recording, post-production overlay or explicitly authorized concept design. Do not assume the image/video model can reproduce exact UI, brand marks or typography. An unexplained end card cannot repair a script whose product promise is unclear.
 
+For product UI shown inside the film, take layouts, images, fonts, colours and motion timings from the product's own design files or client source when the user can provide them, and compute any displayed values with the product's real rules. Record the source of each element. Screenshots are a fallback; redrawn UI is a labelled last resort.
+
 If the ending asks for an action, match the action and destination actually available. Follow the user's requested branding prominence and campaign format; do not force a sales line into every organic post.
 
 ## Review before delivery
