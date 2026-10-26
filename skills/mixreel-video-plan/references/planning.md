@@ -2,7 +2,7 @@
 
 ## Plan generation requests before images
 
-Keep editorial shots separate from generation requests. Prefer one coherent sequence per request, including multiple approved shots when supported, and consider the whole short when it fits. Group connected action and shared geography together. Split only for a documented reason such as endpoint duration/reference limits, a scene change, incompatible inputs or a lower expected rework cost. Do not force the whole film into one request or assume grouping guarantees continuity.
+Keep editorial shots separate from generation requests. Default to one request for the whole generated sequence when it fits the verified maximum duration and prompt limit, including multiple approved shots when supported. Group connected action and shared geography together. Split only for a documented reason such as endpoint duration/reference limits, a scene change, incompatible inputs or a lower expected rework cost. In reference mode, keyframes and reference images are soft guides, so wanting a separate opening anchor for each part is not a reason to split by itself. Do not assume grouping guarantees continuity.
 
 Before producing keyframes, record the ordered shot IDs, requested duration, continuity requirements, references and grouping reason in `generation_groups` as described in [Project records](../../mixreel/references/records.md). Keep each shot's own action and camera plan. Choose the smallest sufficient set of reviewed images to establish identity, wardrobe, spatial layout or a critical state that the script and other references cannot reliably convey. Reuse suitable accepted assets. A shot can share a keyframe or need no new image; do not generate a starting and ending frame for every cut.
 
@@ -11,6 +11,12 @@ Use the approved script and shot sequence as the main direction. When a [spatial
 Compare grouping alternatives using the actual provider's minimum billable duration, duration increments, resolution and expected retry scope. Show requested and estimated billable seconds per request, total quoted/estimated cost and what a rejected sequence would require regenerating. Keep unknown prices or retry rates unknown; do not promise savings from fewer calls alone. Reserve and reconcile each generation request once, even when its output supplies several timeline shots.
 
 Separate the duration of an action from the duration of its generated file. Give fast actions a brief execution interval, clear contact and a readable aftermath within the sequence; do not stretch them to the provider's minimum length. Use any necessary extra footage for approved setup, reaction or removable handles. Do not invent filler actions, default slow motion or blanket speed-up. Translate the shot times and musical accents to request-local times, with the intended cuts and action speeds explicit.
+
+## Continue past the duration limit
+
+When the generated sequence exceeds the verified maximum, generate the first request at that maximum and continue from its accepted result. Use the final seconds of that clip as the next request's reference video, plus its audio as reference audio when score or ambience must carry on, and write the new prompt as a continuation of that clip. Verify that the endpoint accepts these references together. Independent segments cannot share motion, sound or music, so use them only when continuation is unsupported.
+
+Place each continuation boundary at a planned cut, so the continuation opens on a new camera setup. A continuation that resumes the same shot tends to reframe slightly, which reads as a jump. Inspect the seam, discard repeated or jumping head frames and record the source ranges actually used.
 
 ## Shot motion
 
