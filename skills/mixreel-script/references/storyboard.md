@@ -14,7 +14,7 @@ Serialize each scene description as `{"description":"..."}` when a tool needs st
 
 - Establish the view and subjects' physical relationship, including what is outside the frame.
 - Give the camera one principal behavior and a destination. For a fixed camera, explicitly prohibit dolly, zoom and pan. This wording applies only when the shot is intentionally fixed.
-- Describe observable actions and reactions in their causal order. For a risky action, make the starting state, contact or force, transition and resulting state visible.
+- Describe observable actions and reactions in their causal order. For a risky action, make the starting state, contact or force, transition and resulting state visible. When the usual way of performing it would break a relationship, write the specific safe pose.
 - State the ending composition and what must remain readable there. Give plot-critical props their own sentences. In a shot where a prop must stay out of frame, describe where the eyes go instead of naming it.
 - Specify synchronous environment and action sound when relevant. Record score and edit-layer audio separately from scene sound; preserve the user-selected treatment.
 

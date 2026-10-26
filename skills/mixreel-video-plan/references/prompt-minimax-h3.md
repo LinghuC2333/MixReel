@@ -38,7 +38,7 @@ Character portraits, outfit anchors, sprites, backgrounds, and style images are 
 
 Extract the ordered visible beats before choosing shots. Track where every person and plot-critical prop begins, what changes, who sees what, and which image must end the clip. Do not move a person to another location, merge separate spaces, reverse cause and reaction, or invent a new event.
 
-For every decisive physical action or prop state change, extract an action contract: the initial state, the contact or force that causes the change, the visible transition, and the resulting state. Give failure-prone actions such as cutting, locking, opening, handing over, mounting, or taking control enough screen time to complete. Describe positive physical geometry and causality instead of relying on words such as `really`, `actually`, or repeated prohibitions.
+For every decisive physical action or prop state change, extract an action contract: the initial state, the contact or force that causes the change, the visible transition, and the resulting state. Give failure-prone actions such as cutting, locking, opening, handing over, mounting, or taking control enough screen time to complete. Describe positive physical geometry and causality instead of relying on words such as `really`, `actually`, or repeated prohibitions. When the model's usual way of performing an action would break the scene, such as a raised weapon sweeping across an ally, specify a different concrete pose or path that cannot break it, for example the blade held upright against the bearer's own chest.
 
 Extract the emotional contract as an arc: the opening emotional state, the source beat that changes or intensifies it, and the feeling left in the final image. A genuinely static mood may remain static when the source contains no emotional turn. Name the atmosphere once, then embody it through observable performance and filmmaking choices such as pace, held breath, gaze, body distance, hesitation, lighting, environmental motion, synchronous sound, or deliberate non-contact. Preserve the interactions established by the source.
 
@@ -96,6 +96,7 @@ Before returning the prompt, verify all of the following:
 - Every reference label matches the provider inventory and keeps one meaning.
 - Every critical prop has continuous position, ownership, and state.
 - No object or person that must stay out of a shot is named in that shot.
+- Risky actions specify a concrete safe pose or path rather than a prohibition.
 - Cut times increase and remain inside the target duration.
 - Dialogue, sound, and visible text are synchronized and not invented.
 - The prompt contains no unresolved source tags, URLs, local paths, model settings, executor commands, subtitles, logos, watermarks, or fade to black.
