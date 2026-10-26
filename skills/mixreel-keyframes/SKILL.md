@@ -1,6 +1,6 @@
 ---
 name: mixreel-keyframes
-description: Create or locally repair the necessary illustration keyframes using the GPT blocking, Ideogram completion and GPT repair workflow. Use for character/style-consistent artwork with explicit reference roles; accepts existing shot and frame requirements.
+description: Create or locally repair the necessary illustration keyframes by generating from composition, style and character references and then editing locally, with each step's model chosen by its strengths. Use for character/style-consistent artwork with explicit reference roles; accepts existing shot and frame requirements.
 ---
 
 # Make necessary keyframes
@@ -13,12 +13,12 @@ For a video project, generation planning determines which new frames are actuall
 
 ## Execute and inspect
 
-Follow the documented four stages: select one composition reference, two-image GPT blocking draft, Ideogram completion, localized GPT repair. Keep the direct-reference-frame branch conditional as documented. Preserve the user-confirmed role of every input; appearance choices remain the user's, including character reference format and wardrobe.
+Follow the documented steps: select one composition source, generate with a style-strong model, then edit locally with an instruction-following model. Choose and record each step's model by its strengths as documented; switching models remains the user's decision. Preserve the user-confirmed role of every input; appearance choices remain the user's, including character reference format and wardrobe.
 
 Read [providers](../mixreel/references/providers.md), [local configuration](../mixreel/references/local-config.md) and [execution](../mixreel/references/execution.md) before paid calls. Resolve actual model/tool identity and supported edit fields. Do not substitute providers silently. Planning or mock mode produces a manifest, never a claimed generated image.
 
-Confirm after every pass that the output actually differs from its base, as described in [images](references/images.md). Check composition, identity, style, clothing, gaze, anatomy and regions outside each repair. Character/style drift returns to completion with original inputs; localized repair cannot redesign the character. Use [diagnosis](../mixreel-review/references/diagnosis.md) for retry decisions.
+Confirm after every pass that the output actually differs from its input, as described in [images](references/images.md). Check composition, identity, style, clothing, gaze, anatomy and regions outside each edit. A wrong style or composition returns to generation with revised inputs; near misses, including a face that is nearly right, go to local editing, which keeps the rendering and cannot redesign the character. Use [diagnosis](../mixreel-review/references/diagnosis.md) for retry decisions.
 
 ## Deliver
 
-Return the requested images, stage/version records, the ordered actual-input manifest, comparison findings and costs. Link them from `keyframes.md` in the private project. Record pending/accepted/rejected versions distinctly. Hand off the actual selected assets to video planning; no automatic video submission.
+Return the requested images, step/version records, the ordered actual-input manifest, comparison findings and costs. Link them from `keyframes.md` in the private project. Record pending/accepted/rejected versions distinctly. Hand off the actual selected assets to video planning; no automatic video submission.

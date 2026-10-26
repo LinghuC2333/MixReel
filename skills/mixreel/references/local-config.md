@@ -4,7 +4,7 @@ Use this reference when installing the skill or selecting paid services. Configu
 
 ## Default files
 
-- `~/.config/mixreel/providers.json` records image generation, image editing and video generation profiles. Each role has an actual billed provider, model, endpoint allowlist and credential reference. Name additional profiles when stages need different services, and bind each job to its actual profile. For the image workflow, identify GPT draft/repair access and Ideogram rendering access separately; a host-managed GPT tool need not have a local key.
+- `~/.config/mixreel/providers.json` records image generation, image editing and video generation profiles. Each role has an actual billed provider, model, endpoint allowlist and credential reference. Name additional profiles when stages need different services, and bind each job to its actual profile. For the image workflow, identify generation and editing access separately, since they often use different models; a host-managed tool need not have a local key.
 - `~/.config/mixreel/credentials.json` holds local plaintext credential values under named keys. On macOS/Linux the directory must be mode 700 and both files mode 600. This is file permission protection, not encryption. A host secret store or environment injection is preferable when already available.
 
 Create blank files with `python3 scripts/init_config.py`, resolving that script from the installed skill. The initializer imports no keys, makes no network calls and preserves existing files. It does not load credentials into tools or configure a provider client. On Windows, use operating-system access controls to restrict these files to the user; POSIX mode checks are not available there.

@@ -26,7 +26,7 @@ For a new project, establish audience, purpose, materials, borrowing choices and
 
 The usual order is reference analysis, script, generation planning and necessary-image decisions, keyframes, finalized prompts, production and review. Video planning checks real provider capabilities before commissioning images. A request may contain several editorial shots; it may need few or no new keyframes. Preserve this grouping through production.
 
-Use the four-stage image workflow for each needed new illustration, including its documented direct-frame branch. Follow the user's recorded identity, wardrobe, style and composition choices. Preserve accepted decisions without asking again. Proposed creative choices remain proposals until approved or covered by explicit delegation.
+Use the generate-then-edit image workflow for each needed new illustration. Follow the user's recorded identity, wardrobe, style and composition choices. Preserve accepted decisions without asking again. Proposed creative choices remain proposals until approved or covered by explicit delegation.
 
 For collaborative work, show the actual script before illustrations, a representative style result before an image batch, and reviewed groups/references/cost before video submission. Existing authorization applies to its covered scope; do not invent human approval from a machine check.
 
