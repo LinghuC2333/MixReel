@@ -1,5 +1,9 @@
 # Execute within the approved scope
 
+## One version per paid request
+
+Paid image and video generation produces one version per approved request. Do not request several candidates, alternate prompts or competing models for the user to choose from, and keep any count parameter at one. Offer options where they cost nothing: script directions, plans, previs, edits and local treatments. A paid comparison happens only when the user asks for that specific comparison and its cost. A retry after a defect replaces the rejected version; it is not an extra option.
+
 ## Local checks before spending
 
 Run `validate_plan.py` on the machine plan. Complete the separate creative reviews in the brief. Confirm the chosen model profile matches the provider/account the user authorized, the referenced files are the reviewed versions, all role bindings are ordered, and the batch fits the remaining budget.
@@ -32,6 +36,7 @@ The request file used for hashing contains the prompt, parameters, account alias
 | Generation running | Continue polling the same task within documented limits |
 | Generation succeeded, download failed | Retrieve existing output again, retain billed cost |
 | Output creatively rejected | Record the defect and proposed repair scope before another paid job |
+| Output identical or nearly identical to its input base | Record the pass as ineffective with the measured difference, keep the billed cost and change the route before paying again |
 | Quoted amount unavailable | Obtain a documented maximum and authority; unknown never becomes zero |
 
 ## Privacy and release

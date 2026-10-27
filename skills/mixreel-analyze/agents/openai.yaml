@@ -1,0 +1,6 @@
+interface:
+  display_name: "参考视频分析"
+  short_description: "按时间分析参考视频与音乐，记录钩子、画面、剪辑和画风依据"
+  default_prompt: "使用 $mixreel-analyze 完成本次请求，沿用已确认的项目决定，只执行已授权的范围。"
+policy:
+  allow_implicit_invocation: true

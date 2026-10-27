@@ -1,6 +1,6 @@
 interface:
   display_name: "MixReel"
-  short_description: "结合参考视频、音乐和故事资料，设计分镜并制作人物与画风一致的短片"
-  default_prompt: "使用 $mixreel，根据参考视频、目标音乐和故事资料，先完成可逐镜检查的短片方案。"
+  short_description: "统筹参考分析、脚本、插画、视频制作和审片，按已确认进度继续工作"
+  default_prompt: "使用 $mixreel 完成本次请求，沿用已确认的项目决定，只执行已授权的范围。"
 policy:
   allow_implicit_invocation: true

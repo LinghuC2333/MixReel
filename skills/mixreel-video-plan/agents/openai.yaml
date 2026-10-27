@@ -1,0 +1,6 @@
+interface:
+  display_name: "视频方案与提示词"
+  short_description: "规划连续视频生成与少量关键帧，编写符合模型要求的运镜提示词"
+  default_prompt: "使用 $mixreel-video-plan 完成本次请求，沿用已确认的项目决定，只执行已授权的范围。"
+policy:
+  allow_implicit_invocation: true

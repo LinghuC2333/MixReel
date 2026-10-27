@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "core": "mixreel",
+  "skills": [
+    "mixreel",
+    "mixreel-analyze",
+    "mixreel-script",
+    "mixreel-keyframes",
+    "mixreel-video-plan",
+    "mixreel-produce",
+    "mixreel-review"
+  ],
+  "installation": "Install this collection together; invoke each skill independently."
+}

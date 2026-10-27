@@ -1,0 +1,25 @@
+# Edit and deliver video
+
+## Edit plan
+
+Keep a satisfactory generated sequence intact wherever its actual timing fits. For timeline shots drawn from one result, use the same source asset with observed in-points and its full duration; do not regenerate those shots merely to create separate files. Avoid replaying or skipping action at shared-source joins. A picture-only replacement keeps the source clip's audio under the new footage; record both sources for that interval. Record each clip's source in-point, source duration, output interval, playback speed and transition. For a clip with speed `s`, source accent `a`, target accent `T` and timeline start `t`, use `clip_in = a - s * (T - t)`. Then verify the selected range exists. A negative in-point means the edit needs changing, not silent clamping.
+
+Use cuts and reveals on selected musical events. Preserve readable reactions and a coherent ending; not every beat requires an event. Mark intentional off-beat cuts. Dissolves consume overlap and require handles; model them explicitly so they do not shorten the film unexpectedly. Retiming limits follow the scene and acceptable motion, not a fixed universal percentage. Keep synchronous sound in time when retiming or omit unusable sound deliberately.
+
+Composite exact UI, captions and brand layers over the interval reserved for them. Keep live footage under partial overlays and use a held or blurred frame only where the product screen covers the picture. Keep score and sound continuous through the overlay; interface sounds sit on top.
+
+Frame holds such as twelve distinct drawings per second played at twenty-four frames per second can produce a hand-drawn cadence. Offer or use this according to recorded preference. Compare motion and cut timing after applying it. It is an editing treatment, not a reason to regenerate already acceptable footage.
+
+## Deliver
+
+Render a quality master and a mobile-friendly preview. Once every shot has `clip {asset, in, duration, speed}`, `python3 <core>/scripts/render_edit.py PLAN MASTER --preview PREVIEW [--holds 12]` renders the cut, frame holds, dissolves and music from the plan, and for version 3 also per-shot sound, overlays and sound layers; any other host editing tool is equally valid. Verify duration, frame size, aspect ratio, frame rate, audio coverage, silence, clipping, cut boundaries and encoding quality. Use `media_inspect.py audio` on the final output as a diagnostic, then listen; intended silence should not be classified as an automatic defect.
+
+With version 1 and 2 plans the helper outputs music only and discards source-clip audio; version 3 keeps the sound each shot names. It adds a 0.3-second fade-out to a music track, a limiter to the mix and sharpens clips narrower than the output width; review those treatments before delivery. Use another editing tool when different finishing controls are required.
+
+Run a quality gate before each delivery and fix what editing can fix first. Compare detected cuts with the plan, look for runs of only a few frames from a neighbouring shot, inspect every continuation seam, check audio coverage and silence, listen for score the plan did not ask for, locate each line of dialogue in its intended shot, and measure loudness, duration and frame size. Report only what remains as known issues, each with a repair option and its cost. `python3 <core>/scripts/qa_check.py MASTER --plan PLAN [--size WxH] [--lufs TARGET]` checks every planned cut for frames that belong to the neighbouring shot, lists unplanned picture changes and very short runs as candidates to watch, and reports silence, loudness, true peak and size; dialogue placement still needs listening or speech recognition.
+
+Export for the channels the user named: a master plus one version per platform, meeting its resolution, duration and loudness targets, with captions, logo and UI clear of the platform's own interface overlays.
+
+When an edit-only choice is still open, such as two music candidates, two openings, or frame holds versus motion smear, deliver the recommended version with labelled variants instead of stopping to ask. Variants come only from edit-layer choices, never from extra paid generation, and they double as test material. Each version carries a short note of what changed since the previous one.
+
+Watch once without explanatory notes, then with music. Report unresolved creative defects separately from technical checks. Provide the requested delivery location only under the user's authorization. Include the plan, accepted references, export settings and costs with estimates visibly separated from actual billed amounts.

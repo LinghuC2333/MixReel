@@ -2,7 +2,7 @@
 
 <h3 align="center">把一条参考短视频，翻拍成你自己的故事</h3>
 
-<p align="center">一个 Agent Skill，用你自己的角色和音乐，把参考视频改编成新的卡点短片</p>
+<p align="center">一组可分别调用的 skill，用于参考分析、脚本、人物一致的插画和视频制作</p>
 
 <p align="center">
   <a href="#安装"><strong>安装</strong></a>
@@ -21,9 +21,9 @@
   <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?style=flat-square">
 </p>
 
-这是一个给 Claude Code、Codex 等助手用的 Agent Skill。把参考视频、目标音乐和故事资料交给助手，它会逐镜拆解参考视频带给观众的感受，在你的故事里找到对应的情节，产出可以逐镜审阅的脚本、关键帧、视频片段和卡着音乐剪好的成片。
+MixReel 包含七个给 Claude Code、Codex 等助手用的 skill。提供参考视频和广告主或创作要求，可以只写脚本、单独完成某个阶段，也可以使用自己选择的素材和模型完成整片。
 
-搬过来的是参考视频的观看体验，人物、故事和画风都换成你自己的。
+借鉴范围由你决定，可以选择钩子、脚本、构图，也可以选择音乐、剪辑或画风。借用其中一项，不会自动把其他项一起搬来。
 
 <p align="center">
   <img src="https://github.com/LinghuC2333/MixReel/releases/download/showcase-first-meeting/side-by-side.webp" alt="左边是参考视频，右边是用这个 skill 做出的新短片" width="608">
@@ -32,11 +32,14 @@
 
 ## 安装
 
+安装完整套件，再按需要单独调用某个 skill。先下载或克隆本仓库，在仓库目录执行下面的本地安装命令。
+
 ```bash
-npx skills add LinghuC2333/MixReel
+python3 scripts/install_collection.py --destination ~/.codex/skills
 ```
 
-也可以把 `skills/mixreel` 整个目录复制到助手的技能目录，Claude Code 项目一般是 `.claude/skills`，Codex 一般是 `~/.codex/skills`。
+Claude Code 项目可把目标改为 `.claude/skills`。安装器一起复制七个 skill 和共用资源，不读取密钥、不联网，也不覆盖已有 MixReel。更新时先装到新目录检查，再自行替换旧安装；不要只复制某个专用 skill，或修改其他项目正在引用的目录。
+
 
 skill 本身免费。生图和生视频用的是你自己选、自己付费的服务，在本机配置一次就行，见下文“配置自己的模型”。
 
@@ -101,15 +104,17 @@ skill 本身免费。生图和生视频用的是你自己选、自己付费的�
 
 助手会把每个决定、每次输入和每笔费用记在项目文件夹里，任何一步停下来都能接着做。
 
+也可以直接使用 `$mixreel-script` 写广告脚本，或用 `$mixreel-review` 检查已有素材，其他入口见下方项目结构。
+
 ## 它做了什么
 
-**从观众感受出发写脚本。** 助手先把参考视频拆成镜头，记下观众每一刻在期待什么、知道了什么、感受到什么，再去你的故事里找能制造同样感受的情节，标明出处，标出哪些压缩了、哪些是新加的。脚本交给你之前，还会先假装一个没看过原著的观众过一遍。
+**结合参考和目标写脚本。** 助手分析具体的开头、揭露和回应，再决定哪些适合表达你的信息。广告脚本包含实际画面、准确文案、产品行为和品牌界面的呈现方式。改编故事时注明来源和新写情节。单独写脚本不需要生成素材或配置模型账号。
 
-**能直接审阅的场景描述。** 每个镜头只有一个主要机位，动作按因果顺序写成看得见的画面，写清结尾停在哪，只保留现场声。容易生成失败的动作会拆成起始状态、接触、变化、结果四步。你审的是画面，不是模型咒语。
+**能直接审阅的场景描述。** 每个镜头有明确的运镜，动作按因果顺序写成看得见的画面，写清结尾停在哪。容易生成失败的动作会说明起始状态、接触、变化和结果。字幕、配乐、产品界面和品牌要求保留在脚本与后期计划中，不会因为某种模型提示词排除它们就从成片删掉。
 
 **按视频模型分别写提示词。** MiniMax H3 用六段式参考提示词，图片编号严格对应实际上传顺序；Seedance 2 用简短的单机位描述。两套各写各的，不互相转换。
 
-**保住画风和角色的关键帧。** 先确定连贯段落需要哪些图，已有素材可以复用，多个镜头也可以共用一张关键帧。只为必要的新关键帧选一张构图参考，先出简易构图稿，再用你的画风和角色参考补完，最后做局部修补。GPT 只负责开头的构图和最后的小修，画风和人物长相都由 Ideogram 来定。参考视频里如果已经有合适的帧，可以直接当编辑底图，它算不算画风参考由你决定。
+**保住画风和角色的关键帧。** 先确定连贯段落需要哪些图，已有素材可以复用，多个镜头也可以共用一张关键帧。每张必要的新关键帧只分两步。先拿一张构图图、你的画风参考和角色参考生图，再做局部修改。构图图可以来自可选的三维站位预演，也可以是参考视频里合适的一帧。每一步按模型的长处选，比如 Ideogram 擅长迁移画风，GPT 擅长照着具体指令改图；每一步出完都会核对图片确实改了。参考帧算不算画风参考由你决定。
 
 **相连镜头合在一次生成里。** 先排好整段动作，再按接口能力把多个镜头放进同一次请求，使用少量关键帧、脚本和受支持的视频及音频参考。需要拆开时记录原因，并比较最低计费时长和返工费用。动作速度单独说明，快速动作不必占满整段视频。
 
@@ -136,13 +141,15 @@ python3 skills/mixreel/scripts/init_config.py
 ## 项目结构
 
 ```text
-skills/mixreel/
-  SKILL.md        入口、阶段选择与边界
-  references/     故事、分镜、图像、视频和执行说明，按阶段读取
-  scripts/        本地分析、剪辑导出、计划检查、费用记录与脱敏
-  assets/         项目记录模板和合成计划样例
-tests/            不触发付费调用的自动测试
-docs/             设计说明和验证记录
+skills/
+  mixreel/             coordinator and shared rules, tools, templates
+  mixreel-analyze/     reference video and audio evidence
+  mixreel-script/      adaptation and advertising scripts
+  mixreel-keyframes/   consistent illustration keyframes
+  mixreel-video-plan/  generation groups and model prompts
+  mixreel-produce/     authorized generation, edit and export
+  mixreel-review/      evidence-based review and repair routing
+  mixreel.collection.json
 ```
 
 ## 工具与检查

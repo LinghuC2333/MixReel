@@ -4,11 +4,11 @@
 
 | 来源文件 | 本项目位置 | 来源 SHA-256 |
 |---|---|---|
-| `agents/asset/skills/seedance-2-cg-video-prompt/SKILL.md` | `references/prompt-seedance-2.md` | `8d2af848df5200d7dedee66b8c8c8eb2410151c3f9996149b86023a92919c2c6` |
-| `agents/asset/skills/minimax-h3-cg-video-prompt/SKILL.md` | `references/prompt-minimax-h3.md` | `6cf6db4e4e76569b1a7106d768407d2f95f06ec0f1bae2bef4d21e3e1cbd0581` |
-| `agents/asset/skills/minimax-h3-cg-video-prompt/references/h3-ref2va-contract.md` | `references/h3-format.md` | `8b64527da3c88026c0e96d11b6b56ed1c57e3a42c0db178ad3745aed2d2ec740` |
-| `agents/asset/skills/minimax-h3-cg-video-prompt/references/cinematic-cg-coverage.md` | `references/cinematic-coverage.md` | `2f0169a964a38be98a2b0995187254dac562284f47a195bcec38dcc653f5d821` |
-| `packages/ls-workshop/src/video-cg-description.ts` | `references/storyboard.md` 中的可编辑描述规范 | `c21824c7573f1be66d5ebe57c13f8a68c53220bed1085353617c9b70933d9811` |
+| `agents/asset/skills/seedance-2-cg-video-prompt/SKILL.md` | `skills/mixreel-video-plan/references/prompt-seedance-2.md` | `8d2af848df5200d7dedee66b8c8c8eb2410151c3f9996149b86023a92919c2c6` |
+| `agents/asset/skills/minimax-h3-cg-video-prompt/SKILL.md` | `skills/mixreel-video-plan/references/prompt-minimax-h3.md` | `6cf6db4e4e76569b1a7106d768407d2f95f06ec0f1bae2bef4d21e3e1cbd0581` |
+| `agents/asset/skills/minimax-h3-cg-video-prompt/references/h3-ref2va-contract.md` | `skills/mixreel-video-plan/references/h3-format.md` | `8b64527da3c88026c0e96d11b6b56ed1c57e3a42c0db178ad3745aed2d2ec740` |
+| `agents/asset/skills/minimax-h3-cg-video-prompt/references/cinematic-cg-coverage.md` | `skills/mixreel-video-plan/references/cinematic-coverage.md` | `2f0169a964a38be98a2b0995187254dac562284f47a195bcec38dcc653f5d821` |
+| `packages/ls-workshop/src/video-cg-description.ts` | `skills/mixreel-script/references/storyboard.md` 中的可编辑描述规范 | `c21824c7573f1be66d5ebe57c13f8a68c53220bed1085353617c9b70933d9811` |
 
 ## 已做的调整
 
