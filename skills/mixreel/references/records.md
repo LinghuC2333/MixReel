@@ -1,12 +1,34 @@
 # Project records and continuation
 
+## Project layout
+
+Keep the private project outside the installed skill. The user works in this folder and may never open the skill, so the folder is where they read, correct and reuse everything. It has two layers.
+
+```
+<project>/
+  brand/                  one per brand, shared by every film
+    brand-context.md      product, audience, positioning, key messages, what each may claim, asset list
+    audience-taste.md     what this audience longs for, what they already know, why they keep watching
+    competitors.md        how competitors advertise and what their audience reacts to
+    taste-library/        analyzed ads with frames, transcripts and breakdowns
+    assets/               character art, backgrounds, product screenshots, UI sources
+  <film>/                 one per ad or film
+    BRIEF.md
+    script.md
+    reference-sheet.jpg
+    plan.json, providers/, journal.json, media/, review.md   once production starts
+```
+
+On first use, look for an existing brand layer, including folders the user already keeps under other names, and map them instead of copying. When a brand file is missing, build it from what the user supplies and show it to them before relying on it. Write the user's corrections about the product or the audience back into the brand files so the next film starts from them. A non-advertising project can omit the brand layer.
+
 ## Files and authority
 
-Keep the private project outside the installed skill. Use these records without duplicating the same decision in several places.
+Use these records without duplicating the same decision in several places.
 
 | File | Owner of the information |
 |---|---|
-| `BRIEF.md` | User intent, source provenance, creative choices, review decisions, next action |
+| `brand/` files | Product facts and claim limits, audience taste and competitor evidence shared across films |
+| `BRIEF.md` | This film's intent, source provenance, creative choices, review decisions, next action |
 | `plan.json` | Timed shots, reference roles, keyframe identifiers, source ranges and transitions |
 | `providers/` | Verified service capabilities and project-specific parameter mappings |
 | `journal.json` | Paid job lifecycle, reservations and billing evidence |
