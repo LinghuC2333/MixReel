@@ -22,7 +22,7 @@ Read only the relevant specialist and its required references. This is a skill c
 
 ## Order and boundaries
 
-For a new project, establish audience, purpose, materials, borrowing choices and requested stop point in the [brief](assets/BRIEF.template.md). Use [handoffs](references/handoffs.md) to distinguish analysis, script and production artifacts. Advertising work also uses the script skill's advertiser requirements; other filmmaking remains supported.
+For a new project, set up the folder described in [records](references/records.md), with a brand layer for advertising, and establish audience, purpose, materials, borrowing choices and requested stop point in the film's [brief](assets/BRIEF.template.md). Use [handoffs](references/handoffs.md) to distinguish analysis, script and production artifacts. Advertising work also uses the script skill's advertiser requirements; other filmmaking remains supported.
 
 The usual order is reference analysis, script, generation planning and necessary-image decisions, keyframes, finalized prompts, production and review. Video planning checks real provider capabilities before commissioning images. A request may contain several editorial shots; it may need few or no new keyframes. Preserve this grouping through production.
 

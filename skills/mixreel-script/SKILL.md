@@ -1,27 +1,28 @@
 ---
 name: mixreel-script
-description: Write or revise a reference-led adaptation script from advertiser or creative requirements, source material and selected borrowing dimensions. Produces watchable scenes, exact copy and timing; use for hooks, ad scripts and storyboard-only work without generation.
+description: Write or revise ad and story scripts. For ads, builds the idea from what the audience longs for and what they already know, using the project's brand files, and can adapt a reference video's chosen dimensions. Produces watchable shot-level scenes, exact copy, a sound plan and a reference sheet; use for ad ideas, hooks, scripts and storyboard-only work without generation.
 ---
 
-# Write the adaptation script
+# Write the script
 
 ## Inputs and scope
 
-Read the user's requirements and existing brief, actual reference evidence, available product/story sources, confirmed brand/appearance choices and target music if supplied. Accept an existing script for focused revision. Do not require a novel, a new illustration, a provider account or a complete production plan to write a script.
+Work from the user's request and the film's brief, the project's brand layer described in [records](../mixreel/references/records.md), any reference video, product or story sources, confirmed appearance choices and target music. Accept an existing script for focused revision. Do not require a novel, a new illustration, a provider account or a complete production plan.
 
-Read [handoffs](../mixreel/references/handoffs.md), then [adaptation decisions](references/adaptation.md). For advertising, also read [advertising script](references/ad-script.md). For source-story adaptation read [story](references/story.md). Use [storyboard](references/storyboard.md) for the visible sequence. When staging, screen direction or prop placement is at risk, block it first with a [spatial previs](references/previs.md). Creative work about fictional events must preserve the user's source/adaptation boundaries.
+Read [handoffs](../mixreel/references/handoffs.md) first. Then read each reference only when its step comes; each step names the files it needs.
 
-## Work from evidence to a watchable proposal
+## Steps
 
-1. Identify the intended audience response and the advertiser's selected message or creative goal. Separate supplied facts, hypotheses and unresolved constraints.
-2. Use time-labelled reference observations to explain how attention, anticipation, information and payoff develop. If evidence is missing, request only the necessary source access or provide a clearly limited draft; do not fabricate reference analysis.
-3. Record one or more selected borrowing dimensions, exact retained mechanics, changes and reason. Reuse confirmed decisions. Keep unselected dimensions independent; resolve meaningful conflicts with brand/product requirements.
-4. Develop materially different directions when comparison is useful or requested. A request for one script can receive one developed direction. Do not swap names into the source plot or enforce a universal hook/conflict/twist template.
-5. Deliver shot-level CG descriptions, not just timed plot beats, following [storyboard](references/storyboard.md). Include exact copy, sound treatment and brand/product realization. If music changes, rebuild timing without silently replacing the approved creative mechanics.
-6. Before calling a full script complete, choose or propose a concrete sound plan and run the [early feasibility check](references/storyboard.md#early-feasibility-check). Respect known duration limits without inventing unknown endpoint capabilities. Read it as a stranger with no explanatory notes. Revise weak openings, dead time, unclear reveals, unearned emotion, forced product insertions and untrue implications. Deliver the remaining trade-offs honestly.
+1. **Message and limits.** For advertising, read `brand/brand-context.md`, or build it with the user following [advertising message](references/ad-script.md), and record this film's one message in the brief. When a story source is part of the task, also read [story](references/story.md). A film without advertising skips steps 2 and 3.
+2. **Audience taste.** Read `brand/audience-taste.md` and `brand/competitors.md`, or build them following [audience taste](references/audience-taste.md).
+3. **The idea.** Build it following [marketing idea](references/marketing-idea.md), from what the audience longs for to the scene, the familiar parts and the staging.
+4. **Reference video, only when one is supplied.** Record the borrowing dimensions following [adaptation](references/adaptation.md). If evidence is missing, request the necessary access or give a clearly limited draft; never fabricate reference analysis.
+5. **Shots.** Write shot-level CG descriptions with exact copy, sound and product realization following [storyboard](references/storyboard.md). When staging, screen direction or prop placement is at risk, block it first with a [spatial previs](references/previs.md).
+6. **Sound and feasibility.** Choose a concrete sound plan and run the [early feasibility check](references/storyboard.md#early-feasibility-check). Respect known duration limits without inventing unknown endpoint capabilities. If music changes, rebuild timing without silently replacing the approved idea.
+7. **Review and deliver.** Run the review in [advertising message](references/ad-script.md#review-before-delivery), revise concrete failures and attach the reference sheet. Write corrections the user makes about the product or audience back into the brand files.
 
 ## Output and stop
 
-Deliver `script.md` using [the script template](assets/SCRIPT.template.md), adapted to the requested format. Include source locators, borrowing decisions, the actual script, proposed realization of exact UI/text, unresolved items and self-review. An outline may leave production details pending. A complete script must include the shot descriptions, sound proposal and early feasibility findings; final provider bindings, cost quotes and keyframes can remain pending. Never fabricate them to satisfy the production validator.
+Deliver `script.md` in the film's folder using [the script template](assets/SCRIPT.template.md), adapted to the requested format, with the reference sheet beside it when images exist. Include source locators, the idea and why it should work, borrowing decisions when a reference was used, the actual script, the realization of exact UI and text, unresolved items and self-review. An outline may leave production details pending. A complete script must include the shot descriptions, sound proposal and early feasibility findings; final provider bindings, cost quotes and keyframes can remain pending. Never fabricate them to satisfy the production validator.
 
-Do not mark your own review as user approval. Record the version and requested next step in the brief. Production planning happens after the creative script is accepted or within the user's explicit delegation. This skill does not submit images/videos, publish, or promise improved advertising results.
+Do not mark your own review as user approval. Record the version and requested next step in the brief. Production planning happens after the creative script is accepted or within the user's explicit delegation. This skill does not submit images or videos, publish, or promise improved advertising results.

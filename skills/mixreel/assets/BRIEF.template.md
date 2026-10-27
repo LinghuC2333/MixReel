@@ -10,7 +10,7 @@ Link reference video, target music/excerpt, story passages, character consistenc
 
 ## Advertiser or creative requirements
 
-For marketing tasks, record current product facts and their source/conditions, audience situation, selected message(s), campaign objective, available UI/brand assets, required copy, desired viewer action and any testing hypothesis. Mark planned capabilities and unknown claims. Skip irrelevant fields for non-marketing work. Keep private product information outside the public package.
+For marketing tasks, link the brand layer files this film relies on and their versions, then record what is specific to this film, such as the selected message, the story or setting, the desire and familiar point the idea starts from, campaign objective, required copy, desired viewer action and any testing hypothesis. Product facts and claim limits stay in `brand/brand-context.md`; do not copy them here. Skip irrelevant fields for non-marketing work. Keep private product information outside the public package.
 
 ## Reference borrowing
 

@@ -1,6 +1,6 @@
 # Develop a source-story adaptation
 
-Use this when a story source is part of the task. Advertising without a story source follows [advertising script](ad-script.md); do not invent a novel prerequisite.
+Use this when a story source is part of the task, including an ad built on one of the product's stories. Advertising without a story source follows [advertising message](ad-script.md) and [marketing idea](marketing-idea.md); do not invent a novel prerequisite.
 
 ## 1. Read the reference over time
 
