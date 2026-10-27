@@ -1,0 +1,200 @@
+{
+  "version": 3,
+  "duration": 8.0,
+  "fps": 24,
+  "illustration_count": 1,
+  "music": {
+    "source": "generated",
+    "events": [
+      {
+        "id": "entry",
+        "time": 0.0,
+        "kind": "phrase_start"
+      },
+      {
+        "id": "hit",
+        "time": 5.0,
+        "kind": "accent"
+      }
+    ]
+  },
+  "references": [
+    {
+      "id": "style-a",
+      "asset": "media/style.png",
+      "role": "style",
+      "contribution": "Rendering only; no source identities.",
+      "media_type": "image"
+    },
+    {
+      "id": "motion-a",
+      "asset": "media/reference.mp4",
+      "media_type": "video",
+      "role": "motion",
+      "contribution": "Camera progression only; no source style or identities."
+    }
+  ],
+  "reviews": {
+    "storyboard": "pending",
+    "style": "pending",
+    "keyframes": "pending"
+  },
+  "shots": [
+    {
+      "id": "shot-1",
+      "start": 0.0,
+      "end": 3.0,
+      "function": "Establish an obstructed view.",
+      "source_evidence": "Synthetic fixture, not a source-story adaptation.",
+      "keyframe_design": "A foreground curtain partially hides an empty doorway. One new keyframe establishes the shared room layout.",
+      "description": "From the room, the camera tracks right past the curtain and reveals the doorway. The curtain moves gently in the draft. Room ambience only.",
+      "opening": "Doorway partly occluded.",
+      "ending": "Doorway visible.",
+      "camera": {
+        "behavior": "track_right",
+        "start": "Behind foreground curtain",
+        "end": "Clear view of doorway"
+      },
+      "bindings": [
+        "style-a"
+      ],
+      "keyframes": [
+        "frame-1"
+      ],
+      "music_event": "entry",
+      "transition": {
+        "type": "cut",
+        "duration": 0
+      },
+      "clip": {
+        "asset": "media/sequence-1.mp4",
+        "in": 0.0,
+        "duration": 6.0,
+        "speed": 1.0
+      },
+      "holds": 12
+    },
+    {
+      "id": "shot-2",
+      "start": 3.0,
+      "end": 5.0,
+      "function": "Reveal a change in the room.",
+      "source_evidence": "Synthetic fixture, not a source-story adaptation.",
+      "keyframe_design": "A hand on the outer door handle, viewed from the room. No new keyframe; use the established layout and scripted action.",
+      "description": "The camera holds on the handle, with no dolly, no zoom and no pan. The hand turns the handle and the door opens slightly. The latch clicks; no background music.",
+      "opening": "Door closed.",
+      "ending": "Door slightly open.",
+      "camera": {
+        "behavior": "fixed",
+        "start": "Handle close-up",
+        "end": "Same close-up"
+      },
+      "bindings": [
+        "style-a"
+      ],
+      "keyframes": [],
+      "transition": {
+        "type": "cut",
+        "duration": 0
+      },
+      "clip": {
+        "asset": "media/repair-shot-2.mp4",
+        "in": 0.0,
+        "duration": 4.0,
+        "speed": 1.0,
+        "repair": "The hand reached across the frame; only this shot was regenerated from its own opening frame."
+      },
+      "audio": {
+        "from": "asset",
+        "asset": "media/sequence-1.mp4",
+        "in": 3.0,
+        "duration": 6.0
+      },
+      "holds": 8
+    },
+    {
+      "id": "shot-3",
+      "start": 5.0,
+      "end": 8.0,
+      "function": "Show who opened the door.",
+      "source_evidence": "Synthetic fixture, not a source-story adaptation.",
+      "keyframe_design": "A figure in the doorway, viewed from the room. No new keyframe.",
+      "description": "The camera pushes in slowly as the door opens fully and a figure steps into the light. Footsteps on stone.",
+      "opening": "Door slightly open.",
+      "ending": "Figure in the doorway.",
+      "camera": {
+        "behavior": "push_in",
+        "start": "Doorway medium shot",
+        "end": "Figure medium close-up"
+      },
+      "bindings": [
+        "style-a"
+      ],
+      "keyframes": [],
+      "transition": {
+        "type": "cut",
+        "duration": 0
+      },
+      "clip": {
+        "asset": "media/sequence-2.mp4",
+        "in": 0.5,
+        "duration": 5.0,
+        "speed": 1.0
+      },
+      "music_event": "hit"
+    }
+  ],
+  "generation_groups": [
+    {
+      "id": "sequence-1",
+      "shot_ids": [
+        "shot-1",
+        "shot-2"
+      ],
+      "requested_duration": 6.0,
+      "bindings": [
+        "style-a",
+        "motion-a"
+      ],
+      "reason": "Both shots reveal one continuous event in the same room; one request preserves the transition.",
+      "continuity": "The doorway stays on the same wall; the handle remains closed until the hand turns it. Preserve screen direction through the cut.",
+      "provider_prompt": null
+    },
+    {
+      "id": "sequence-2",
+      "shot_ids": [
+        "shot-3"
+      ],
+      "requested_duration": 5.0,
+      "bindings": [
+        "style-a"
+      ],
+      "continues_from": {
+        "group": "sequence-1",
+        "tail": 3.0
+      },
+      "reason": "The event runs past the request limit, so it continues from the tail of sequence-1, opening on a new camera setup.",
+      "continuity": "Same room and lighting; the door is slightly open where sequence-1 ends.",
+      "provider_prompt": null
+    }
+  ],
+  "overlays": [
+    {
+      "id": "choice-page",
+      "asset": "media/ui/%03d.png",
+      "fps": 24,
+      "start": 1.0,
+      "end": 2.5
+    }
+  ],
+  "sound": {
+    "layers": [
+      {
+        "id": "tap",
+        "asset": "media/tap.wav",
+        "at": 1.8,
+        "gain": 0.8
+      }
+    ]
+  }
+}

@@ -25,6 +25,6 @@ Keep action, gaze, geography, rapid execution intervals, causal order and author
 
 ## Deliver
 
-Write `video-plan.md` with groups, split reasons, local timing, frame needs, capability evidence, reference inventory, per-request cost basis and prompt readiness. Add complete production fields to `plan.json` only when available; preserve version 1/2 compatibility. Use `<core>/scripts/validate_plan.py` on a complete production plan, not on a script-only artifact.
+Write `video-plan.md` with groups, split reasons, local timing, frame needs, capability evidence, reference inventory, per-request cost basis and prompt readiness. Add complete production fields to `plan.json` only when available; preserve version 1/2 compatibility and use version 3 for continuations, per-shot sound or overlays. Use `<core>/scripts/validate_plan.py` on a complete production plan, not on a script-only artifact.
 
 Return the selected model's exact structured prompt separately from the planning explanation. No paid submission or rewriting the accepted story. New creative cuts or conflicts return to the script decision rather than being hidden in the model prompt.

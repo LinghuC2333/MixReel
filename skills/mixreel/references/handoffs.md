@@ -19,7 +19,7 @@ These names are defaults for new project records, not requirements to rename exi
 
 ## From a script to a production plan
 
-Keep a script proposal in Markdown while its production inputs are unresolved. The current `plan.json` versions 1 and 2 describe a music-based production/edit timeline; they are not the schema for every creative task. Do not put dummy music or generation groups into a script to pass `validate_plan.py`. For an authorized sound-only or other unsupported edit, record the real plan and use a suitable host editor rather than inventing a music track.
+Keep a script proposal in Markdown while its production inputs are unresolved. The current `plan.json` versions 1 and 2 describe a music-based production/edit timeline, and version 3 adds generated or absent score, per-shot sound, edit-layer overlays and continuations; they are not the schema for every creative task. Do not put dummy music or generation groups into a script to pass `validate_plan.py`. For an authorized sound-only or other unsupported edit, record the real plan and use a suitable host editor rather than inventing a music track.
 
 A full script already includes a sound proposal and a provisional feasibility check against known limits. Video planning verifies and finalizes these choices; it must not silently repair a structurally unworkable script after approval. An outline can defer that check explicitly.
 

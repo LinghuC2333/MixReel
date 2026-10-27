@@ -24,21 +24,29 @@ def validate(plan):
     if not isinstance(plan, dict):
         return ['plan: expected an object']
     version = plan.get('version')
-    if isinstance(version, bool) or version not in (1, 2):
+    if isinstance(version, bool) or version not in (1, 2, 3):
         fail('version', 'unsupported or missing version')
     if version == 1 and 'generation_groups' in plan:
         fail('generation_groups', 'use version 2 for grouped generation')
+    if version in (1, 2):
+        for key in ('overlays', 'sound'):
+            if key in plan: fail(key, 'use version 3 for overlays and mixed sound')
     duration = number(plan.get('duration'), 'duration', True)
     fps = number(plan.get('fps'), 'fps', True)
     tolerance = 0.5 / fps if fps else 0.001
     music = plan.get('music', {})
     if not isinstance(music, dict):
         music = {}; fail('music', 'expected an object')
-    text(music, 'asset', 'music')
-    source_duration = number(music.get('duration'), 'music.duration', True)
-    offset = number(music.get('offset'), 'music.offset')
-    if None not in (source_duration, offset, duration) and offset + duration > source_duration + tolerance:
-        fail('music', 'selected excerpt exceeds source duration')
+    # Version 3 can take its score from generated clip audio or have none at all.
+    music_source = music.get('source', 'track') if version == 3 else 'track'
+    if music_source not in ('track', 'generated', 'none'):
+        fail('music.source', 'expected track, generated or none')
+    if music_source == 'track':
+        text(music, 'asset', 'music')
+        source_duration = number(music.get('duration'), 'music.duration', True)
+        offset = number(music.get('offset'), 'music.offset')
+        if None not in (source_duration, offset, duration) and offset + duration > source_duration + tolerance:
+            fail('music', 'selected excerpt exceeds source duration')
     events = music.get('events', [])
     if not isinstance(events, list):
         events = []; fail('music.events', 'expected a list')
@@ -60,7 +68,7 @@ def validate(plan):
         refs = []; fail('references', 'expected a list')
     ref_ids = set()
     allowed_roles = {'composition', 'identity', 'style', 'wardrobe', 'environment', 'ending_anchor'}
-    if version == 2:
+    if version in (2, 3):
         allowed_roles.update(('motion', 'timing', 'sound'))
     for i, ref in enumerate(refs):
         p = f'references[{i}]'
@@ -73,7 +81,7 @@ def validate(plan):
             ref_ids.add(rid)
         if not isinstance(ref.get('role'), str) or ref['role'] not in allowed_roles:
             fail(p, 'unknown reference role')
-        if version == 2 and ref.get('media_type') not in ('image', 'video', 'audio'):
+        if version in (2, 3) and ref.get('media_type') not in ('image', 'video', 'audio'):
             fail(p + '.media_type', 'expected image, video or audio')
     reviews = plan.get('reviews', {})
     if not isinstance(reviews, dict):
@@ -116,9 +124,9 @@ def validate(plan):
             for b in bindings:
                 if b not in ref_ids: fail(p + '.bindings', 'unknown reference ' + b)
         kfs = shot.get('keyframes')
-        if not isinstance(kfs, list) or (version != 2 and not kfs) or any(not isinstance(k, str) or not k.strip() for k in kfs):
-            fail(p + '.keyframes', 'list of image IDs required (may be empty in version 2)' if version == 2
-                 else 'nonempty list of image IDs required')
+        if not isinstance(kfs, list) or (version == 1 and not kfs) or any(not isinstance(k, str) or not k.strip() for k in kfs):
+            fail(p + '.keyframes', 'nonempty list of image IDs required' if version == 1
+                 else 'list of image IDs required (may be empty from version 2)')
         else: frame_ids.update(kfs)
         event = shot.get('music_event')
         if event is not None and (not isinstance(event, str) or event not in event_ids):
@@ -148,6 +156,11 @@ def validate(plan):
                     fail(p + '.clip', 'source clip lacks requested range or transition handle; '
                          f'required source end {cin + (length + pad) * speed:g}s exceeds '
                          f'clip.duration {cd:g}s (total source-file duration)')
+                if 'repair' in clip:
+                    if version != 3: fail(p + '.clip.repair', 'use version 3 for repair clips')
+                    else: text(clip, 'repair', p + '.clip')
+        if version == 3:
+            validate_shot_v3(shot, p, length, pad, fps, tolerance, fail, number, text)
         if end is not None: previous_end = end
         if length is not None: previous_length = length
     if duration is not None and abs(previous_end - duration) > tolerance:
@@ -155,19 +168,87 @@ def validate(plan):
     count = plan.get('illustration_count')
     if isinstance(count, bool) or not isinstance(count, int) or count != len(frame_ids):
         fail('illustration_count', f'expected {len(frame_ids)} unique images')
-    if version == 2:
-        validate_groups(plan.get('generation_groups'), shots, ref_ids, tolerance, fail, number, text)
+    if version in (2, 3):
+        validate_groups(plan.get('generation_groups'), shots, ref_ids, tolerance, fail, number, text, version)
+    if version == 3:
+        validate_layers(plan, duration, fps, tolerance, fail, number, text)
     return errors
 
 
-def validate_groups(groups, shots, ref_ids, tolerance, fail, number, text):
+def validate_shot_v3(shot, p, length, pad, fps, tolerance, fail, number, text):
+    """Per-shot frame holds and the source of each shot's sound."""
+    if 'holds' in shot:
+        holds = number(shot['holds'], p + '.holds', True)
+        if holds is not None and fps and holds > fps:
+            fail(p + '.holds', 'cannot exceed fps')
+    audio = shot.get('audio', {'from': 'clip'})
+    if not isinstance(audio, dict):
+        fail(p + '.audio', 'expected an object'); return
+    source = audio.get('from')
+    if source not in ('clip', 'asset', 'none'):
+        fail(p + '.audio.from', 'expected clip, asset or none')
+    elif source == 'asset':
+        # A picture-only replacement keeps another file's sound, usually the original generated clip.
+        text(audio, 'asset', p + '.audio')
+        ain = number(audio.get('in'), p + '.audio.in')
+        ad = number(audio.get('duration'), p + '.audio.duration', True)
+        speed = number(audio.get('speed', 1), p + '.audio.speed', True)
+        if None not in (ain, ad, speed, length) and ain + (length + pad) * speed > ad + tolerance:
+            fail(p + '.audio', 'audio source lacks requested range')
+
+
+def validate_layers(plan, duration, fps, tolerance, fail, number, text):
+    """Edit-layer overlays and extra sound placed on the final timeline."""
+    overlays = plan.get('overlays', [])
+    if not isinstance(overlays, list):
+        fail('overlays', 'expected a list'); overlays = []
+    ids = set()
+    for i, overlay in enumerate(overlays):
+        p = f'overlays[{i}]'
+        if not isinstance(overlay, dict):
+            fail(p, 'expected an object'); continue
+        text(overlay, 'id', p); text(overlay, 'asset', p)
+        if overlay.get('id') in ids: fail(p, 'duplicate overlay id')
+        ids.add(overlay.get('id'))
+        start = number(overlay.get('start'), p + '.start')
+        end = number(overlay.get('end'), p + '.end')
+        if None not in (start, end) and end <= start: fail(p, 'end must follow start')
+        if None not in (end, duration) and end > duration + tolerance: fail(p, 'overlay outside timeline')
+        if 'fps' in overlay: number(overlay['fps'], p + '.fps', True)
+        if isinstance(overlay.get('asset'), str) and '%' in overlay['asset'] and 'fps' not in overlay:
+            fail(p + '.fps', 'image sequence needs fps')
+    sound = plan.get('sound', {})
+    if not isinstance(sound, dict):
+        fail('sound', 'expected an object'); return
+    for i, duck in enumerate(sound.get('ducking', []) if isinstance(sound.get('ducking', []), list) else []):
+        p = f'sound.ducking[{i}]'
+        if not isinstance(duck, dict): fail(p, 'expected an object'); continue
+        start = number(duck.get('start'), p + '.start'); end = number(duck.get('end'), p + '.end')
+        gain = number(duck.get('gain'), p + '.gain')
+        if None not in (start, end) and end <= start: fail(p, 'end must follow start')
+        if None not in (end, duration) and end > duration + tolerance: fail(p, 'ducking outside timeline')
+        if gain is not None and gain > 1: fail(p + '.gain', 'ducking gain must be at most 1')
+    if not isinstance(sound.get('ducking', []), list): fail('sound.ducking', 'expected a list')
+    layers = sound.get('layers', [])
+    if not isinstance(layers, list):
+        fail('sound.layers', 'expected a list'); layers = []
+    for i, layer in enumerate(layers):
+        p = f'sound.layers[{i}]'
+        if not isinstance(layer, dict): fail(p, 'expected an object'); continue
+        text(layer, 'id', p); text(layer, 'asset', p)
+        at = number(layer.get('at'), p + '.at')
+        if 'gain' in layer: number(layer['gain'], p + '.gain')
+        if None not in (at, duration) and at > duration: fail(p, 'layer starts outside timeline')
+
+
+def validate_groups(groups, shots, ref_ids, tolerance, fail, number, text, version=2):
     """Check request membership independently of editorial shot and image counts."""
     if not isinstance(groups, list) or not groups:
         fail('generation_groups', 'nonempty list required for version 2')
         return
     by_id = {s['id']: s for s in shots if isinstance(s, dict) and isinstance(s.get('id'), str)}
     ordered_ids = [s['id'] for s in shots if isinstance(s, dict) and isinstance(s.get('id'), str)]
-    assigned, group_ids = [], set()
+    assigned, group_ids, requested_by_id = [], set(), {}
     for i, group in enumerate(groups):
         p = f'generation_groups[{i}]'
         if not isinstance(group, dict):
@@ -179,6 +260,19 @@ def validate_groups(groups, shots, ref_ids, tolerance, fail, number, text):
             if gid in group_ids: fail(p + '.id', 'duplicate generation group id')
             group_ids.add(gid)
         requested = number(group.get('requested_duration'), p + '.requested_duration', True)
+        if 'continues_from' in group:
+            # A continuation reuses the tail of an earlier, accepted request as its reference.
+            link = group['continues_from']
+            if version != 3: fail(p + '.continues_from', 'use version 3 for continuations')
+            elif not isinstance(link, dict): fail(p + '.continues_from', 'expected an object')
+            else:
+                if link.get('group') not in requested_by_id:
+                    fail(p + '.continues_from.group', 'must name an earlier generation group')
+                tail = number(link.get('tail'), p + '.continues_from.tail', True)
+                earlier = requested_by_id.get(link.get('group'))
+                if None not in (tail, earlier) and tail > earlier + tolerance:
+                    fail(p + '.continues_from.tail', 'longer than the earlier request')
+        if isinstance(gid, str): requested_by_id[gid] = requested
         members = group.get('shot_ids')
         if not isinstance(members, list) or not members or any(not isinstance(s, str) or not s.strip() for s in members):
             fail(p + '.shot_ids', 'nonempty ordered list of shot IDs required')
@@ -212,7 +306,8 @@ def validate_groups(groups, shots, ref_ids, tolerance, fail, number, text):
                     fail(p + '.bindings', 'missing a member shot reference binding')
         # One selected result supplies a group; repeated timeline uses must
         # not silently point to different files or different source lengths.
-        clips = [s['clip'] for s in selected if isinstance(s.get('clip'), dict)]
+        clips = [s['clip'] for s in selected if isinstance(s.get('clip'), dict)
+                 and not (version == 3 and 'repair' in s['clip'])]
         if clips:
             asset = clips[0].get('asset')
             total = number(clips[0].get('duration'), p + '.clip.duration', True)
