@@ -39,6 +39,6 @@ This directory also owns the collection's common resources. Specialists read the
 - [Providers](references/providers.md) and [local configuration](references/local-config.md) own service selection and credentials.
 - [Plan example](assets/plan.example.json) is a synthetic production plan, not a script-only requirement.
 
-Resolve shared scripts from this installed directory, denoted `<core>` in specialist references. Keep project outputs outside the skill source. The seven local tools in `scripts/` analyze media, fit beat grids, validate plans, render simple edits, maintain the journal, initialize blank configuration and redact exports; none submits paid model jobs.
+Resolve shared scripts from this installed directory, denoted `<core>` in specialist references. Keep project outputs outside the skill source. The eight local tools in `scripts/` analyze media, fit beat grids, validate plans, render edits, check a finished edit before delivery, maintain the journal, initialize blank configuration and redact exports; none submits paid model jobs.
 
 Complete only after inspecting the requested artifact, reporting untested or unresolved items and reconciling any paid work. Do not infer creative success from successful generation or structural validation.
