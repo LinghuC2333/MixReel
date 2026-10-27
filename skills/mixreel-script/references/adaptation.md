@@ -21,7 +21,7 @@ Use the dimensions relevant to this request; the table is not a quota. Exact ref
 
 Describe the first meaningful event and what a viewer anticipates next. Identify which shot, word, gesture or sound changes that expectation. Locate the payoff and whether it arrives before attention is likely to drift; mark that judgment as a hypothesis, not a measured retention result.
 
-Write the actual copy or action involved when available. Labels such as fast-paced, viral, emotional or cinematic do not explain the mechanism. Do not add fashionable slang to imitate fluency. Check whether a joke, character cameo or nostalgic reference requires knowledge the target viewer lacks. Adapt or replace that dependency explicitly.
+Write the actual copy or action involved when available. Labels such as fast-paced, viral, emotional or cinematic do not explain the mechanism. Borrow slang, memes, songs and references that the [audience taste](audience-taste.md) record shows this audience already uses; slang added without that evidence reads as imitation. Check that a joke, character cameo or nostalgic reference relies on knowledge the target viewer has, and adapt or replace it explicitly when it does not.
 
 ## Creative logic and musical timing
 
