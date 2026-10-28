@@ -8,7 +8,7 @@ Keep the private project outside the installed skill. The user works in this fol
 <project>/
   brand/                  one per brand, shared by every film
     brand-context.md      product, audience, positioning, key messages, what each may claim, asset list
-    audience-taste.md     what this audience longs for, what they already know, why they keep watching
+    audience-taste.md     longings broken down, familiar material, approved scripts, ideas already used, rejected approaches
     competitors.md        how competitors advertise and what their audience reacts to
     taste-library/        analyzed ads with frames, transcripts and breakdowns
     assets/               character art, backgrounds, product screenshots, UI sources
