@@ -6,11 +6,11 @@ Record artifact version, audience, purpose, the one message or creative goal, th
 
 ## The idea
 
-State the desire this film serves, the scene and characters that deliver it, the familiar point with its evidence and what is new, and the rights position of anything that belongs to others. Then describe the film through its actual opening, escalation and payoff. Include alternatives only when useful or requested, with the trade-off.
+State the key message, the one event in a sentence, the longing it serves, the familiar things it uses with their evidence, how the product appears, and the rights position of anything that belongs to others, such as the music. Then describe the film as it plays. Include alternatives only when requested.
 
 ## Why it should work
 
-State the viewer's viewpoint, the first-frame stimulus, the expectation it opens, how each beat raises it, where the viewer's choice sits and why they would want it, and the payoff. Explain who decides and how the product enters the story. Mark what comes from the user, audience evidence, a reference and the agent's judgment.
+Explain, against [marketing idea](../references/marketing-idea.md), what the viewer feels at each stretch and what holds them to the next, and how the product enters. Mark what comes from the user, audience evidence, a reference and the agent's judgment.
 
 ## Borrowing decisions
 

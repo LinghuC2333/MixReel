@@ -14,8 +14,8 @@ Read [handoffs](../mixreel/references/handoffs.md) first. Then read each referen
 ## Steps
 
 1. **Message and limits.** For advertising, read `brand/brand-context.md`, or build it with the user following [advertising message](references/ad-script.md), and record this film's one message in the brief. When a story source is part of the task, also read [story](references/story.md). A film without advertising skips steps 2 and 3.
-2. **Audience taste.** Read `brand/audience-taste.md` and `brand/competitors.md`, or build them following [audience taste](references/audience-taste.md).
-3. **The idea.** Build it following [marketing idea](references/marketing-idea.md), from what the audience longs for to the scene, the familiar parts and the staging.
+2. **Audience longings.** Read `brand/audience-taste.md` and `brand/competitors.md`, or build them following [audience taste](references/audience-taste.md).
+3. **The idea.** Build it following [marketing idea](references/marketing-idea.md), from the brand's approved scripts to one event and its staging.
 4. **Reference video, only when one is supplied.** Record the borrowing dimensions following [adaptation](references/adaptation.md). If evidence is missing, request the necessary access or give a clearly limited draft; never fabricate reference analysis.
 5. **Shots.** Write shot-level CG descriptions with exact copy, sound and product realization following [storyboard](references/storyboard.md). When staging, screen direction or prop placement is at risk, block it first with a [spatial previs](references/previs.md).
 6. **Sound and feasibility.** Choose a concrete sound plan and run the [early feasibility check](references/storyboard.md#early-feasibility-check). Respect known duration limits without inventing unknown endpoint capabilities. If music changes, rebuild timing without silently replacing the approved idea.
@@ -23,6 +23,6 @@ Read [handoffs](../mixreel/references/handoffs.md) first. Then read each referen
 
 ## Output and stop
 
-Deliver `script.md` in the film's folder using [the script template](assets/SCRIPT.template.md), adapted to the requested format, with the reference sheet beside it when images exist. Include source locators, the idea and why it should work, borrowing decisions when a reference was used, the actual script, the realization of exact UI and text, unresolved items and self-review. An outline may leave production details pending. A complete script must include the shot descriptions, sound proposal and early feasibility findings; final provider bindings, cost quotes and keyframes can remain pending. Never fabricate them to satisfy the production validator.
+Deliver `script.md` in the film's folder using [the script template](assets/SCRIPT.template.md), adapted to the requested format, with the reference sheet beside it when images exist. An outline may leave production details pending. A complete script must include the shot descriptions, sound proposal and early feasibility findings; final provider bindings, cost quotes and keyframes can remain pending. Never fabricate them to satisfy the production validator.
 
 Do not mark your own review as user approval. Record the version and requested next step in the brief. Production planning happens after the creative script is accepted or within the user's explicit delegation. This skill does not submit images or videos, publish, or promise improved advertising results.

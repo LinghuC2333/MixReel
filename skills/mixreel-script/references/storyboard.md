@@ -4,7 +4,7 @@
 
 For a script proposal, show the visible sequence with target timing or provisional pacing, image/action/camera, exact copy/dialogue, sound/music and product/brand treatment when relevant. Include source locators and selected reference functions. Use the [script template](../assets/SCRIPT.template.md) as needed.
 
-Distinguish a story outline from a complete director-facing script. Every actual camera cut in the latter gets a stable shot ID, final-timeline range, scale/viewpoint, subject placement and starting state, one principal camera behavior, visible action/reaction, ending state and connection to the next shot. Record dialogue, sound and edit-layer copy alongside the description. A plot beat containing several setups needs several shot descriptions. Each shot should identify the information it reveals or changes; a timestamp alone is not a storyboard.
+Distinguish a story outline from a complete director-facing script. Every actual camera cut in the latter gets a stable shot ID, final-timeline range, scale/viewpoint, subject placement and starting state, one principal camera behavior, visible action/reaction, ending state and connection to the next shot. Record dialogue, sound and edit-layer copy alongside the description. A plot beat containing several setups needs several shot descriptions. Each shot should identify what it reveals or changes, in information or in feeling; a timestamp alone is not a storyboard.
 
 A script-only task needs no paid account or generated assets. Before finalizing a full script, run the early feasibility check below; [video planning](../../mixreel-video-plan/SKILL.md) owns final groups, verified request settings and necessary frame counts. Preserve shot IDs across that handoff. Camera cuts do not imply separate calls.
 
@@ -28,7 +28,7 @@ The provider prompt is a separate rendering of the approved generation group, co
 
 Track character positions, screen direction, eye lines, prop ownership, injuries, wardrobe, environment and time of day across cuts. Keep each character's user-selected outfit consistent within a continuous scene using the wardrobe-reference rules in [Images](../../mixreel-keyframes/references/images.md). Write the visual cause of each meaningful change. A change of angle is legitimate when geography remains understandable; no automatic ban on repeated angles or static shots.
 
-Ask what new information each shot adds. Use a wide view for scale, an over-shoulder view for what someone sees, an insert for evidence, or a close-up for a readable reaction. These are choices justified by the scene, not a checklist that forces every type into every film.
+Ask what each shot adds, in information or in feeling, and choose its scale and angle for that, such as a wide view for scale, an over-shoulder view for being watched or shut out, an insert for evidence, or a close-up for a reaction. These are choices justified by the scene, not a checklist that forces every type into every film.
 
 Choose camera movement or stillness for what the viewer needs to discover and how the action develops. Do not default all shots to a locked camera merely because it is easier to describe, or add motion only to make the list more varied. Record the purpose of a consequential camera choice in the production notes.
 

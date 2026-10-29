@@ -30,29 +30,25 @@ Keep review annotations, missing-asset notes and test status outside the audienc
 
 Use the approved logo, UI and materials. Mark how precise elements will be realized, such as supplied screen recording, post-production overlay or explicitly authorized concept design. Do not assume the image or video model can reproduce exact UI, brand marks or typography. An unexplained end card cannot repair a script whose product promise is unclear.
 
-For product UI shown inside the film, take layouts, images, fonts, colours and motion timings from the product's own design files or client source when the user can provide them, and compute any displayed values with the product's real rules. Record the source of each element. Screenshots are a fallback; redrawn UI is a labelled last resort.
+For product UI shown inside the film, take layouts, images, fonts, colours and motion timings from the product's own design files or client source when the user can provide them, and compute any displayed values with the product's real rules. Record the source of each element. Screenshots are a fallback; redrawn UI is a labelled last resort. Show the screen with the product's own layout, layering and flow. Do not shrink, move or redraw it to fit the story, and do not cut away to it as a separate recording when the product itself shows it over the scene.
 
 If the ending asks for an action, match the action and destination actually available. Follow the user's requested branding prominence and campaign format; do not force a sales line into every organic post.
 
 ## Review before delivery
 
-Read the actual sequence without its explanatory notes, once as an unfamiliar viewer and once against the brief. Ask:
+Read the actual sequence without its explanatory notes, once as a viewer who knows nothing about the story or product and once against the brief.
 
-- What does this audience long for, and does the film deliver it? Does the situation carry the pull they seek, or only describe their life?
-- What reason to keep watching appears in the first frame, and does each later beat raise it until a payoff fulfills it?
-- Can a viewer who knows nothing about the story or product tell what is happening at each moment from the picture, text and sound alone?
-- Is any choice offered something this audience would want to make at that moment, with a visible consequence?
-- Which familiar point will this viewer recognize, what evidence shows they know it, and what is new? Is each emotion earned on screen and consistent from shot to shot?
-- Does every line sound like a real person speaking in that moment?
-- Is a framing caption on screen from the first frame, and does the music keep running without stopping and restarting?
-- Is the product experience understandable from the images, words or sound, without the rationale paragraph? Does the product moment look and flow the way the product really does, and does it sit at the peak?
+- Would someone who loves the stories this audience loves see, in the first seconds, a story she would choose to watch?
+- Can the film be told as one event in one sentence, and does every shot, sound and passage of music serve that event's feeling?
+- Would these people, in this place, really do what the film shows, by the evidence gathered, and does any beat depend on something the viewer was never shown?
+- Does the ending stop on an image, or does a line say what the moment means?
+- Does the film use an approach the user has rejected in the brand record, or repeat an idea an earlier film used?
 - If a reference was used, are the chosen dimensions recognizable, and have excluded dimensions leaked into appearance or story?
-- Are brand, UI and copy accurate, readable and assigned an achievable production method?
-- Do actual facts support every implied capability and outcome, including conditions shown in the demonstration?
-- Does the audio fit the script's reveal and action speeds? Which observations remain unverified?
+- Are brand, UI and copy accurate, readable, backed by facts including the conditions shown, true to how the product behaves and achievable to produce?
+- Does the sound follow [storyboard](storyboard.md#early-feasibility-check) and fit the reveal and action speeds, and which observations remain unverified?
 
 Revise concrete failures before delivery. Record remaining uncertainties and the reason for the recommended direction. Do not certify a script as viral, high-converting or objectively tasteful.
 
 ## Keep learning interpretable
 
-Record the script version, selected message, idea, reference dimensions if any, creative change and intended campaign measure. If the advertiser supplies results later, distinguish paid and organic reach, platform, audience, spend and downstream behavior. When several variables changed together or evidence is sparse, keep causal conclusions uncertain. Corrections from the user about this brand's product or audience go into the brand files; they do not automatically become universal public rules.
+Record the script version, message, idea, reference dimensions if any, creative change and intended campaign measure. When results arrive, separate paid from organic reach, platform, audience, spend and downstream behavior, and keep causal conclusions tentative when several things changed or evidence is thin. Corrections about this brand go into the brand files, not into universal rules.
