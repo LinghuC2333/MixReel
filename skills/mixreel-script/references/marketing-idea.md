@@ -4,13 +4,15 @@ Use this for marketing scripts, after the project's `brand/audience-taste.md` re
 
 ## Read the approved scripts first
 
-Before writing, read the scripts the user has approved in the brand record and the approaches they have rejected. Write in the register of the approved ones. The longings in the record, broken down into what each is made of, explain what this audience wants from a scene; use them to understand, not as items to tick off.
+Before writing, read the scripts the user has approved in the brand record and the approaches they have rejected. Write in the register of the approved ones.
 
 ## One event, told simply
 
-A short film tells one event, written so simply that a stranger gets it at a glance, such as "she is lectured and hugs him instead". Write that sentence before any shot. Everything else, music, rendering style, camera, faces and sound, serves the feeling of that one event. Keep the film short; a thirty-second film loses most of its viewers before the end.
+Start from a moment this audience already lives, in which the product is already part of what they do, found in evidence of how real people use it, such as parents handing a phone to a restless child at a restaurant, or a runner checking her watch at every red light. Test it by putting a competitor in the product's place; if the story still works, the product is not where the feeling turns, so find another moment before writing on; flagging it for the user is not enough. The longings in the record explain what she wants from that moment; they do not choose it.
 
-The event lives inside what this audience enjoys, as the record shows, and serves one longing. It must be a situation the real work could contain, true to its characters; mark it for the user when unsure. Play it the most direct way. An invented predicament that exists only to give the product something to decide is a detour, and the user will see it.
+The moment brings its people and what they are to each other, which may be one person and her situation, as in the example below, and their motive grows from that. Check every action against the same evidence. A relationship's name proves nothing; when an action exists only to make a turn, change the people or the situation.
+
+Write the event in one sentence that a stranger gets at a glance, with the people and their situation in it. Everything else, music, rendering style, camera, faces and sound, serves the feeling of that one event, inside what this audience enjoys, played the most direct way. How the product appears, as a place, a thing in hand, an interface following [product, copy and UI on screen](ad-script.md#product-copy-and-ui-on-screen) or a mark on screen, follows from that moment and from what the brief and the brand record allow. Length, platform and the rules of this product's world come from them too.
 
 ## Write it stretch by stretch
 
@@ -26,13 +28,9 @@ Three feelings run through most short films. Atmosphere is the sense that someth
 
 Faces carry the change; keep each character's emotion on one line of change. Dialogue is the few lines only a voice can deliver, short and plain; vows, declarations and lines that tell the viewer what the moment means sound childish on screen.
 
-## Where the product goes
-
-Not every film shows the product's signature mechanic. The product can be the screen in a real person's hand, or only a logo held on screen; a story worth watching is what the product sells. When an interface does appear, it appears whole and as the product really looks, following [product, copy and UI on screen](ad-script.md#product-copy-and-ui-on-screen), and is not cut away from mid-flow. For a feeling such as luck, the thrill of the roll itself, the twenty landing and the success, is enough; no plot needs to be bent around it.
-
 ## An approved example
 
-A film the user approved, for the line-rewrite feature of an interactive story app. It is here to show what good looks like, not as a plot to reuse. Static, continuous comic panels; the music is "Rap God". The caption from the first frame reads "POV: when the older love interest lectures you". A handsome older man talks at her without pause. A reverse shot finds the real "me" holding her phone, first speechless, then rolling her eyes, then head down until her eyes are hidden, then a defeated sigh. The app's screen appears; she long-presses his line, types "Sorry, I want to hug you", and the d20 lands on success. From behind, the girl hugs him. He freezes and the music stops, he blushes, and a romantic chorus comes in. The last shot returns to the real "me", phone in one hand, touching her own reddening cheek with the other, smiling and still a little wronged.
+A film the user wrote for a coffee chain, on the theme of the first snow of winter. It is here to show what good looks like, not as a plot to reuse. A train pulls out of an open-air station and leaves her walking off the platform in the first snow. Close on her profile, earphones and scarf, eyes rimmed red, the morning crowd out of focus. A long lens on her back, office towers ahead. Over a barista's shoulder she comes to the familiar corner; close on her hand lifting a small hot latte to blow on it. She looks back at the towers, drops her head and shakes it, then lifts it with a small smile she has put there herself, and walks out of frame. One line: a fresh start, then the brand's name. Her relationship is with the towers waiting for her; the coffee is a small act she gives herself, and the barista is only a point of view.
 
 ## Record and present
 

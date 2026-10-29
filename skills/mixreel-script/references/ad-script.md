@@ -40,7 +40,7 @@ Read the actual sequence without its explanatory notes, once as a viewer who kno
 
 - Would someone who loves the stories this audience loves see, in the first seconds, a story she would choose to watch?
 - Can the film be told as one event in one sentence, and does every shot, sound and passage of music serve that event's feeling?
-- Could the real work contain this situation, or was it invented so the product has something to decide?
+- Would these people, in this place, really do what the film shows, by the evidence gathered, and does any beat depend on something the viewer was never shown?
 - Does the ending stop on an image, or does a line say what the moment means?
 - Does the film use an approach the user has rejected in the brand record, or repeat an idea an earlier film used?
 - If a reference was used, are the chosen dimensions recognizable, and have excluded dimensions leaked into appearance or story?
