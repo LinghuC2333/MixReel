@@ -63,6 +63,25 @@ class PrevisTests(unittest.TestCase):
         yaw = ps._yaw_toward(mia['pos'], barista)
         self.assertAlmostEqual(mia['yaw'], yaw, places=4)
 
+    def test_film_places_every_piece_as_the_renders_do(self):
+        import numpy as np
+        import previs_scene as ps
+        scene = ps.load(EXAMPLE)
+        fps, count, pieces, cameras = ps.film(scene)
+        self.assertEqual(count, 168)
+        self.assertEqual([k for k, _ in cameras['S03']][0], 120)
+
+        def rows(meshes):
+            v = np.concatenate([m for m in meshes]).round(6)
+            return v[np.lexsort(v.T[::-1])]
+
+        # Frame 130 is inside S03, the barista's point of view.
+        for k, pov in [(80, None), (130, 'Barista')]:
+            placed = [p['vertices'] @ p['matrices'][k][:3, :3].T + p['matrices'][k][:3, 3]
+                      for p in pieces.values() if p['matrices'][k] is not None]
+            expected = [v for _, v, _, _ in ps.scene_meshes(scene, k / fps, pov=pov)]
+            np.testing.assert_allclose(rows(placed), rows(expected), atol=1e-6)
+
     def test_duplicate_ids_are_rejected(self):
         import previs_scene as ps
         scene = json.loads(EXAMPLE.read_text())

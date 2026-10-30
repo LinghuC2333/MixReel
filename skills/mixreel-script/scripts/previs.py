@@ -127,6 +127,8 @@ def render_frames(scene_path, scene, jobs, args, out_dir):
         return {"backend": "bpy", "renderer": f"bpy {version}", "rough": False}
 
     import previs_raster as pr
+    if args.save_blend:
+        sys.stderr.write("--save-blend needs the blender or bpy backend; the raster backend saves no .blend.\n")
     width, height = ps.frame_size(scene)
     shots = {s["id"]: s for s in scene["shots"]}
     for j in jobs:
@@ -308,7 +310,8 @@ def main():
     ap.add_argument("--bpy-python", default="3.11", help="Python version uv uses for the bpy package")
     ap.add_argument("--bpy-version", default="", help="pip version spec for bpy, such as ==4.5.*")
     ap.add_argument("--plan-time", type=float, default=0.0, help="moment drawn in the plan, in seconds")
-    ap.add_argument("--save-blend", action="store_true", help="also save a .blend of the last rendered moment")
+    ap.add_argument("--save-blend", action="store_true",
+                    help="also save previs.blend: the whole film on Blender's timeline, each shot's camera bound to a marker at its cut")
     ap.add_argument("--font", help="font file for plan and sheet labels")
     ap.add_argument("--schema", action="store_true", help="print the scene file format and exit")
     args = ap.parse_args()
@@ -336,6 +339,7 @@ def main():
 
     manifest = dict(info, scene=os.path.abspath(args.scene), seconds=round(time.time() - started, 1),
                     plan="plan.png", storyboard="storyboard.png" if jobs else None,
+                    blend="previs.blend" if args.save_blend and not info["rough"] else None,
                     review="review.png" if jobs else None, note=ROUGH_NOTE if info["rough"] else None,
                     frames=[{"shot": j["shot"], "frame": j["frame"], "t": round(j["t"], 3),
                              "file": os.path.relpath(j["path"], out_dir),

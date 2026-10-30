@@ -27,6 +27,7 @@ Render the plan and the few shots most at risk first with `--shots`, and show th
 - `plan.png` is drawn straight down, with names, movement arrows and each camera's position and facing.
 - Each shot gets a start and an end frame, and `review.png` lays them out with shot IDs. Check that the subject is not hidden behind foreground figures, that screen direction and eyelines hold across cuts, what lies behind each subject, where every plot prop is, and whether each action fits its time.
 - Fix problems inside the scene file, for example by moving a camera or opening a gap in a formation, then render again.
+- With Blender, `--save-blend` also saves `previs.blend`, the whole film on one timeline with a marker at each cut that switches to that shot's camera. The user can scrub it in Blender, and `blender -b previs.blend -a` renders it as a moving preview.
 
 ## Use the results downstream
 

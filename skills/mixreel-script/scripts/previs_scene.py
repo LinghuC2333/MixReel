@@ -430,6 +430,46 @@ def scene_meshes(scene, t, pov=None):
     return out
 
 
+def film(scene):
+    """The whole film sampled once a frame, for a scene file people can scrub.
+
+    Returns (fps, frame count, pieces, cameras). pieces maps a stable key to its owner, vertices
+    in its own frame, faces, rgb and one 4x4 world matrix per frame, None while hidden; a pose
+    change hides one set of pieces and shows another. cameras maps each shot id to its
+    (frame index, camera) samples from the shot's start to its end."""
+    fps = scene.get("fps", 24)
+    shots = scene.get("shots", [])
+    count = max(1, round(max([s["end"] for s in shots] + [0]) * fps))
+    pieces = {}
+
+    def put(key, owner, v, f, c, m, k):
+        if key not in pieces:
+            pieces[key] = {"owner": owner, "vertices": v, "faces": f, "rgb": c, "matrices": [None] * count}
+        pieces[key]["matrices"][k] = m
+
+    first = {s["id"]: round(s["start"] * fps) for s in shots}
+    for k in range(count):
+        t = k / fps
+        # On screen is the latest shot to have started, as the cut markers give.
+        shot = max((s for s in shots if first[s["id"]] <= k), key=lambda s: first[s["id"]], default=None)
+        st = states(scene, t)
+        for prop in scene.get("props", []):
+            for i, v, f, c, m in prop_parts(prop, st[prop["id"]]):
+                put((prop["id"], i), prop["id"], v, f, c, m, k)
+        for actor in scene.get("actors", []):
+            pov = shot is not None and shot.get("pov") == actor["id"]
+            for key, v, f, c, m in actor_parts(actor, st[actor["id"]], hide_body=pov):
+                put((actor["id"],) + key, actor["id"], v, f, c, m, k)
+    for i, (v, f, c) in enumerate(floor_meshes(scene)):
+        pieces[("floor", i)] = {"owner": "floor", "vertices": v, "faces": f, "rgb": c,
+                                "matrices": [np.eye(4)] * count}
+    cameras = {}
+    for shot in shots:
+        a, b = first[shot["id"]], min(count, round(shot["end"] * fps))
+        cameras[shot["id"]] = [(k, camera_at(shot, k / fps)) for k in range(a, max(a + 1, b))]
+    return fps, count, pieces, cameras
+
+
 def triangles(meshes):
     tris, cols, oids = [], [], []
     for i, (oid, v, f, c) in enumerate(meshes):

@@ -14,7 +14,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import bpy  # noqa: E402
-from mathutils import Vector  # noqa: E402
+from mathutils import Matrix, Vector  # noqa: E402
 
 import previs_scene as ps  # noqa: E402
 
@@ -79,18 +79,159 @@ def build(scene, meshes):
         scene.collection.objects.link(ob)
 
 
+def lens(data, vfov):
+    data.sensor_fit = "VERTICAL"
+    data.sensor_height = 24
+    data.lens = 12 / math.tan(math.radians(vfov) / 2)
+    data.clip_start, data.clip_end = 0.03, 500
+
+
+def aim(cam):
+    return (Vector(cam["look"]) - Vector(cam["pos"])).to_track_quat("-Z", "Y").to_euler()
+
+
 def camera(scene, cam):
     data = bpy.data.cameras.get("previs") or bpy.data.cameras.new("previs")
     ob = bpy.data.objects.get("previs") or bpy.data.objects.new("previs", data)
     if ob.name not in scene.collection.objects:
         scene.collection.objects.link(ob)
-    data.sensor_fit = "VERTICAL"
-    data.sensor_height = 24
-    data.lens = 12 / math.tan(math.radians(cam["vfov"]) / 2)
-    data.clip_start, data.clip_end = 0.03, 500
+    lens(data, cam["vfov"])
     ob.location = cam["pos"]
-    ob.rotation_euler = (Vector(cam["look"]) - Vector(cam["pos"])).to_track_quat("-Z", "Y").to_euler()
+    ob.rotation_euler = aim(cam)
     scene.camera = ob
+
+
+# Scrubbable scene file
+
+def _fcurves(ob):
+    """F-curves of an object's action, before and after Blender 4.4 moved them into slots."""
+    act = ob.animation_data.action
+    if hasattr(act, "layers") and act.layers:
+        from bpy_extras import anim_utils
+        return anim_utils.action_get_channelbag_for_slot(act, ob.animation_data.action_slot).fcurves
+    return act.fcurves
+
+
+def _key(ob, path, values, frames):
+    """Key a property on many frames at once; values holds one tuple per frame."""
+    ob.keyframe_insert(path, frame=frames[0])
+    for fc in _fcurves(ob):
+        if fc.data_path != path:
+            continue
+        fc.keyframe_points.clear()
+        fc.keyframe_points.add(len(frames))
+        co = [x for f, v in zip(frames, values) for x in (f, v[fc.array_index])]
+        fc.keyframe_points.foreach_set("co", co)
+        for kp in fc.keyframe_points:
+            kp.interpolation = "LINEAR"
+        fc.update()
+
+
+def _animate(ob, samples):
+    """samples: (frame, location, rotation) with only the frames where something changes."""
+    frames = [f for f, _, _ in samples]
+    _key(ob, "location", [tuple(l) for _, l, _ in samples], frames)
+    _key(ob, "rotation_euler", [tuple(r) for _, _, r in samples], frames)
+
+
+def _changes(values, same):
+    """Indices where a value differs from its neighbour, so holds need only their two ends."""
+    keep = [0]
+    for k in range(1, len(values)):
+        if not same(values[k], values[k - 1]) or (k + 1 < len(values) and not same(values[k], values[k + 1])):
+            keep.append(k)
+    if keep[-1] != len(values) - 1:
+        keep.append(len(values) - 1)
+    return keep
+
+
+def _collection(scene, name):
+    col = bpy.data.collections.get(name)
+    if col is None:
+        col = bpy.data.collections.new(name)
+        scene.collection.children.link(col)
+    return col
+
+
+def build_film(scene, scene_data):
+    """Rebuild the scene as the whole film: every piece keyed once a frame where it moves, every
+    shot's camera keyed over its shot and a timeline marker at each cut bound to that camera."""
+    for o in list(bpy.data.objects):
+        bpy.data.objects.remove(o, do_unlink=True)
+    fps, count, pieces, cameras = ps.film(scene_data)
+    scene.render.fps = round(fps)
+    scene.frame_start, scene.frame_end = 1, count
+
+    for key, p in pieces.items():
+        name = ".".join(str(k) for k in key)
+        me = bpy.data.meshes.new(name)
+        me.from_pydata([tuple(v) for v in p["vertices"]], [], [tuple(x) for x in p["faces"]])
+        for poly in me.polygons:
+            poly.use_smooth = True
+        if hasattr(me, "set_sharp_from_angle"):
+            me.set_sharp_from_angle(angle=math.radians(40))
+        me.materials.append(material(p["rgb"]))
+        ob = bpy.data.objects.new(name, me)
+        _collection(scene, p["owner"]).objects.link(ob)
+
+        mats = p["matrices"]
+        shown = [m is not None for m in mats]
+        # A hidden piece holds its last placement so the curves stay calm.
+        held, last = [], next(m for m in mats if m is not None)
+        for m in mats:
+            last = m if m is not None else last
+            held.append(last)
+        loc_rot, prev = [], None
+        for m in held:
+            loc, quat, scale = Matrix(m.tolist()).decompose()
+            prev = quat.to_euler("XYZ", prev) if prev else quat.to_euler("XYZ")
+            loc_rot.append((loc, prev))
+        ob.scale = scale
+        same = lambda a, b: (abs(a - b) < 1e-7).all()
+        if all(same(m, held[0]) for m in held):
+            ob.location, ob.rotation_euler = loc_rot[0]
+        else:
+            _animate(ob, [(k + 1, *loc_rot[k]) for k in _changes(held, same)])
+        if not all(shown):
+            flips = [k for k in range(count) if k == 0 or shown[k] != shown[k - 1]]
+            for k in flips:
+                ob.hide_viewport = ob.hide_render = not shown[k]
+                ob.keyframe_insert("hide_viewport", frame=k + 1)
+                ob.keyframe_insert("hide_render", frame=k + 1)
+
+    col = _collection(scene, "cameras")
+    scene.timeline_markers.clear()
+    for shot in scene_data.get("shots", []):
+        data = bpy.data.cameras.new(shot["id"])
+        lens(data, shot["vfov"])
+        ob = bpy.data.objects.new(shot["id"], data)
+        col.objects.link(ob)
+        samples = cameras[shot["id"]]
+        poses = [(Vector(c["pos"]), aim(c)) for _, c in samples]
+        same = lambda a, b: (a[0] - b[0]).length < 1e-7 and (Vector(a[1]) - Vector(b[1])).length < 1e-7
+        if all(same(p, poses[0]) for p in poses):
+            ob.location, ob.rotation_euler = poses[0]
+        else:
+            _animate(ob, [(samples[k][0] + 1, *poses[k]) for k in _changes(poses, same)])
+        frame = samples[0][0] + 1
+        if not any(m.frame == frame for m in scene.timeline_markers):
+            scene.timeline_markers.new(shot["id"], frame=frame).camera = ob
+        if scene.camera is None:
+            scene.camera = ob
+
+    # Open on the first shot, looking through its camera with the render's look.
+    scene.frame_set(1)
+    for screen in bpy.data.screens:
+        for area in screen.areas:
+            if area.type != "VIEW_3D":
+                continue
+            for space in area.spaces:
+                if space.type == "VIEW_3D":
+                    sh = space.shading
+                    sh.type, sh.light, sh.color_type = "SOLID", "STUDIO", "MATERIAL"
+                    sh.show_object_outline, sh.show_cavity, sh.show_shadows = True, True, True
+                    space.overlay.show_floor = False
+                    space.region_3d.view_perspective = "CAMERA"
 
 
 def main():
@@ -109,6 +250,7 @@ def main():
         scene.render.filepath = item["path"]
         bpy.ops.render.render(write_still=True)
     if job.get("blend"):
+        build_film(scene, scene_data)
         bpy.ops.wm.save_as_mainfile(filepath=job["blend"])
     print("PREVIS_BLENDER_DONE", bpy.app.version_string)
 
