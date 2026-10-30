@@ -1,0 +1,36 @@
+{
+  "name": "Example: last order at a coffee bar",
+  "frame": {"width": 540, "height": 960},
+  "background": "#3a414b",
+  "floor": {"center": [0, 0], "size": [8, 8], "color": "#5b6470", "grid": 1.0},
+  "props": [
+    {"id": "counter", "label": "Counter", "color": "#8a6a4f",
+     "parts": [{"box": {"center": [0, 1.2, 0.5], "size": [3.2, 0.7, 1.0]}}]},
+    {"id": "door", "label": "Door", "color": "#c9d2dc",
+     "parts": [{"box": {"center": [0, -3.6, 1.05], "size": [1.0, 0.1, 2.1]}}]},
+    {"id": "cup", "color": "#f2efe8",
+     "keys": [{"t": 0, "pos": [0.3, 1.2, 1.0]}, {"t": 4.0, "pos": [0.3, 1.2, 1.0]}, {"t": 5.0, "pos": [0.1, 0.92, 1.0]}],
+     "parts": [{"cone": {"from": [0, 0, 0], "to": [0, 0, 0.12], "r1": 0.035, "r2": 0.045}}]}
+  ],
+  "actors": [
+    {"id": "Mia", "label": "Mia", "color": "#d9734e", "height": 1.68, "long_hair": true,
+     "keys": [{"t": 0, "pos": [0, -3.2, 0], "yaw": 0},
+              {"t": 3.0, "pos": [0.1, 0.5, 0]},
+              {"t": 5.0, "look_at": "Barista"},
+              {"t": 6.0, "arm": 60}]},
+    {"id": "Barista", "label": "Barista", "color": "#4e8fd9", "height": 1.8,
+     "keys": [{"t": 0, "pos": [0.4, 1.9, 0], "yaw": 180},
+              {"t": 4.0, "arm": 0},
+              {"t": 5.0, "arm": 55}]}
+  ],
+  "shots": [
+    {"id": "S01", "title": "She comes in from the snow", "start": 0, "end": 3, "vfov": 45,
+     "camera": {"start": {"pos": [1.6, 2.4, 1.6], "look": [0, -3.0, 1.3]},
+                "end": {"pos": [1.4, 2.2, 1.6], "look": [0.1, 0.4, 1.4]}}},
+    {"id": "S02", "title": "The cup crosses the counter", "start": 3, "end": 5, "vfov": 42,
+     "camera": {"start": {"pos": [-2.0, 0.97, 1.45], "look": [0.2, 0.97, 1.1]}}},
+    {"id": "S03", "title": "Her reaction", "start": 5, "end": 7, "vfov": 28, "pov": "Barista",
+     "camera": {"start": {"pos": [0.4, 1.95, 1.68], "look": [0.1, 0.5, 1.45]},
+                "end": {"pos": [0.4, 1.8, 1.66], "look": [0.1, 0.5, 1.5]}}}
+  ]
+}
