@@ -352,40 +352,49 @@ def _person_parts(actor, st):
     return out, s, dz
 
 
-def actor_meshes(actor, st, hide_body=False):
+def _affine(rot, move):
+    m = np.eye(4)
+    m[:3, :3], m[:3, 3] = rot, move
+    return m
+
+
+def actor_parts(actor, st, hide_body=False):
+    """Body pieces as (key, vertices, faces, rgb, matrix). Vertices sit in the piece's own frame and the
+    4x4 matrix places them in the world; the key stays the same while the pose's shape does."""
     color = hex_rgb(actor.get("color"))
     parts, s, dz = _person_parts(actor, st)
-    shoulder = np.array([.30, 0, 1.45 + dz])
+    body = _affine(_rot_z(st["yaw"]) * s, st["pos"])
+    if st["pose"] == "lie":
+        body = body @ _affine(_rot_x(90), [0, 0, .17])
     # Seated, the arm at 0 rests the hand on the lap like the left one.
-    arm = _rot_x(st["arm"] + (40 if st["pose"] == "sit" else 0))
-    lie = _rot_x(90) if st["pose"] == "lie" else None
-    world = _rot_z(st["yaw"])
-    pos = np.array(st["pos"], float)
-    meshes = []
-    for part, frame in parts:
+    arm = body @ _affine(_rot_x(st["arm"] + (40 if st["pose"] == "sit" else 0)), [.30, 0, 1.45 + dz])
+    shape = st["pose"] + (f"{st['seat']:.3f}" if st["pose"] == "sit" else "")
+    out = []
+    for i, (part, frame) in enumerate(parts):
         if hide_body and part.get("group") != "right_arm":
             continue
         v, f = primitive(part)
-        if not len(v):
-            continue
-        if frame == "right_arm":
-            v = v @ arm.T + shoulder
-        if lie is not None:
-            v = v @ lie.T + [0, 0, .17]
-        v = (v * s) @ world.T + pos
-        meshes.append((v, f, hex_rgb(part.get("color"), color)))
-    return meshes
+        if len(v):
+            out.append(((shape, i), v, f, hex_rgb(part.get("color"), color), arm if frame == "right_arm" else body))
+    return out
+
+
+def prop_parts(prop, st):
+    color = hex_rgb(prop.get("color"))
+    m = _affine(_rot_z(st["yaw"]), st["pos"])
+    return [(i, *primitive(part), hex_rgb(part.get("color"), color), m) for i, part in enumerate(prop.get("parts", []))]
+
+
+def _placed(pieces):
+    return [(v @ m[:3, :3].T + m[:3, 3], f, c) for _, v, f, c, m in pieces]
+
+
+def actor_meshes(actor, st, hide_body=False):
+    return _placed(actor_parts(actor, st, hide_body))
 
 
 def prop_meshes(prop, st):
-    color = hex_rgb(prop.get("color"))
-    world = _rot_z(st["yaw"])
-    pos = np.array(st["pos"], float)
-    out = []
-    for part in prop.get("parts", []):
-        v, f = primitive(part)
-        out.append((v @ world.T + pos, f, hex_rgb(part.get("color"), color)))
-    return out
+    return _placed(prop_parts(prop, st))
 
 
 def floor_meshes(scene):
