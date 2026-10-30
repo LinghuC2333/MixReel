@@ -21,8 +21,8 @@ Only when a reference video was used.
 
 ## Actual script
 
-| Shot ID and target time | Scale, angle, placement, camera and causal action | End state and next-shot connection | Exact copy/dialogue | Sound cue and product/edit-layer realization |
-| --- | --- | --- | --- | --- |
+| Shot ID and target time | Made as video, image or post | Scale, angle, placement, camera and causal action | End state and next-shot connection | Exact copy/dialogue | Sound cue and product/edit-layer realization |
+| --- | --- | --- | --- | --- | --- |
 
 Keep source timestamps distinct from target times. Mark the target music excerpt, phrase/accents and timing confidence, or give the proposed original/sound-only treatment and mark exact alignment provisional. Document intentional montage gaps.
 
@@ -32,7 +32,7 @@ Attach labelled reference images when they exist, such as frames from the brand'
 
 ## Early production feasibility
 
-Record edit length, generated versus post-production footage, known duration/input/audio limits and their evidence, provisional groups when needed, boundary states and sound continuity. Keep unknown request settings and prices unknown. Detailed verified execution belongs to video planning.
+Record edit length, the shots made as video, image and post, the previs renderer and renders when one was built, known duration/input/audio limits and their evidence, provisional groups when needed, boundary states and sound continuity. Keep unknown request settings and prices unknown. Detailed verified execution belongs to video planning.
 
 ## Self-review and next step
 
